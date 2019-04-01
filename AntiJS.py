@@ -16,10 +16,7 @@ from bs4 import BeautifulSoup
 from googletrans import Translator
 import youtube_dl
 
-#LOGIN PAKAI QR BIAR NGK RIBET AMBIL TOKEN NYA
-#รєใғв๏ҭ вұ: ◄]·❍✯͜͡⊰์◉⊱τ∉∂m d®∂ⓖ๏n ❂Ғ w∂®®¡๏®⊰์◉⊱™️✯͜͡❂➣
 
-#ANTIJS_V2
 cl = LineClient()
 #cl = LineClient(authToken='Tokwn Luu')
 cl.log("Auth Token : " + str(cl.authToken))
@@ -86,9 +83,6 @@ print ("SUCCES LOGIN")
 poll = LinePoll(cl)
 call = cl
 creator = [""]
-owner = [""]
-admin = [""]
-staff = [""]
 mid = cl.getProfile().mid
 Amid = k1.getProfile().mid
 Bmid = k2.getProfile().mid
@@ -489,13 +483,17 @@ def bot(op):
         if op.type == 11:
             if op.param1 in Setmain["pro"]["qr"]:
                 try:
-                    if cl.getGroup(op.param1).preventedJoinByTicket == False:
+                    if k6.getGroup(op.param1).preventedJoinByTicket == False:
                         if op.param2 not in Bots and op.param2 not in Setmain["daftar"]["bot"] and op.param2 not in Setmain["daftar"]["admin"]:
-                            cl.reissueGroupTicket(op.param1)
-                            X = cl.getGroup(op.param1)
+                            k6.reissueGroupTicket(op.param1)
+                            X = k6.getGroup(op.param1)
                             X.preventedJoinByTicket = True
-                            cl.updateGroup(X)
-                            cl.sendMessage(op.param1, None, contentMetadata={'mid': op.param2}, contentType=13)
+                            k6.updateGroup(X)
+                            random.choice(ABC).kickoutFromFoup(op.param1,[op.param2])
+                            Setmain["daftar"]["blacklist"][op.param2] = True
+                            f = codecs.open("setting.json","w","utf-8")
+                            json.dump(Setmain, f, sort_keys=True, indent=4,ensure_ascii=False)
+                            k1.sendMessage(op.param1, None, contentMetadata={'mid': op.param2}, contentType=13)
                 except:
                     try:
                         if k1.getGroup(op.param1).preventedJoinByTicket == False:
@@ -504,43 +502,59 @@ def bot(op):
                                 X = k1.getGroup(op.param1)
                                 X.preventedJoinByTicket = True
                                 k1.updateGroup(X)
+                                random.choice(ABC).kickoutFromFoup(op.param1,[op.param2])
+                                Setmain["daftar"]["blacklist"][op.param2] = True
+                                f = codecs.open("setting.json","w","utf-8")
+                                json.dump(Setmain, f, sort_keys=True, indent=4,ensure_ascii=False)
                                 k1.sendMessage(op.param1, None, contentMetadata={'mid': op.param2}, contentType=13)
                     except:
                         try:
                             if k2.getGroup(op.param1).preventedJoinByTicket == False:
-                                if op.param2 not in Bots and op.param2 not in owner and op.param2 not in admin and op.param2 not in staff:
+                                if op.param2 not in Bots and op.param2 not in Setmain["daftar"]["bot"] and op.param2 not in Setmain["daftar"]["admin"]:
                                     k2.reissueGroupTicket(op.param1)
                                     X = k2.getGroup(op.param1)
                                     X.preventedJoinByTicket = True
                                     k2.updateGroup(X)
+                                    random.choice(ABC).kickoutFromFoup(op.param1,[op.param2])
+                                    Setmain["daftar"]["blacklist"][op.param2] = True
+                                    f = codecs.open("setting.json","w","utf-8")
                                     k1.sendMessage(op.param1, None, contentMetadata={'mid': op.param2}, contentType=13)
                         except:
                             try:
-                                if kc.getGroup(op.param1).preventedJoinByTicket == False:
-                                    if op.param2 not in Bots and op.param2 not in owner and op.param2 not in admin and op.param2 not in staff:
+                                if k3.getGroup(op.param1).preventedJoinByTicket == False:
+                                    if op.param2 not in Bots and op.param2 not in Setmain["daftar"]["bot"] and op.param2 not in Setmain["daftar"]["admin"]:
                                         k3.reissueGroupTicket(op.param1)
                                         X = k3.getGroup(op.param1)
                                         X.preventedJoinByTicket = True
                                         k3.updateGroup(X)
+                                        random.choice(ABC).kickoutFromFoup(op.param1,[op.param2])
+                                        Setmain["daftar"]["blacklist"][op.param2] = True
+                                        f = codecs.open("setting.json","w","utf-8")
                                         k1.sendMessage(op.param1, None, contentMetadata={'mid': op.param2}, contentType=13)
                             except:
                                 try:
-                                    if cl.getGroup(op.param1).preventedJoinByTicket == False:
-                                        if op.param2 not in Bots and op.param2 not in owner and op.param2 not in admin and op.param2 not in staff:
-                                            cl.reissueGroupTicket(op.param1)
-                                            X = cl.getGroup(op.param1)
+                                    if k4.getGroup(op.param1).preventedJoinByTicket == False:
+                                        if op.param2 not in Bots and op.param2 not in Setmain["daftar"]["bot"] and op.param2 not in Setmain["daftar"]["admin"]:
+                                            k4.reissueGroupTicket(op.param1)
+                                            X = k4.getGroup(op.param1)
                                             X.preventedJoinByTicket = True
-                                            cl.updateGroup(X)
-                                            cl.sendMessage(op.param1, None, contentMetadata={'mid': op.param2}, contentType=13)
+                                            k4.updateGroup(X)
+                                            random.choice(ABC).kickoutFromFoup(op.param1,[op.param2])
+                                            Setmain["daftar"]["blacklist"][op.param2] = True
+                                            f = codecs.open("setting.json","w","utf-8")
+                                            k1.sendMessage(op.param1, None, contentMetadata={'mid': op.param2}, contentType=13)
                                 except:
                                     try:
-                                        if ki.getGroup(op.param1).preventedJoinByTicket == False:
-                                            if op.param2 not in Bots and op.param2 not in owner and op.param2 not in admin and op.param2 not in staff:
-                                                ki.reissueGroupTicket(op.param1)
-                                                X = ki.getGroup(op.param1)
+                                        if k5.getGroup(op.param1).preventedJoinByTicket == False:
+                                            if op.param2 not in Bots and op.param2 not in Setmain["daftar"]["bot"] and op.param2 not in Setmain["daftar"]["admin"]:
+                                                k5.reissueGroupTicket(op.param1)
+                                                X = k5.getGroup(op.param1)
                                                 X.preventedJoinByTicket = True
-                                                ki.updateGroup(X)
-                                                cl.sendMessage(op.param1, None, contentMetadata={'mid': op.param2}, contentType=13)
+                                                k5.updateGroup(X)
+                                                random.choice(ABC).kickoutFromFoup(op.param1,[op.param2])
+                                                Setmain["daftar"]["blacklist"][op.param2] = True
+                                                f = codecs.open("setting.json","w","utf-8")
+                                                k1.sendMessage(op.param1, None, contentMetadata={'mid': op.param2}, contentType=13)
                                     except:
                                         pass
         if op.type == 13:
@@ -602,31 +616,48 @@ def bot(op):
                         kc.sendMessage(op.param1,"Hai " + str(ginfo.name))
 
         if op.type == 13:
-            if op.param1 in protectinvite:
-                if op.param2 not in Bots and op.param2 not in owner and op.param2 not in admin and op.param2 not in staff:
+            if op.param1 in Setmain["pro"]["invite"]:
+                if op.param2 not in Bots and op.param2 not in Setmain["daftar"]["bot"] and op.param2 not in Setmain["daftar"]["admin"]:
                     try:
-                        group = cl.getGroup(op.param1)
+                        group = k2.getGroup(op.param1)
                         gMembMids = [contact.mid for contact in group.invitee]
-                        for _mid in gMembMids:
-                            cl.cancelGroupInvitation(op.param1,[_mid])
+                        for _mid in gMembMids
+                            k2.cancelGroupInvitation(op.param1,[_mid])
+                        k2.kickoutFromGroup(op.param1,[op.param2])
+                        Setmain["daftar"]["blacklist"][op.param2] = True
+                        f = codecs.open("setting.json","w","utf-8")
+                        json.dump(Setmain, f, sort_keys=True, indent=4,ensure_ascii=False)
+
                     except:
                         try:
                             group = ki.getGroup(op.param1)
                             gMembMids = [contact.mid for contact in group.invitee]
                             for _mid in gMembMids:
                                 ki.cancelGroupInvitation(op.param1,[_mid])
+                            k2.kickoutFromGroup(op.param1,[op.param2])
+                            Setmain["daftar"]["blacklist"][op.param2] = True
+                            f = codecs.open("setting.json","w","utf-8")
+                            json.dump(Setmain, f, sort_keys=True, indent=4,ensure_ascii=False)
                         except:
                             try:
                                 group = kk.getGroup(op.param1)
                                 gMembMids = [contact.mid for contact in group.invitee]
                                 for _mid in gMembMids:
                                     kk.cancelGroupInvitation(op.param1,[_mid])
+                                k2.kickoutFromGroup(op.param1,[op.param2])
+                                Setmain["daftar"]["blacklist"][op.param2] = True
+                                f = codecs.open("setting.json","w","utf-8")
+                                json.dump(Setmain, f, sort_keys=True, indent=4,ensure_ascii=False)
                             except:
                                 try:
                                     group = kc.getGroup(op.param1)
                                     gMembMids = [contact.mid for contact in group.invitee]
                                     for _mid in gMembMids:
                                         kc.cancelGroupInvitation(op.param1,[_mid])
+                                    k2.kickoutFromGroup(op.param1,[op.param2])
+                                    Setmain["daftar"]["blacklist"][op.param2] = True
+                                    f = codecs.open("setting.json","w","utf-8")
+                                    json.dump(Setmain, f, sort_keys=True, indent=4,ensure_ascii=False)
                                 except:
                                     pass
 
