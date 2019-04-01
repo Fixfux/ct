@@ -44,6 +44,37 @@ kc.log("Auth Token : " + str(kc.authToken))
 channel3 = LineChannel(kc)
 kc.log("Channel Access Token : " + str(channel3.channelAccessToken))
 
+
+ki = LineClient()
+#ki = LineClient(authToken='Token Luu')
+ki.log("Auth Token : " + str(ki.authToken))
+channel1 = LineChannel(ki)
+ki.log("Channel Access Token : " + str(channel1.channelAccessToken))
+
+kk = LineClient()
+#kk = LineClient(authToken='Token Luu')
+kk.log("Auth Token : " + str(kk.authToken))
+channel2 = LineChannel(kk)
+kk.log("Channel Access Token : " + str(channel2.channelAccessToken))
+
+kc= LineClient()
+#kc = LineClient(authToken='Token Luu')
+kc.log("Auth Token : " + str(kc.authToken))
+channel3 = LineChannel(kc)
+kc.log("Channel Access Token : " + str(channel3.channelAccessToken))
+
+ki = LineClient()
+#ki = LineClient(authToken='Token Luu')
+ki.log("Auth Token : " + str(ki.authToken))
+channel1 = LineChannel(ki)
+ki.log("Channel Access Token : " + str(channel1.channelAccessToken))
+
+kk = LineClient()
+#kk = LineClient(authToken='Token Luu')
+kk.log("Auth Token : " + str(kk.authToken))
+channel2 = LineChannel(kk)
+kk.log("Channel Access Token : " + str(channel2.channelAccessToken))
+
 sw= LineClient()
 #sw = LineClient(authToken='Token Luu')
 sw.log("Auth Token : " + str(sw.authToken))
@@ -700,7 +731,7 @@ def bot(op):
                         pass
                         
                 if op.param3 in Zmid:
-                    if op.param2 not in Bots and op.param2 not in owner and op.param2 not in admin and op.param2 not in staff:
+                    if op.param2 not in Bots and op.param2 not in owner and op.param2 not in admin and op.param2 not in staff and op.param2 not in Setmain["bot"] and op.param2 not in Setmain["idku"]:
                         cl.kickoutFromGroup(op.param1,[op.param2])
                         cl.findAndAddContactsByMid(op.param3)
                         cl.inviteIntoGroup(op.param1,[Zmid])
