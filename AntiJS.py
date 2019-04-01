@@ -621,7 +621,7 @@ def bot(op):
                     try:
                         group = k2.getGroup(op.param1)
                         gMembMids = [contact.mid for contact in group.invitee]
-                        for _mid in gMembMids
+                        for _mid in gMembMids:
                             k2.cancelGroupInvitation(op.param1,[_mid])
                         k2.kickoutFromGroup(op.param1,[op.param2])
                         Setmain["daftar"]["blacklist"][op.param2] = True
