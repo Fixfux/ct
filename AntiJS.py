@@ -26,54 +26,54 @@ cl.log("Auth Token : " + str(cl.authToken))
 channel = LineChannel(cl)
 cl.log("Channel Access Token : " + str(channel.channelAccessToken))
 
-ki = LineClient()
-#ki = LineClient(authToken='Token Luu')
-ki.log("Auth Token : " + str(ki.authToken))
-channel1 = LineChannel(ki)
-ki.log("Channel Access Token : " + str(channel1.channelAccessToken))
+k1 = LineClient()
+#k1 = LineClient(authToken='Token Luu')
+k1.log("Auth Token : " + str(k1.authToken))
+channel1 = LineChannel(k1)
+k1.log("Channel Access Token : " + str(channel1.channelAccessToken))
 
-kk = LineClient()
-#kk = LineClient(authToken='Token Luu')
-kk.log("Auth Token : " + str(kk.authToken))
-channel2 = LineChannel(kk)
-kk.log("Channel Access Token : " + str(channel2.channelAccessToken))
+k2 = LineClient()
+#k2 = LineClient(authToken='Token Luu')
+k2.log("Auth Token : " + str(k2.authToken))
+channel2 = LineChannel(k2)
+k2.log("Channel Access Token : " + str(channel2.channelAccessToken))
 
-kc= LineClient()
-#kc = LineClient(authToken='Token Luu')
-kc.log("Auth Token : " + str(kc.authToken))
-channel3 = LineChannel(kc)
-kc.log("Channel Access Token : " + str(channel3.channelAccessToken))
+k3= LineClient()
+#k3 = LineClient(authToken='Token Luu')
+k3.log("Auth Token : " + str(k3.authToken))
+channel3 = LineChannel(k3)
+k3.log("Channel Access Token : " + str(channel3.channelAccessToken))
 
 
-ki = LineClient()
-#ki = LineClient(authToken='Token Luu')
-ki.log("Auth Token : " + str(ki.authToken))
-channel1 = LineChannel(ki)
-ki.log("Channel Access Token : " + str(channel1.channelAccessToken))
+k4 = LineClient()
+#k4 = LineClient(authToken='Token Luu')
+k4.log("Auth Token : " + str(k4.authToken))
+channel4 = LineChannel(k4)
+k4.log("Channel Access Token : " + str(channel4.channelAccessToken))
 
-kk = LineClient()
-#kk = LineClient(authToken='Token Luu')
-kk.log("Auth Token : " + str(kk.authToken))
-channel2 = LineChannel(kk)
-kk.log("Channel Access Token : " + str(channel2.channelAccessToken))
+k5 = LineClient()
+#k5 = LineClient(authToken='Token Luu')
+k5.log("Auth Token : " + str(k5.authToken))
+channel5 = LineChannel(k5)
+k5.log("Channel Access Token : " + str(channel5.channelAccessToken))
 
-kc= LineClient()
-#kc = LineClient(authToken='Token Luu')
-kc.log("Auth Token : " + str(kc.authToken))
-channel3 = LineChannel(kc)
-kc.log("Channel Access Token : " + str(channel3.channelAccessToken))
+k6= LineClient()
+#k6 = LineClient(authToken='Token Luu')
+k6.log("Auth Token : " + str(k6.authToken))
+channel6 = LineChannel(k6)
+k6.log("Channel Access Token : " + str(channel6.channelAccessToken))
 
-ki = LineClient()
-#ki = LineClient(authToken='Token Luu')
-ki.log("Auth Token : " + str(ki.authToken))
-channel1 = LineChannel(ki)
-ki.log("Channel Access Token : " + str(channel1.channelAccessToken))
+k7 = LineClient()
+#k7 = LineClient(authToken='Token Luu')
+k7.log("Auth Token : " + str(k7.authToken))
+channel7 = LineChannel(k7)
+k7.log("Channel Access Token : " + str(channel8.channelAccessToken))
 
-kk = LineClient()
-#kk = LineClient(authToken='Token Luu')
-kk.log("Auth Token : " + str(kk.authToken))
-channel2 = LineChannel(kk)
-kk.log("Channel Access Token : " + str(channel2.channelAccessToken))
+k8 = LineClient()
+#k8 = LineClient(authToken='Token Luu')
+k8.log("Auth Token : " + str(k8.authToken))
+channel8 = LineChannel(k8)
+kk.log("Channel Access Token : " + str(channel8.channelAccessToken))
 
 sw= LineClient()
 #sw = LineClient(authToken='Token Luu')
@@ -81,37 +81,37 @@ sw.log("Auth Token : " + str(sw.authToken))
 channel11 = LineChannel(sw)
 sw.log("Channel Access Token : " + str(channel11.channelAccessToken))
 
-print ("รєใғв๏ҭ вұ: ◄]·❍✯͜͡⊰์◉⊱τ∉∂m d®∂ⓖ๏n ❂Ғ w∂®®¡๏®⊰์◉⊱™️✯͜͡❂➣")
+print ("SUCCES LOGIN")
 
 poll = LinePoll(cl)
 call = cl
-creator = ["Mid Luu"]
-owner = ["Mid Luu"]
-admin = ["Mid Luu"]
-staff = ["Mid Luu"]
+creator = [""]
+owner = [""]
+admin = [""]
+staff = [""]
 mid = cl.getProfile().mid
-Amid = ki.getProfile().mid
-Bmid = kk.getProfile().mid
-Cmid = kc.getProfile().mid
+Amid = k1.getProfile().mid
+Bmid = k2.getProfile().mid
+Cmid = k3.getProfile().mid
+Dmid = k4.getProfile().mid
+Emid = k5.getProfile().mid
+Fmid = k6.getProfile().mid
+Gmid = k7.getProfile().mid
+Hmid = k8.getProfile().mid
 Zmid = sw.getProfile().mid
-KAC = [cl,ki,kk,kc,sw]
-ABC = [ki,kk,kc,sw]
-Bots = [mid,Amid,Bmid,Cmid,Zmid]
+KAC = [cl,k1,k2,k3,k4,k5,k6,k7,k8,sw]
+ABC = [k1,k2,k3,k4,k5,k6,k7,k8]
+Bots = [mid,Amid,Bmid,Cmid,Dmid,Emid,Fmid,Gmid,Hmid,Zmid]
 Dpk = creator + owner + admin + staff
 
-protectqr = []
-protectkick = []
-protectjoin = []
-protectinvite = []
-protectcancel = []
-protectantijs = []
-ghost = []
-
-welcome = []
-
-responsename1 = ki.getProfile().displayName
-responsename2 = kk.getProfile().displayName
-responsename3 = kc.getProfile().displayName
+responsename1 = k1.getProfile().displayName
+responsename2 = k2.getProfile().displayName
+responsename3 = k3.getProfile().displayName
+responsename4 = k4.getProfile().displayName
+responsename5 = k5.getProfile().displayName
+responsename6 = k6.getProfile().displayName
+responsename7 = ki.getProfile().displayName
+responsename8 = kk.getProfile().displayName
 
 settings = {
     "Picture":False,
@@ -237,7 +237,7 @@ def runtime(secs):
 def mentionMembers(to, mid):
     try:
         arrData = ""
-        textx = "Total Penghuni Rumah「{}」\n\n  [ Mention ]\n1. ".format(str(len(mid)))
+        textx = "{}\n\n  [ Mention ]\n1. ".format(str(len(mid)))
         arr = []
         no = 1
         num = 2
@@ -264,7 +264,7 @@ def mentionMembers(to, mid):
 def siderMembers(to, mid):
     try:
         arrData = ""
-        textx = "Nih Yang Suka Ngintip「{}」\nHaii ".format(str(len(mid)))
+        textx = "Nih Yang Suka Ngintip {} \nHaii ".format(str(len(mid)))
         arr = []
         no = 1
         num = 2
@@ -291,7 +291,7 @@ def siderMembers(to, mid):
 def welcomeMembers(to, mid):
     try:
         arrData = ""
-        textx = "Total Penghuni Baru「{}」\nHaii  ".format(str(len(mid)))
+        textx = "{} \nHaii  ".format(str(len(mid)))
         arr = []
         no = 1
         num = 2
@@ -487,10 +487,10 @@ def bot(op):
             return
         
         if op.type == 11:
-            if op.param1 in protectqr:
+            if op.param1 in Setmain["pro"]["qr"]:
                 try:
                     if cl.getGroup(op.param1).preventedJoinByTicket == False:
-                        if op.param2 not in Bots and op.param2 not in owner and op.param2 not in admin and op.param2 not in staff:
+                        if op.param2 not in Bots and op.param2 not in Setmain["daftar"]["bot"] and op.param2 not in Setmain["daftar"]["admin"]:
                             cl.reissueGroupTicket(op.param1)
                             X = cl.getGroup(op.param1)
                             X.preventedJoinByTicket = True
@@ -498,31 +498,31 @@ def bot(op):
                             cl.sendMessage(op.param1, None, contentMetadata={'mid': op.param2}, contentType=13)
                 except:
                     try:
-                        if ki.getGroup(op.param1).preventedJoinByTicket == False:
-                            if op.param2 not in Bots and op.param2 not in owner and op.param2 not in admin and op.param2 not in staff:
-                                ki.reissueGroupTicket(op.param1)
-                                X = ki.getGroup(op.param1)
+                        if k1.getGroup(op.param1).preventedJoinByTicket == False:
+                            if op.param2 not in Bots and op.param2 not in Setmain["daftar"]["bot"] and op.param2 not in Setmain["daftar"]["admin"]:
+                                k1.reissueGroupTicket(op.param1)
+                                X = k1.getGroup(op.param1)
                                 X.preventedJoinByTicket = True
-                                ki.updateGroup(X)
-                                cl.sendMessage(op.param1, None, contentMetadata={'mid': op.param2}, contentType=13)
+                                k1.updateGroup(X)
+                                k1.sendMessage(op.param1, None, contentMetadata={'mid': op.param2}, contentType=13)
                     except:
                         try:
-                            if kk.getGroup(op.param1).preventedJoinByTicket == False:
+                            if k2.getGroup(op.param1).preventedJoinByTicket == False:
                                 if op.param2 not in Bots and op.param2 not in owner and op.param2 not in admin and op.param2 not in staff:
-                                    kk.reissueGroupTicket(op.param1)
-                                    X = kk.getGroup(op.param1)
+                                    k2.reissueGroupTicket(op.param1)
+                                    X = k2.getGroup(op.param1)
                                     X.preventedJoinByTicket = True
-                                    kk.updateGroup(X)
-                                    cl.sendMessage(op.param1, None, contentMetadata={'mid': op.param2}, contentType=13)
+                                    k2.updateGroup(X)
+                                    k1.sendMessage(op.param1, None, contentMetadata={'mid': op.param2}, contentType=13)
                         except:
                             try:
                                 if kc.getGroup(op.param1).preventedJoinByTicket == False:
                                     if op.param2 not in Bots and op.param2 not in owner and op.param2 not in admin and op.param2 not in staff:
-                                        kc.reissueGroupTicket(op.param1)
-                                        X = kc.getGroup(op.param1)
+                                        k3.reissueGroupTicket(op.param1)
+                                        X = k3.getGroup(op.param1)
                                         X.preventedJoinByTicket = True
-                                        kc.updateGroup(X)
-                                        cl.sendMessage(op.param1, None, contentMetadata={'mid': op.param2}, contentType=13)
+                                        k3.updateGroup(X)
+                                        k1.sendMessage(op.param1, None, contentMetadata={'mid': op.param2}, contentType=13)
                             except:
                                 try:
                                     if cl.getGroup(op.param1).preventedJoinByTicket == False:
