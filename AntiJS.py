@@ -1640,91 +1640,32 @@ def bot(op):
 #ADD Bots
                if msg.contentType == 13:
                  if msg._from in admin:
-                  if wait["addbots"] == True:
-                    if msg.contentMetadata["mid"] in Bots:
-                        cl.sendMessage(msg.to,"Contact itu sudah jadi anggota bot")
-                        wait["addbots"] = True
-                    else:
-                        Bots.append(msg.contentMetadata["mid"])
-                        wait["addbots"] = True
-                        cl.sendMessage(msg.to,"Berhasil menambahkan ke anggota bot")
-                 if wait["dellbots"] == True:
-                    if msg.contentMetadata["mid"] in Bots:
-                        Bots.remove(msg.contentMetadata["mid"])
-                        cl.sendMessage(msg.to,"Berhasil menghapus dari anggota bot")
-                    else:
-                        wait["dellbots"] = True
-                        cl.sendMessage(msg.to,"Contact itu bukan anggota bot Dpk")
-#ADD STAFF
+                   if msg.to in Setmain["kirim"]["idadmin"]:
+                     if msg.contentMetadata["mid"] in Setmain["daftar"]["admin"]:
+                         cl.sendMessage(msg.to,"{} sudah menjadi admin".format(str(cl.getContact(msg.contentMetadata["mid"]).displayName)))
+                     else:
+                         Setmain["daftar"]["admin"][msg.contentMetadata["mid"]] = True
+                         f = codecs.open("setting.json","w","utf-8")
+                         json.dump(Setmain, f, sort_keys=True, indent=4,ensure_ascii=False)
+                         cl.sendMessage(msg.to,"{} diangkat menjadi admin".format(str(cl.getContact(msg.contentMetadata["mid"]).displayName)))
+                   if msg.to in Setmain["kirim"]["idcadmin"]:
+                     if msg.contentMetadata["mid"] not in Setmain["daftar"]["admin"]:
+                         cl.sendMessage(msg.to,"{} tidak pernah menjadi admin".format(str(cl.getContact(msg.contentMetadata["mid"]).displayName)))
+                     else:
+                         del Setmain["daftar"]["admin"][msg.contentMetadata["mid"]] = True
+                         f = codecs.open("setting.json","w","utf-8")
+                         json.dump(Setmain, f, sort_keys=True, indent=4,ensure_ascii=False)
+                         cl.sendMessage(msg.to,"{} di copot menjadi admin".format(str(cl.getContact(msg.contentMetadata["mid"]).displayName)))
                  if msg._from in admin:
-                  if wait["addstaff"] == True:
-                    if msg.contentMetadata["mid"] in staff:
-                        cl.sendMessage(msg.to,"Contact itu sudah jadi staff")
-                        wait["addstaff"] = True
-                    else:
-                        staff.append(msg.contentMetadata["mid"])
-                        wait["addstaff"] = True
-                        cl.sendMessage(msg.to,"Berhasil menambahkan ke staff")
-                 if wait["dellstaff"] == True:
-                    if msg.contentMetadata["mid"] in staff:
-                        staff.remove(msg.contentMetadata["mid"])
-                        cl.sendMessage(msg.to,"Berhasil menghapus dari staff")
-                        wait["dellstaff"] = True
-                    else:
-                        wait["dellstaff"] = True
-                        cl.sendMessage(msg.to,"Contact itu bukan staff")
-#ADD ADMIN
-                 if msg._from in admin:
-                  if wait["addadmin"] == True:
-                    if msg.contentMetadata["mid"] in admin:
-                        cl.sendMessage(msg.to,"Contact itu sudah jadi admin")
-                        wait["addadmin"] = True
-                    else:
-                        admin.append(msg.contentMetadata["mid"])
-                        wait["addadmin"] = True
-                        cl.sendMessage(msg.to,"Berhasil menambahkan ke admin")
-                 if wait["delladmin"] == True:
-                    if msg.contentMetadata["mid"] in admin:
-                        admin.remove(msg.contentMetadata["mid"])
-                        cl.sendMessage(msg.to,"Berhasil menghapus dari admin")
-                    else:
-                        wait["delladmin"] = True
-                        cl.sendMessage(msg.to,"Contact itu bukan admin")
-#ADD BLACKLIST
-                 if msg._from in admin:
-                  if wait["wblacklist"] == True:
-                    if msg.contentMetadata["mid"] in wait["blacklist"]:
-                        cl.sendMessage(msg.to,"Contact itu sudah ada di blacklist")
-                        wait["wblacklist"] = True
-                    else:
-                        wait["blacklist"][msg.contentMetadata["mid"]] = True
-                        wait["wblacklist"] = True
-                        cl.sendMessage(msg.to,"Berhasil menambahkan ke blacklist user")
-                  if wait["dblacklist"] == True:
-                    if msg.contentMetadata["mid"] in wait["blacklist"]:
-                        del wait["blacklist"][msg.contentMetadata["mid"]]
-                        cl.sendMessage(msg.to,"Berhasil menghapus dari blacklist user")
-                    else:
-                        wait["dblacklist"] = True
-                        cl.sendMessage(msg.to,"Contact itu tidak ada di blacklist")
-#TALKBAN
-                 if msg._from in admin:
-                  if wait["Talkwblacklist"] == True:
-                    if msg.contentMetadata["mid"] in wait["Talkblacklist"]:
-                        cl.sendMessage(msg.to,"Contact itu sudah ada di Talkban")
-                        wait["Talkwblacklist"] = True
-                    else:
-                        wait["Talkblacklist"][msg.contentMetadata["mid"]] = True
-                        wait["Talkwblacklist"] = True
-                        cl.sendMessage(msg.to,"Berhasil menambahkan ke Talkban user")
-                  if wait["Talkdblacklist"] == True:
-                    if msg.contentMetadata["mid"] in wait["Talkblacklist"]:
-                        del wait["Talkblacklist"][msg.contentMetadata["mid"]]
-                        cl.sendMessage(msg.to,"Berhasil menghapus dari Talkban user")
-                    else:
-                        wait["Talkdblacklist"] = True
-                        cl.sendMessage(msg.to,"Contact itu tidak ada di Talkban")
-#UPDATE FOTO
+                   if msg.to in Setmain["kirim"]["idbot"]:
+                     if msg.contentMetadata["mid"] in Setmain["daftar"]["bot"]:
+                         cl.sendMessage(msg.to,"{} sudah masuk daftar bot".format(str(cl.getContact(msg.contentMetadata["mid"]).displayName)))
+                     else:
+                         Setmain["daftar"]["bot"][msg.contentMetadata["mid"]] = True
+                         f = codecs.open("setting.json","w","utf-8")
+                         json.dump(Setmain, f, sort_keys=True, indent=4,ensure_ascii=False)
+                         cl.sendMessage(msg.to,"{} diangkat menjadi bots".format(str(cl.getContact(msg.contentMetadata["mid"]).displayName)))
+   
                if msg.contentType == 1:
                  if msg._from in admin:
                     if Setmain["Addimage"] == True:
