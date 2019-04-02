@@ -560,7 +560,7 @@ def bot(op):
         if op.type == 13:
             if mid in op.param3:
                 if wait["autoLeave"] == True:
-                    if op.param2 not in Bots and op.param2 not in owner and op.param2 not in admin and op.param2 not in staff:
+                    if op.param2 not in Bots and op.param2 not in Setmain["daftar"]["bot"] and op.param2 not in Setmain["daftar"]["admin"]:
                         cl.acceptGroupInvitation(op.param1)
                         ginfo = cl.getGroup(op.param1)
                         cl.sendMessage(op.param1,"Selamat Tinggal\n Group " +str(ginfo.name))
@@ -573,7 +573,7 @@ def bot(op):
         if op.type == 13:
             if mid in op.param3:
                 if wait["autoJoin"] == True:
-                    if op.param2 not in Bots and op.param2 not in owner and op.param2 not in admin and op.param2 not in staff:
+                    if op.param2 not in Bots and op.param2 not in Setmain["daftar"]["bot"] and op.param2 not in Setmain["daftar"]["admin"]:
                         cl.acceptGroupInvitation(op.param1)
                         ginfo = cl.getGroup(op.param1)
                         cl.sendMessage(op.param1,"Haii " +str(ginfo.name))
@@ -583,7 +583,7 @@ def bot(op):
                         cl.sendMessage(op.param1,"Haii " + str(ginfo.name))
             if Amid in op.param3:
                 if wait["autoJoin"] == True:
-                    if op.param2 not in Bots and op.param2 not in owner and op.param2 not in admin and op.param2 not in staff:
+                    if op.param2 not in Bots and op.param2 not in Setmain["daftar"]["bot"] and op.param2 not in Setmain["daftar"]["admin"]:
                         ki.acceptGroupInvitation(op.param1)
                         ginfo = ki.getGroup(op.param1)
                         ki.sendMessage(op.param1,"Selamat Tinggal\n Group " +str(ginfo.name))
@@ -594,7 +594,7 @@ def bot(op):
                         ki.sendMessage(op.param1,"Hai " + str(ginfo.name))
             if Bmid in op.param3:
                 if wait["autoJoin"] == True:
-                    if op.param2 not in Bots and op.param2 not in owner and op.param2 not in admin and op.param2 not in staff:
+                    if op.param2 not in Bots and op.param2 not in Setmain["daftar"]["bot"] and op.param2 not in Setmain["daftar"]["admin"]:
                         kk.acceptGroupInvitation(op.param1)
                         ginfo = kk.getGroup(op.param1)
                         ki.sendMessage(op.param1,"Selamat Tinggal\n Group " +str(ginfo.name))
@@ -605,7 +605,7 @@ def bot(op):
                         kk.sendMessage(op.param1,"Hai " + str(ginfo.name))
             if Cmid in op.param3:
                 if wait["autoJoin"] == True:
-                    if op.param2 not in Bots and op.param2 not in owner and op.param2 not in admin and op.param2 not in staff:
+                    if op.param2 not in Bots and op.param2 not in Setmain["daftar"]["bot"] and op.param2 not in Setmain["daftar"]["admin"]:
                         kc.acceptGroupInvitation(op.param1)
                         ginfo = kc.getGroup(op.param1)
                         kc.sendMessage(op.param1,"Selamat Tinggal\n Group " +str(ginfo.name))
@@ -682,7 +682,7 @@ def bot(op):
                                                 json.dump(Setmain, f, sort_keys=True, indent=4,ensure_ascii=False)
                                             except:
                                                 try:
-                                                    random.choice(ABC).kickoutFromGroup(op.param1,[op.param2)
+                                                    random.choice(ABC).kickoutFromGroup(op.param1,[op.param2])
                                                     Setmain["daftar"]["blacklist"][op.param2] = True
                                                     f = codecs.open("setting.json","w","utf-8")
                                                     json.dump(Setmain, f, sort_keys=True, indent=4,ensure_ascii=False)
