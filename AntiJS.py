@@ -630,31 +630,31 @@ def bot(op):
 
                     except:
                         try:
-                            group = ki.getGroup(op.param1)
+                            group = k3.getGroup(op.param1)
                             gMembMids = [contact.mid for contact in group.invitee]
                             for _mid in gMembMids:
-                                ki.cancelGroupInvitation(op.param1,[_mid])
-                            k2.kickoutFromGroup(op.param1,[op.param2])
+                                k3.cancelGroupInvitation(op.param1,[_mid])
+                            k3.kickoutFromGroup(op.param1,[op.param2])
                             Setmain["daftar"]["blacklist"][op.param2] = True
                             f = codecs.open("setting.json","w","utf-8")
                             json.dump(Setmain, f, sort_keys=True, indent=4,ensure_ascii=False)
                         except:
                             try:
-                                group = kk.getGroup(op.param1)
+                                group = k4.getGroup(op.param1)
                                 gMembMids = [contact.mid for contact in group.invitee]
                                 for _mid in gMembMids:
-                                    kk.cancelGroupInvitation(op.param1,[_mid])
-                                k2.kickoutFromGroup(op.param1,[op.param2])
+                                    k4.cancelGroupInvitation(op.param1,[_mid])
+                                k4.kickoutFromGroup(op.param1,[op.param2])
                                 Setmain["daftar"]["blacklist"][op.param2] = True
                                 f = codecs.open("setting.json","w","utf-8")
                                 json.dump(Setmain, f, sort_keys=True, indent=4,ensure_ascii=False)
                             except:
                                 try:
-                                    group = kc.getGroup(op.param1)
+                                    group = k4.getGroup(op.param1)
                                     gMembMids = [contact.mid for contact in group.invitee]
                                     for _mid in gMembMids:
-                                        kc.cancelGroupInvitation(op.param1,[_mid])
-                                    k2.kickoutFromGroup(op.param1,[op.param2])
+                                        k4.cancelGroupInvitation(op.param1,[_mid])
+                                    k4.kickoutFromGroup(op.param1,[op.param2])
                                     Setmain["daftar"]["blacklist"][op.param2] = True
                                     f = codecs.open("setting.json","w","utf-8")
                                     json.dump(Setmain, f, sort_keys=True, indent=4,ensure_ascii=False)
@@ -662,7 +662,7 @@ def bot(op):
                                     pass
 
         if op.type == 17:
-            if op.param2 in wait["blacklist"]:
+            if op.param2 in Setmain["daftar"]["blacklist"]:
                 random.choice(ABC).kickoutFromGroup(op.param1,[op.param2])
             else:
                 pass
@@ -678,23 +678,23 @@ def bot(op):
                 cl.sendImageWithURL(op.param1, image)
 
         if op.type == 17:
-            if op.param1 in protectjoin:
-                if op.param2 not in Bots and op.param2 not in owner and op.param2 not in admin and op.param2 not in staff:
-                    wait["blacklist"][op.param2] = True
+            if op.param1 in Setmain["pro"]["join"]:
+                if op.param2 not in Bots and op.param2 not in Setmain["daftar"]["bot"] and op.param2 not in Setmain["daftar"]["admin"]:
+                    Setmain["daftar"]["blacklist"][op.param2] = True
                     try:
-                        if op.param3 not in wait["blacklist"]:
+                        if op.param3 not in Setmain["daftar"]["blacklist"]:
                         	kc.kickoutFromGroup(op.param1,[op.param2])
                     except:
                         try:
-                            if op.param3 not in wait["blacklist"]:
+                            if op.param3 not in Setmain["daftar"]["blacklist"]:
                                 ki.kickoutFromGroup(op.param1,[op.param2])
                         except:
                             try:
-                                if op.param3 not in wait["blacklist"]:
+                                if op.param3 not in Setmain["daftar"]["blacklist"]:
                                     kk.kickoutFromGroup(op.param1,[op.param2])
                             except:
                                 try:
-                                    if op.param3 not in wait["blacklist"]:
+                                    if op.param3 not in Setmain["daftar"]["blacklist"]:
                                         cl.kickoutFromGroup(op.param1,[op.param2])
                                 except:
                                     pass
@@ -704,16 +704,16 @@ def bot(op):
             return
         if op.type == 5:
             if wait["autoAdd"] == True:
-                if op.param2 not in Bots and op.param2 not in owner and op.param2 not in admin and op.param2 not in staff:
+                if op.param2 not in Bots and op.param2 not in Setmain["daftar"]["bot"] and op.param2 not in Setmain["daftar"]["admin"]:
                     if (wait["message"] in [" "," ","\n",None]):
                         pass
                     else:
-                        cl.sendText(op.param1, wait["message"])
+                        cl.sendMessage(op.param1, wait["message"])
 
         if op.type == 19:
             if op.param1 in protectkick:
-                if op.param2 not in Bots and op.param2 not in owner and op.param2 not in admin and op.param2 not in staff:
-                    wait["blacklist"][op.param2] = True
+                if op.param2 not in Bots and op.param2 not in Setmain["daftar"]["bot"] and op.param2 not in Setmain["daftar"]["admin"]:
+                    Setmain["daftar"]["blacklist"][op.param2] = True
                     random.choice(ABC).kickoutFromGroup(op.param1,[op.param2])
                 else:
                     pass
@@ -740,7 +740,7 @@ def bot(op):
             try:
                 if op.param1 in protectantijs:
                   if op.param3 in mid:
-                    if op.param2 not in Bots and op.param2 not in owner and op.param2 not in admin and op.param2 not in staff:
+                    if op.param2 not in Bots and op.param2 not in Setmain["daftar"]["bot"] and op.param2 not in Setmain["daftar"]["admin"]:
                         sw.acceptGroupInvitation(op.param1)
                         G = sw.getGroup(op.param1)
                         G.preventedJoinByTicket = False
@@ -762,7 +762,7 @@ def bot(op):
                         pass
                         
                 if op.param3 in Zmid:
-                    if op.param2 not in Bots and op.param2 not in owner and op.param2 not in admin and op.param2 not in staff and op.param2 not in Setmain["bot"] and op.param2 not in Setmain["idku"]:
+                    if op.param2 not in Bots and op.param2 not in Setmain["daftar"]["bot"] and op.param2 not in Setmain["daftar"]["admin"]:
                         cl.kickoutFromGroup(op.param1,[op.param2])
                         cl.findAndAddContactsByMid(op.param3)
                         cl.inviteIntoGroup(op.param1,[Zmid])
@@ -773,7 +773,7 @@ def bot(op):
                         cl.inviteIntoGroup(op.param1,[Zmid])
                         cl.sendMessage(op.param1,"=AntiJS Invited=")
                         
-                if op.param2 not in Bots and op.param2 not in owner and op.param2 not in admin and op.param2 not in staff:
+                if op.param2 not in Bots and op.param2 not in Setmain["daftar"]["bot"] and op.param2 not in Setmain["daftar"]["admin"]:
                     if op.param3 in admin:
                         if op.param1 in protectantijs:
                             wait["blacklist"][op.param2] = True
@@ -788,7 +788,7 @@ def bot(op):
 #-------------------------------------------------------------------------------                
         if op.type == 32:
             if op.param1 in protectcancel:
-                if op.param2 not in Bots and op.param2 not in owner and op.param2 not in admin and op.param2 not in staff:
+                if op.param2 not in Bots and op.param2 not in Setmain["daftar"]["bot"] and op.param2 not in Setmain["daftar"]["admin"]:
                     wait["blacklist"][op.param2] = True
                     try:
                         if op.param3 not in wait["blacklist"]:
@@ -821,11 +821,9 @@ def bot(op):
             if mid in op.param3:
                 if op.param2 in Bots:
                     pass
-                if op.param2 in owner:
+                if op.param2 in Setmain["daftar"]["admin"]:
                     pass
-                if op.param2 in admin:
-                    pass
-                if op.param2 in staff:
+                if op.param2 in Setmain["daftar"]["bot"]:
                     pass
                 else:
                     wait["blacklist"][op.param2] = True
@@ -875,11 +873,9 @@ def bot(op):
             if Amid in op.param3:
                 if op.param2 in Bots:
                     pass
-                if op.param2 in owner:
+                if op.param2 in Setmain["daftar"]["bot"]:
                     pass
-                if op.param2 in admin:
-                    pass
-                if op.param2 in staff:
+                if op.param2 in Setmain["daftar"]["admin"]:
                     pass
                 else:
                     wait["blacklist"][op.param2] = True
