@@ -575,46 +575,73 @@ def bot(op):
                 if wait["autoJoin"] == True:
                     if op.param2 not in Bots and op.param2 not in Setmain["daftar"]["bot"] and op.param2 not in Setmain["daftar"]["admin"]:
                         cl.acceptGroupInvitation(op.param1)
-                        ginfo = cl.getGroup(op.param1)
-                        cl.sendMessage(op.param1,"Haii " +str(ginfo.name))
+                        cl.leaveGroup(op.param1)
                     else:
                         cl.acceptGroupInvitation(op.param1)
-                        ginfo = cl.getGroup(op.param1)
-                        cl.sendMessage(op.param1,"Haii " + str(ginfo.name))
             if Amid in op.param3:
                 if wait["autoJoin"] == True:
                     if op.param2 not in Bots and op.param2 not in Setmain["daftar"]["bot"] and op.param2 not in Setmain["daftar"]["admin"]:
-                        ki.acceptGroupInvitation(op.param1)
-                        ginfo = ki.getGroup(op.param1)
-                        ki.sendMessage(op.param1,"Selamat Tinggal\n Group " +str(ginfo.name))
-                        ki.leaveGroup(op.param1)
+                        k1.acceptGroupInvitation(op.param1)
+                        k1.leaveGroup(op.param1)
                     else:
-                        ki.acceptGroupInvitation(op.param1)
-                        ginfo = ki.getGroup(op.param1)
-                        ki.sendMessage(op.param1,"Hai " + str(ginfo.name))
+                        k1.acceptGroupInvitation(op.param1)
             if Bmid in op.param3:
                 if wait["autoJoin"] == True:
                     if op.param2 not in Bots and op.param2 not in Setmain["daftar"]["bot"] and op.param2 not in Setmain["daftar"]["admin"]:
-                        kk.acceptGroupInvitation(op.param1)
-                        ginfo = kk.getGroup(op.param1)
-                        ki.sendMessage(op.param1,"Selamat Tinggal\n Group " +str(ginfo.name))
-                        kk.leaveGroup(op.param1)
+                        k2.acceptGroupInvitation(op.param1)
+                        k2.leaveGroup(op.param1)
                     else:
-                        kk.acceptGroupInvitation(op.param1)
-                        ginfo = kk.getGroup(op.param1)
-                        kk.sendMessage(op.param1,"Hai " + str(ginfo.name))
+                        k2.acceptGroupInvitation(op.param1)
+                        
             if Cmid in op.param3:
                 if wait["autoJoin"] == True:
                     if op.param2 not in Bots and op.param2 not in Setmain["daftar"]["bot"] and op.param2 not in Setmain["daftar"]["admin"]:
-                        kc.acceptGroupInvitation(op.param1)
-                        ginfo = kc.getGroup(op.param1)
-                        kc.sendMessage(op.param1,"Selamat Tinggal\n Group " +str(ginfo.name))
-                        kc.leaveGroup(op.param1)
+                        k3.acceptGroupInvitation(op.param1)
+                        k3.leaveGroup(op.param1)
                     else:
-                        kc.acceptGroupInvitation(op.param1)
-                        ginfo = kc.getGroup(op.param1)
-                        kc.sendMessage(op.param1,"Hai " + str(ginfo.name))
+                        k3.acceptGroupInvitation(op.param1)
+                        
+            if Dmid in op.param3:
+                if wait["autoJoin"] == True:
+                    if op.param2 not in Bots and op.param2 not in Setmain["daftar"]["bot"] and op.param2 not in Setmain["daftar"]["admin"]:
+                        k4.acceptGroupInvitation(op.param1)
+                        k4.leaveGroup(op.param1)
+                    else:
+                        k4.acceptGroupInvitation(op.param1)
+                        
+            if Emid in op.param3:
+                if wait["autoJoin"] == True:
+                    if op.param2 not in Bots and op.param2 not in Setmain["daftar"]["bot"] and op.param2 not in Setmain["daftar"]["admin"]:
+                        k5.acceptGroupInvitation(op.param1)
+                        k5.leaveGroup(op.param1)
+                    else:
+                        k5.acceptGroupInvitation(op.param1)
+                        
+            if Fmid in op.param3:
+                if wait["autoJoin"] == True:
+                    if op.param2 not in Bots and op.param2 not in Setmain["daftar"]["bot"] and op.param2 not in Setmain["daftar"]["admin"]:
+                        k6.acceptGroupInvitation(op.param1)
+                        k6.leaveGroup(op.param1)
+                    else:
+                        k6.acceptGroupInvitation(op.param1)
+                        
+            if Gmid in op.param3:
+                if wait["autoJoin"] == True:
+                    if op.param2 not in Bots and op.param2 not in Setmain["daftar"]["bot"] and op.param2 not in Setmain["daftar"]["admin"]:
+                        k7.acceptGroupInvitation(op.param1)
+                        k7.leaveGroup(op.param1)
+                    else:
+                        k7.acceptGroupInvitation(op.param1)
+                        
 
+            if Hmid in op.param3:
+                if wait["autoJoin"] == True:
+                    if op.param2 not in Bots and op.param2 not in Setmain["daftar"]["bot"] and op.param2 not in Setmain["daftar"]["admin"]:
+                        k8.acceptGroupInvitation(op.param1)
+                        k8.leaveGroup(op.param1)
+                    else:
+                        k8.acceptGroupInvitation(op.param1)
+                        
         if op.type == 13:
             if op.param1 in Setmain["pro"]["invite"]:
                 if op.param2 not in Bots and op.param2 not in Setmain["daftar"]["bot"] and op.param2 not in Setmain["daftar"]["admin"]:
@@ -757,7 +784,7 @@ def bot(op):
                         cl.sendMessage(op.param1, wait["message"])
 
         if op.type == 19:
-            if op.param1 in protectkick:
+            if op.param1 in Setmain["pro"]["kick"]:
                 if op.param2 not in Bots and op.param2 not in Setmain["daftar"]["bot"] and op.param2 not in Setmain["daftar"]["admin"]:
                     Setmain["daftar"]["blacklist"][op.param2] = True
                     f = codecs.open("setting.json","w","utf-8")
@@ -786,7 +813,7 @@ def bot(op):
                 
         if op.type == 19:
             try:
-                if op.param1 in protectantijs:
+                if op.param1 in Setmain["pro"]["js"]:
                   if op.param3 in mid:
                     if op.param2 not in Bots and op.param2 not in Setmain["daftar"]["bot"] and op.param2 not in Setmain["daftar"]["admin"]:
                         sw.acceptGroupInvitation(op.param1)
