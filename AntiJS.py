@@ -1576,42 +1576,7 @@ def bot(op):
                               random.choice(ABC).kickoutFromGroup(msg.to, [msg._from])
                           except:
                               random.choice(ABC).kickoutFromGroup(msg.to, [msg._from])
-               if 'MENTION' in msg.contentMetadata.keys() != None:
-                 if wait["detectMention"] == True:
-                   name = re.findall(r'@(\w+)', msg.text)
-                   mention = ast.literal_eval(msg.contentMetadata['MENTION'])
-                   mentionees = mention['MENTIONEES']
-                   for mention in mentionees:
-                        if mention ['M'] in Bots:
-                           cl.sendMessage(msg.to, wait["Respontag"])
-                           cl.sendMessage(msg.to, None, contentMetadata={"STKID":"12842266","STKPKGID":"1318245","STKVER":"1"}, contentType=7)
-                           break
-               if 'MENTION' in msg.contentMetadata.keys() != None:
-                 if wait["Mentionkick"] == True:
-                   name = re.findall(r'@(\w+)', msg.text)
-                   mention = ast.literal_eval(msg.contentMetadata['MENTION'])
-                   mentionees = mention['MENTIONEES']
-                   for mention in mentionees:
-                        if mention ['M'] in Bots:
-                           cl.mentiontag(msg.to,[msg._from])
-                           cl.sendMessage(msg.to, "Jangan Pernah Ngetag² Aim...!!!")
-                           cl.kickoutFromGroup(msg.to, [msg._from])
-                           break
-               if msg.contentType == 7:
-                 if wait["sticker"] == True:
-                    msg.contentType = 0
-                    cl.sendMessage(msg.to,"「Cek ID Sticker」\n❧STKID : " + msg.contentMetadata["STKID"] + "\n❧STKPKGID : " + msg.contentMetadata["STKPKGID"] + "\n❧STKVER : " + msg.contentMetadata["STKVER"]+ "\n\n「Link Sticker」" + "\nline://shop/detail/" + msg.contentMetadata["STKPKGID"])
-               if msg.contentType == 13:
-                 if wait["contact"] == True:
-                    msg.contentType = 0
-                    cl.sendMessage(msg.to,msg.contentMetadata["mid"])
-                    if 'displayName' in msg.contentMetadata:
-                        contact = cl.getContact(msg.contentMetadata["mid"])
-                        path = cl.getContact(msg.contentMetadata["mid"]).picturePath
-                        image = 'http://dl.profile.line.naver.jp'+path
-                        cl.sendMessage(msg.to,"❧Nama : " + msg.contentMetadata["displayName"] + "\n❧MID : " + msg.contentMetadata["mid"] + "\n❧Status Msg : " + contact.statusMessage + "\n❧Picture URL : http://dl.profile.line-cdn.net/" + contact.pictureStatus)
-                        cl.sendImageWithURL(msg.to, image)
-
+               
         if op.type == 25 or op.type == 26:
             msg = op.message
             text = msg.text
@@ -1744,8 +1709,8 @@ def bot(op):
                         elif Hmid in Setmain["ARfoto"]:
                             path = s8.downloadObjectMsg(msg_id)
                             del Setmain["ARfoto"][Hmid]
-                            s8.updateProfilePicture(path)
-                            s8.sendMessage(msg.to,"Foto berhasil dirubah")
+                            k8.updateProfilePicture(path)
+                            k8.sendMessage(msg.to,"Foto berhasil dirubah")
 
                if msg.contentType == 1:
                  if msg._from in admin:
@@ -1783,19 +1748,13 @@ def bot(op):
                                 cl.sendMessage(msg.to, "Selfbot diaktifkan")
                                 
                         elif cmd == "self off":
-                            if msg._from in admin or msg._from in Setmain["daftar"]["admin"]::
+                            if msg._from in admin or msg._from in Setmain["daftar"]["admin"]:
                                 wait["selfbot"] = False
                                 cl.sendMessage(msg.to, "Selfbot dinonaktifkan")
                                             
-                        elif cmd == "help2":
-                          if wait["selfbot"] == True:
-                            if msg._from in admin or msg._from in Setmain["daftar"]["admin"]::
-                               helpMessage1 = helpbot()
-                               cl.sendMessage(msg.to, str(helpMessage1))
-
                         elif cmd == "stat":
                           if wait["selfbot"] == True:
-                            if msg._from in admin or msg._from in Setmain["daftar"]["admin"]::
+                            if msg._from in admin or msg._from in Setmain["daftar"]["admin"]:
                                 tz = pytz.timezone("Asia/Jakarta")
                                 timeNow = datetime.now(tz=tz)
                                 md = "❧ĐPĶ PŘØŤĘČŤÎØŇ❧\n"
@@ -1832,7 +1791,7 @@ def bot(op):
                                 cl.sendMessage(msg.to, md+"\nTanggal : "+ datetime.strftime(timeNow,'%Y-%m-%d')+"\nJam [ "+ datetime.strftime(timeNow,'%H:%M:%S')+" ]")
 
                         elif cmd == "creator" or text.lower() == 'creator':
-                            if msg._from in admin or msg._from in Setmain["daftar"]["admin"]::
+                            if msg._from in admin or msg._from in Setmain["daftar"]["admin"]:
                                 cl.sendText(msg.to,"Creator Bot Abi ♡ Riny") 
                                 ma = ""
                                 for i in creator:
@@ -1847,7 +1806,7 @@ def bot(op):
 
                         elif cmd == "me" or text.lower() == 'me':
                           if wait["selfbot"] == True:
-                            if msg._from in admin or msg._from in Setmain["daftar"]["admin"]::
+                            if msg._from in admin or msg._from in Setmain["daftar"]["admin"]:
                                msg.contentType = 13
                                msg.contentMetadata = {'mid': msg._from}
                                cl.sendMessage1(msg)
@@ -1877,7 +1836,7 @@ def bot(op):
                                else:
                                    cl.sendImageWithURL(msg.to, 'http://dl.profile.line.naver.jp'+str(mi.picturePath))
 
-                        elif cmd == "mb":
+                        elif cmd == "contact bot1":
                           if wait["selfbot"] == True:
                             if msg._from in admin or msg._from in Setmain["daftar"]["admin"]::
                                msg.contentType = 13
@@ -1893,10 +1852,25 @@ def bot(op):
                                msg.contentMetadata = {'mid': Cmid}
                                cl.sendMessage1(msg)
                                msg.contentType = 13
+                               msg.contentMetadata = {'mid': Dmid}
+                               cl.sendMessage1(msg)
+                               msg.contentType = 13
+                               msg.contentMetadata = {'mid': Emid}
+                               cl.sendMessage1(msg)
+                               msg.contentType = 13
+                               msg.contentMetadata = {'mid': Fmid}
+                               cl.sendMessage1(msg)
+                               msg.contentType = 13
+                               msg.contentMetadata = {'mid': Gmid}
+                               cl.sendMessage1(msg)
+                               msg.contentType = 13
+                               msg.contentMetadata = {'mid': Hmid}
+                               cl.sendMessage1(msg)
+                               msg.contentType = 13
                                msg.contentMetadata = {'mid': Zmid}
                                cl.sendMessage1(msg)
 
-                        elif text.lower() == "hc":
+                        elif text.lower() == "clear chat":
                           if wait["selfbot"] == True:
                             if msg._from in admin or msg._from in Setmain["daftar"]["admin"]::
                                try:
@@ -1904,7 +1878,7 @@ def bot(op):
                                except:
                                    pass
 
-                        elif text.lower() == "rc":
+                        elif text.lower() == "remove":
                           if wait["selfbot"] == True:
                             if msg._from in admin or msg._from in Setmain["daftar"]["admin"]::
                                try:
@@ -1916,14 +1890,14 @@ def bot(op):
                                except:
                                    pass
 
-                        elif cmd.startswith("bc: "):
+                        elif cmd.startswith("bc "):
                           if wait["selfbot"] == True:
-                            if msg._from in admin or msg._from in Setmain["daftar"]["admin"]::
+                            if msg._from in admin or msg._from in Setmain["daftar"]["admin"]:
                                sep = text.split(" ")
                                pesan = text.replace(sep[0] + " ","")
                                saya = cl.getGroupIdsJoined()
                                for group in saya:
-                                   cl.sendMessage(group,"[ Broadcast ]\n" + str(pesan))
+                                   cl.sendMessage(group,"[ ID BOTS ]\n" + str(pesan))
 
                         elif text.lower() == "mykey":
                           if wait["selfbot"] == True:
@@ -1949,7 +1923,7 @@ def bot(op):
 
                         elif cmd == "seger":
                           if wait["selfbot"] == True:
-                            if msg._from in admin or msg._from in Setmain["daftar"]["admin"]::
+                            if msg._from in admin or msg._from in Setmain["daftar"]["admin"]:
                                cl.sendMessage(msg.to, "Tunggu sebentar...")
                                Setmain["restartPoint"] = msg.to
                                restartBot()
@@ -1957,13 +1931,13 @@ def bot(op):
                             
                         elif cmd == "run":
                           if wait["selfbot"] == True:
-                            if msg._from in admin or msg._from in Setmain["daftar"]["admin"]::
+                            if msg._from in admin or msg._from in Setmain["daftar"]["admin"]:
                                eltime = time.time() - mulai
                                bot = "Aktif " +waktu(eltime)
                                cl.sendMessage(msg.to,bot)
                             
-                        elif cmd == "gi":
-                          if msg._from in admin:
+                        elif cmd == "groupinfo":
+                          if msg._from in admin or msg._from in Setmain["daftar"]["admin"]:
                             try:
                                 G = cl.getGroup(msg.to)
                                 if G.invitee is None:
@@ -1978,14 +1952,14 @@ def bot(op):
                                     gTicket = "https://line.me/R/ti/g/{}".format(str(cl.reissueGroupTicket(G.id)))
                                 timeCreated = []
                                 timeCreated.append(time.strftime("%d-%m-%Y [ %H:%M:%S ]", time.localtime(int(G.createdTime) / 1000)))
-                                cl.sendMessage(msg.to, "❧ĐPĶ Fams Grup Info\n\n❧Nama Group : {}".format(G.name)+ "\n❧ID Group : {}".format(G.id)+ "\n❧Pembuat : {}".format(G.creator.displayName)+ "\n❧Waktu Dibuat : {}".format(str(timeCreated))+ "\n❧Jumlah Member : {}".format(str(len(G.members)))+ "\n❧Jumlah Pending : {}".format(gPending)+ "\n❧Group Qr : {}".format(gQr)+ "\n❧Group Ticket : {}".format(gTicket))
+                                cl.sendMessage(msg.to, "Grup Info\n\nNama Group : {}".format(G.name)+ "\n❧ID Group : {}".format(G.id)+ "\n❧Pembuat : {}".format(G.creator.displayName)+ "\n❧Waktu Dibuat : {}".format(str(timeCreated))+ "\n❧Jumlah Member : {}".format(str(len(G.members)))+ "\n❧Jumlah Pending : {}".format(gPending)+ "\n❧Group Qr : {}".format(gQr)+ "\n❧Group Ticket : {}".format(gTicket))
                                 cl.sendMessage(msg.to, None, contentMetadata={'mid': G.creator.mid}, contentType=13)
                                 cl.sendImageWithURL(msg.to, 'http://dl.profile.line-cdn.net/'+G.pictureStatus)
                             except Exception as e:
                                 cl.sendMessage(msg.to, str(e))
 
-                        elif cmd.startswith("ig "):
-                          if msg._from in admin:
+                        elif cmd.startswith("infogroup "):
+                          if msg._from in admin or msg._from in Setmain["daftar"]["admin"]:
                             separate = text.split(" ")
                             number = text.replace(separate[0] + " ","")
                             groups = cl.getGroupIdsJoined()
@@ -2023,8 +1997,8 @@ def bot(op):
                             except:
                                 pass
 
-                        elif cmd.startswith("im "):
-                          if msg._from in admin:
+                        elif cmd.startswith("infomember "):
+                          if msg._from in admin or msg._from in Setmain["daftar"]["admin"]:
                             separate = msg.text.split(" ")
                             number = msg.text.replace(separate[0] + " ","")
                             groups = cl.getGroupIdsJoined()
@@ -2055,7 +2029,7 @@ def bot(op):
                                     kc.leaveGroup(i)
                                     cl.sendMessage(msg.to,"Berhasil keluar di grup " +str(ginfo.name))
 
-                        elif cmd == "fl":
+                        elif cmd == "friend":
                           if wait["selfbot"] == True:
                             if msg._from in admin:
                                ma = ""
@@ -2068,7 +2042,7 @@ def bot(op):
                                    ma += "╠ " + str(a) + ". " +G.displayName+ "\n"
                                cl.sendMessage(msg.to,"╔══[ FRIEND LIST ]\n║\n"+ma+"║\n╚══[ Total「"+str(len(gid))+"」Friends ]")
 
-                        elif cmd == "gl":
+                        elif cmd == "grouplist":
                           if wait["selfbot"] == True:
                             if msg._from in admin:
                                ma = ""
@@ -2117,7 +2091,7 @@ def bot(op):
                                    ma += "╠ " + str(a) + ". " +G.name+ "\n"
                                kc.sendMessage(msg.to,"╔══[ GROUP LIST ]\n║\n"+ma+"║\n╚══[ Total「"+str(len(gid))+"」Groups ]")
 
-                        elif cmd == "op":
+                        elif cmd == "open":
                           if wait["selfbot"] == True:
                             if msg._from in admin:
                                 if msg.toType == 2:
@@ -2126,7 +2100,7 @@ def bot(op):
                                    cl.updateGroup(X)
                                    cl.sendMessage(msg.to, "Url Opened")
 
-                        elif cmd == "cl":
+                        elif cmd == "close":
                           if wait["selfbot"] == True:
                             if msg._from in admin:
                                 if msg.toType == 2:
@@ -2371,22 +2345,22 @@ def bot(op):
 
                         elif cmd == "la":
                           if wait["selfbot"] == True:
-                            if msg._from in admin:
+                            if msg._from in admin or msg._from in Setmain["daftar"]["admin"]:
                                 ma = ""
                                 mb = ""
                                 mc = ""
                                 a = 0
                                 b = 0
                                 c = 0
-                                for m_id in owner:
+                                for m_id in admin:
                                     a = a + 1
                                     end = '\n'
                                     ma += str(a) + ". " +cl.getContact(m_id).displayName + "\n"
-                                for m_id in admin:
+                                for m_id in Setmain["daftar"]["admin"]:
                                     b = b + 1
                                     end = '\n'
                                     mb += str(b) + ". " +cl.getContact(m_id).displayName + "\n"
-                                for m_id in staff:
+                                for m_id in Setmain["daftar"]["bot"]:
                                     c = c + 1
                                     end = '\n'
                                     mc += str(c) + ". " +cl.getContact(m_id).displayName + "\n"
@@ -3009,7 +2983,7 @@ def bot(op):
                                            pass
 
 #===========ADMIN ADD============#
-                        elif ("Aad " in msg.text):
+                        elif ("Adminadd " in msg.text):
                           if wait["selfbot"] == True:
                             if msg._from in creator:
                                key = eval(msg.contentMetadata["MENTION"])
@@ -3019,25 +2993,11 @@ def bot(op):
                                     targets.append(x["M"])
                                for target in targets:
                                        try:
-                                           admin[target] = True
-                                           f=codecs.open('admin.json','w','utf-8')
-                                           json.dump(admin, f, sort_keys=True, indent=4,ensure_ascii=False)                                            
+                                           Setmain["daftar"]["admin"][target] = True
+                                           f=codecs.open('setting.json','w','utf-8')
+                                           json.dump(Setmain, f, sort_keys=True, indent=4,ensure_ascii=False)  
+                                           cl.findAndAddContactsByMid(target)
                                            cl.sendMessage(msg.to,"Berhasil menambahkan admin")
-                                       except:
-                                           pass
-
-                        elif ("Staffadd " in msg.text):
-                          if wait["selfbot"] == True:
-                            if msg._from in admin:
-                               key = eval(msg.contentMetadata["MENTION"])
-                               key["MENTIONEES"][0]["M"]
-                               targets = []
-                               for x in key["MENTIONEES"]:
-                                    targets.append(x["M"])
-                               for target in targets:
-                                       try:
-                                           staff.append(target)
-                                           cl.sendMessage(msg.to,"Berhasil menambahkan staff")
                                        except:
                                            pass
 
@@ -3049,14 +3009,17 @@ def bot(op):
                                targets = []
                                for x in key["MENTIONEES"]:
                                     targets.append(x["M"])
-                               for target in targets:
+                               for target in targets:/
                                        try:
-                                           Bots.append(target)
+                                           Setmain["daftar"]["bot"][target] = True
+                                           f = codecs.open("setting.json","w","utf-8")
+                                           json.dump(Setmain, f, sort_keys=True, indent=4,ensure_ascii=False)
+                                           cl.findAndAddContactsByMid(target)
                                            cl.sendMessage(msg.to,"Berhasil menambahkan bot")
                                        except:
                                            pass
 
-                        elif ("Adl " in msg.text):
+                        elif ("Admindel " in msg.text):
                             if msg._from in creator:
                                key = eval(msg.contentMetadata["MENTION"])
                                key["MENTIONEES"][0]["M"]
@@ -3065,28 +3028,14 @@ def bot(op):
                                     targets.append(x["M"])
                                for target in targets:
                                        try:
-                                           del admin[target]
-                                           f=codecs.open('admin.json','w','utf-8')
-                                           json.dump(admin, f, sort_keys=True, indent=4,ensure_ascii=False)                                            
+                                           del Setmain["daftar"]["admin"][target]
+                                           f=codecs.open('setting.json','w','utf-8')
+                                           json.dump(Setmain, f, sort_keys=True, indent=4,ensure_ascii=False)                                            
                                            cl.sendMessage(msg.to,"Berhasil menghapus admin")
                                        except:
                                            pass
 
-                        elif ("Staffdell " in msg.text):
-                            if msg._from in admin:
-                               key = eval(msg.contentMetadata["MENTION"])
-                               key["MENTIONEES"][0]["M"]
-                               targets = []
-                               for x in key["MENTIONEES"]:
-                                    targets.append(x["M"])
-                               for target in targets:
-                                   if target not in Dpk:
-                                       try:
-                                           staff.remove(target)
-                                           cl.sendMessage(msg.to,"Berhasil menghapus admin")
-                                       except:
-                                           pass
-
+                        
                         elif ("Botdell " in msg.text):
                             if msg._from in admin:
                                key = eval(msg.contentMetadata["MENTION"])
@@ -3097,41 +3046,15 @@ def bot(op):
                                for target in targets:
                                    if target not in Dpk:
                                        try:
-                                           Bots.remove(target)
+                                           del Setmain["daftar"]["bot"][targe]
+                                           f=codecs.open('setting.json','w','utf-8')
+                                           json.dump(Setmain, f, sort_keys=True, indent=4,ensure_ascii=False)
                                            cl.sendMessage(msg.to,"Berhasil menghapus admin")
                                        except:
                                            pass
 
-                        elif cmd == "a:on" or text.lower() == 'a:on':
-                            if msg._from in admin:
-                                wait["addadmin"] = True
-                                cl.sendText(msg.to,"Kirim kontaknya...")
-
-                        elif cmd == "a:re" or text.lower() == 'a:re':
-                            if msg._from in admin:
-                                wait["delladmin"] = True
-                                cl.sendText(msg.to,"Kirim kontaknya...")
-
-                        elif cmd == "staff:on" or text.lower() == 'staff:on':
-                            if msg._from in admin:
-                                wait["addstaff"] = True
-                                cl.sendText(msg.to,"Kirim kontaknya...")
-
-                        elif cmd == "staff:repeat" or text.lower() == 'staff:repeat':
-                            if msg._from in admin:
-                                wait["dellstaff"] = True
-                                cl.sendText(msg.to,"Kirim kontaknya...")
-
-                        elif cmd == "bot:on" or text.lower() == 'bot:on':
-                            if msg._from in admin:
-                                wait["addbots"] = True
-                                cl.sendText(msg.to,"Kirim kontaknya...")
-
-                        elif cmd == "bot:repeat" or text.lower() == 'bot:repeat':
-                            if msg._from in admin:
-                                wait["dellbots"] = True
-                                cl.sendText(msg.to,"Kirim kontaknya...")
-
+                        
+                        
                         elif cmd == "fr" or text.lower() == 'fr':
                             if msg._from in admin:
                                 wait["addadmin"] = False
@@ -3146,135 +3069,72 @@ def bot(op):
                                 wait["Talkdblacklist"] = False
                                 cl.sendText(msg.to,"Berhasil di Refresh...")
 
-                        elif cmd == "ca" or text.lower() == 'ca':
+                        elif cmd == "contact admin" or text.lower() == 'ca':
                             if msg._from in admin:
                                 ma = ""
-                                for i in admin:
+                                for i in Setmain["daftar"]["admin"]:
                                     ma = cl.getContact(i)
                                     cl.sendMessage(msg.to, None, contentMetadata={'mid': i}, contentType=13)
 
-                        elif cmd == "contact staff" or text.lower() == 'contact staff':
-                            if msg._from in admin:
-                                ma = ""
-                                for i in staff:
-                                    ma = cl.getContact(i)
-                                    cl.sendMessage(msg.to, None, contentMetadata={'mid': i}, contentType=13)
-
+                        
                         elif cmd == "contact bot" or text.lower() == 'contact bot':
                             if msg._from in admin:
                                 ma = ""
-                                for i in Bots:
+                                for i in Setmain["daftar"]["bot"]:
                                     ma = cl.getContact(i)
                                     cl.sendMessage(msg.to, None, contentMetadata={'mid': i}, contentType=13)
 
 #===========COMMAND ON OFF============#
-                        elif cmd == "nt on" or text.lower() == 'nt on':
-                          if wait["selfbot"] == True:
-                            if msg._from in admin:
-                                wait["Mentionkick"] = True
-                                cl.sendText(msg.to,"Notag diaktifkan")
-
-                        elif cmd == "nt off" or text.lower() == 'nt off':
-                          if wait["selfbot"] == True:
-                            if msg._from in admin:
-                                wait["MentionKick"] = False
-                                cl.sendText(msg.to,"Notag dinonaktifkan")
-
-                        elif cmd == "c on" or text.lower() == 'c on':
-                          if wait["selfbot"] == True:
-                            if msg._from in admin:
-                                wait["contact"] = True
-                                cl.sendText(msg.to,"Deteksi contact diaktifkan")
-
-                        elif cmd == "c off" or text.lower() == 'c off':
-                          if wait["selfbot"] == True:
-                            if msg._from in admin:
-                                wait["contact"] = False
-                                cl.sendText(msg.to,"Deteksi contact dinonaktifkan")
-
-                        elif cmd == "re on" or text.lower() == 're on':
-                          if wait["selfbot"] == True:
-                            if msg._from in admin:
-                                wait["detectMention"] = True
-                                cl.sendText(msg.to,"Auto respon diaktifkan")
-
-                        elif cmd == "re off" or text.lower() == 're off':
-                          if wait["selfbot"] == True:
-                            if msg._from in admin:
-                                wait["detectMention"] = False
-                                cl.sendText(msg.to,"Auto respon dinonaktifkan")
-
-                        elif cmd == "aj on" or text.lower() == 'aj on':
+                        
+                        elif cmd == "autojoin on" or text.lower() == 'aj on':
                           if wait["selfbot"] == True:
                             if msg._from in admin:
                                 wait["autoJoin"] = True
-                                cl.sendText(msg.to,"Autojoin diaktifkan")
+                                cl.sendMessage(msg.to,"Autojoin diaktifkan")
 
-                        elif cmd == "aj off" or text.lower() == 'aj off':
+                        elif cmd == "autojoin off" or text.lower() == 'aj off':
                           if wait["selfbot"] == True:
                             if msg._from in admin:
                                 wait["autoJoin"] = False
-                                cl.sendText(msg.to,"Autojoin dinonaktifkan")
+                                cl.sendMessage(msg.to,"Autojoin dinonaktifkan")
 
-                        elif cmd == "al on" or text.lower() == 'al on':
-                          if wait["selfbot"] == True:
-                            if msg._from in admin:
-                                wait["autoLeave"] = True
-                                cl.sendText(msg.to,"Autoleave diaktifkan")
-
-                        elif cmd == "al off" or text.lower() == 'al off':
-                          if wait["selfbot"] == True:
-                            if msg._from in admin:
-                                wait["autoLeave"] = False
-                                cl.sendText(msg.to,"Autoleave dinonaktifkan")
-
-                        elif cmd == "aa on" or text.lower() == 'aa on':
+                        
+                        elif cmd == "add on" or text.lower() == 'aa on':
                           if wait["selfbot"] == True:
                             if msg._from in admin:
                                 wait["autoAdd"] = True
-                                cl.sendText(msg.to,"Auto add diaktifkan")
+                                cl.sendMessage(msg.to,"Auto add diaktifkan")
 
-                        elif cmd == "aa off" or text.lower() == 'aa off':
+                        elif cmd == "add off" or text.lower() == 'aa off':
                           if wait["selfbot"] == True:
                             if msg._from in admin:
                                 wait["autoAdd"] = False
                                 cl.sendText(msg.to,"Auto add dinonaktifkan")
 
-                        elif cmd == "ar on" or text.lower() == 'ar on':
+                        elif cmd == "read on" or text.lower() == 'ar on':
                           if wait["selfbot"] == True:
                             if msg._from in admin:
                                 wait["autoRead"] = True
-                                cl.sendText(msg.to,"Auto add diaktifkan")
+                                cl.sendMessage(msg.to,"Auto read diaktifkan")
 
-                        elif cmd == "ar off" or text.lower() == 'ar off':
+                        elif cmd == "read off" or text.lower() == 'ar off':
                           if wait["selfbot"] == True:
                             if msg._from in admin:
                                 wait["autoRead"] = False
-                                cl.sendText(msg.to,"Auto add dinonaktifkan")
+                                cl.sendMessage(msg.to,"Auto read dinonaktifkan")
 
-                        elif cmd == "str on" or text.lower() == 'str on':
-                          if wait["selfbot"] == True:
-                            if msg._from in admin:
-                                wait["sticker"] = True
-                                cl.sendText(msg.to,"Deteksi sticker diaktifkan")
-
-                        elif cmd == "str off" or text.lower() == 'str off':
-                          if wait["selfbot"] == True:
-                            if msg._from in admin:
-                                wait["sticker"] = False
-                                cl.sendText(msg.to,"Deteksi sticker dinonaktifkan")
-
-                        elif cmd == "jt on" or text.lower() == 'jt on':
+                         
+                        elif cmd == "jointicket on" or text.lower() == 'jt on':
                           if wait["selfbot"] == True:
                             if msg._from in admin:
                                 wait["autoJoinTicket"] = True
-                                cl.sendText(msg.to,"Join ticket diaktifkan")
+                                cl.sendMessage(msg.to,"Join ticket diaktifkan")
 
                         elif cmd == "jt off" or text.lower() == 'jt off':
                           if wait["selfbot"] == True:
                             if msg._from in admin:
                                 wait["autoJoinTicket"] = False
-                                cl.sendText(msg.to,"Autojoin Tiket dinonaktifkan")
+                                cl.sendMessage(msg.to,"Autojoin Tiket dinonaktifkan")
 
 #===========COMMAND BLACKLIST============#
                         elif ("Talkban " in msg.text):
@@ -3364,16 +3224,17 @@ def bot(op):
                         elif cmd == "banlist" or text.lower() == 'banlist':
                           if wait["selfbot"] == True:
                             if msg._from in admin:
-                              if wait["blacklist"] == {}:
+                              if Setmain["daftar
+                                         "]["blacklist"] == {}:
                                 cl.sendMessage(msg.to,"Tidak ada blacklist")
                               else:
                                 ma = ""
                                 a = 0
-                                for m_id in wait["blacklist"]:
+                                for m_id in Setmain["daftar"]["blacklist"]:
                                     a = a + 1
                                     end = '\n'
                                     ma += str(a) + ". " +cl.getContact(m_id).displayName + "\n"
-                                cl.sendMessage(msg.to,"❧ĐPĶ Blacklist User\n\n"+ma+"\nTotal「%s」Blacklist User" %(str(len(wait["blacklist"]))))
+                                cl.sendMessage(msg.to,"\n"+ma+"\nTotal「%s」Blacklist User" %(str(len(Setmain["daftar"]["blacklist"]))))
 
                         elif cmd == "talkbanlist" or text.lower() == 'talkbanlist':
                           if wait["selfbot"] == True:
@@ -3392,19 +3253,19 @@ def bot(op):
                         elif cmd == "blc" or text.lower() == 'blc':
                           if wait["selfbot"] == True:
                             if msg._from in admin:
-                              if wait["blacklist"] == {}:
+                              if Setmain["daftar"]["blacklist"] == {}:
                                     cl.sendMessage(msg.to,"Tidak ada blacklist")
                               else:
                                     ma = ""
-                                    for i in wait["blacklist"]:
+                                    for i in Setmain["daftar"]["blacklist"]:
                                         ma = cl.getContact(i)
                                         cl.sendMessage(msg.to, None, contentMetadata={'mid': i}, contentType=13)
 
-                        elif cmd == "cb" or text.lower() == 'cb':
+                        elif cmd == "clearban" or text.lower() == 'clearbl':
                           if wait["selfbot"] == True:
                             if msg._from in admin:
-                              wait["blacklist"] = {}
-                              ragets = cl.getContacts(wait["blacklist"])
+                              Setmain["daftar"]["blacklist"] = {}
+                              ragets = cl.getContacts(Setmain["daftar"]["blacklist"])
                               mc = "「%i」User Blacklist" % len(ragets)
                               cl.sendMessage(msg.to,"Sukses membersihkan " +mc)
 #===========COMMAND SET============#
