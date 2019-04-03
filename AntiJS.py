@@ -1558,7 +1558,7 @@ def bot(op):
                     print(e)               
                         
         if op.type == 55:
-            if op.param2 in wait["blacklist"]:
+            if op.param2 in Setmain["daftar"]["blacklist"]:
                 random.choice(ABC).kickoutFromGroup(op.param1,[op.param2])
             else:
                 pass
@@ -1665,7 +1665,14 @@ def bot(op):
                          f = codecs.open("setting.json","w","utf-8")
                          json.dump(Setmain, f, sort_keys=True, indent=4,ensure_ascii=False)
                          cl.sendMessage(msg.to,"{} diangkat menjadi bots".format(str(cl.getContact(msg.contentMetadata["mid"]).displayName)))
-   
+                   if msg.to in Setmain["kirim"]["idcbot"]:
+                     if msg.contentMetadata["mid"] not in Setmain["daftar"]["daftar"]:
+                         cl.sendMessage(msg.to,"{} tidak pernah menjadi bots".format(str(cl.getContact(msg.contentMetadata["mid"]).displayName)))
+                     else:
+                         del Setmain["daftar"]["bot"][msg.contentMetadata["mid"]] = True
+                         f = codecs.open("setting.json","w","utf-8")
+                         json.dump(Setmain, f, sort_keys=True, indent=4,ensure_ascii=False)
+                         cl.sendMessage(msg.to,"{} di copot menjadi bots".format(str(cl.getContact(msg.contentMetadata["mid"]).displayName)))
                if msg.contentType == 1:
                  if msg._from in admin:
                     if Setmain["Addimage"] == True:
@@ -1700,25 +1707,45 @@ def bot(op):
                if msg.contentType == 1:
                  if msg._from in admin:
                         if Amid in Setmain["ARfoto"]:
-                            path = ki.downloadObjectMsg(msg_id)
+                            path = k1.downloadObjectMsg(msg_id)
                             del Setmain["ARfoto"][Amid]
-                            ki.updateProfilePicture(path)
-                            ki.sendMessage(msg.to,"Foto berhasil dirubah")
+                            k1.updateProfilePicture(path)
+                            k1.sendMessage(msg.to,"Foto berhasil dirubah")
                         elif Bmid in Setmain["ARfoto"]:
-                            path = kk.downloadObjectMsg(msg_id)
+                            path = k2.downloadObjectMsg(msg_id)
                             del Setmain["ARfoto"][Bmid]
-                            kk.updateProfilePicture(path)
-                            kk.sendMessage(msg.to,"Foto berhasil dirubah")
+                            k2.updateProfilePicture(path)
+                            k2.sendMessage(msg.to,"Foto berhasil dirubah")
                         elif Cmid in Setmain["ARfoto"]:
-                            path = kc.downloadObjectMsg(msg_id)
+                            path = k3.downloadObjectMsg(msg_id)
                             del Setmain["ARfoto"][Cmid]
-                            kc.updateProfilePicture(path)
-                            kc.sendMessage(msg.to,"Foto berhasil dirubah")
-                        elif Zmid in Setmain["ARfoto"]:
-                            path = sw.downloadObjectMsg(msg_id)
-                            del Setmain["ARfoto"][Zmid]
-                            sw.updateProfilePicture(path)
-                            sw.sendMessage(msg.to,"Foto berhasil dirubah")
+                            k3.updateProfilePicture(path)
+                            k3.sendMessage(msg.to,"Foto berhasil dirubah")
+                        elif Dmid in Setmain["ARfoto"]:
+                            path = k4.downloadObjectMsg(msg_id)
+                            del Setmain["ARfoto"][Dmid]
+                            k4.updateProfilePicture(path)
+                            k4.sendMessage(msg.to,"Foto berhasil dirubah")
+                        elif Emid in Setmain["ARfoto"]:
+                            path = k5.downloadObjectMsg(msg_id)
+                            del Setmain["ARfoto"][Emid]
+                            k5.updateProfilePicture(path)
+                            k5.sendMessage(msg.to,"Foto berhasil dirubah")
+                        elif Fmid in Setmain["ARfoto"]:
+                            path = k6.downloadObjectMsg(msg_id)
+                            del Setmain["ARfoto"][Fmid]
+                            k6.updateProfilePicture(path)
+                            k6.sendMessage(msg.to,"Foto berhasil dirubah")
+                        elif Gmid in Setmain["ARfoto"]:
+                            path = k7.downloadObjectMsg(msg_id)
+                            del Setmain["ARfoto"][Gmid]
+                            k7.updateProfilePicture(path)
+                            k7.sendMessage(msg.to,"Foto berhasil dirubah")
+                        elif Hmid in Setmain["ARfoto"]:
+                            path = s8.downloadObjectMsg(msg_id)
+                            del Setmain["ARfoto"][Hmid]
+                            s8.updateProfilePicture(path)
+                            s8.sendMessage(msg.to,"Foto berhasil dirubah")
 
                if msg.contentType == 1:
                  if msg._from in admin:
@@ -1751,24 +1778,24 @@ def bot(op):
                                cl.sendMessage(msg.to, str(helpMessage))
                                                                                        
                         if cmd == "self on":
-                            if msg._from in admin:
+                            if msg._from in admin or msg._from in Setmain["daftar"]["admin"]:
                                 wait["selfbot"] = True
-                                cl.sendText(msg.to, "Selfbot diaktifkan")
+                                cl.sendMessage(msg.to, "Selfbot diaktifkan")
                                 
                         elif cmd == "self off":
-                            if msg._from in admin:
+                            if msg._from in admin or msg._from in Setmain["daftar"]["admin"]::
                                 wait["selfbot"] = False
-                                cl.sendText(msg.to, "Selfbot dinonaktifkan")
+                                cl.sendMessage(msg.to, "Selfbot dinonaktifkan")
                                             
                         elif cmd == "help2":
                           if wait["selfbot"] == True:
-                            if msg._from in admin:
+                            if msg._from in admin or msg._from in Setmain["daftar"]["admin"]::
                                helpMessage1 = helpbot()
                                cl.sendMessage(msg.to, str(helpMessage1))
 
                         elif cmd == "stat":
                           if wait["selfbot"] == True:
-                            if msg._from in admin:
+                            if msg._from in admin or msg._from in Setmain["daftar"]["admin"]::
                                 tz = pytz.timezone("Asia/Jakarta")
                                 timeNow = datetime.now(tz=tz)
                                 md = "❧ĐPĶ PŘØŤĘČŤÎØŇ❧\n"
@@ -1805,7 +1832,7 @@ def bot(op):
                                 cl.sendMessage(msg.to, md+"\nTanggal : "+ datetime.strftime(timeNow,'%Y-%m-%d')+"\nJam [ "+ datetime.strftime(timeNow,'%H:%M:%S')+" ]")
 
                         elif cmd == "creator" or text.lower() == 'creator':
-                            if msg._from in admin:
+                            if msg._from in admin or msg._from in Setmain["daftar"]["admin"]::
                                 cl.sendText(msg.to,"Creator Bot Abi ♡ Riny") 
                                 ma = ""
                                 for i in creator:
@@ -1820,7 +1847,7 @@ def bot(op):
 
                         elif cmd == "me" or text.lower() == 'me':
                           if wait["selfbot"] == True:
-                            if msg._from in admin:
+                            if msg._from in admin or msg._from in Setmain["daftar"]["admin"]::
                                msg.contentType = 13
                                msg.contentMetadata = {'mid': msg._from}
                                cl.sendMessage1(msg)
@@ -1830,7 +1857,7 @@ def bot(op):
 
                         elif ("Mid " in msg.text):
                           if wait["selfbot"] == True:
-                            if msg._from in admin:
+                            if msg._from in admin or msg._from in Setmain["daftar"]["admin"]::
                                key = eval(msg.contentMetadata["MENTION"])
                                key1 = key["MENTIONEES"][0]["M"]
                                mi = cl.getContact(key1)
@@ -1839,7 +1866,7 @@ def bot(op):
 
                         elif ("Info " in msg.text):
                           if wait["selfbot"] == True:
-                            if msg._from in admin:
+                            if msg._from in admin or msg._from in Setmain["daftar"]["admin"]::
                                key = eval(msg.contentMetadata["MENTION"])
                                key1 = key["MENTIONEES"][0]["M"]
                                mi = cl.getContact(key1)
@@ -1852,7 +1879,7 @@ def bot(op):
 
                         elif cmd == "mb":
                           if wait["selfbot"] == True:
-                            if msg._from in admin:
+                            if msg._from in admin or msg._from in Setmain["daftar"]["admin"]::
                                msg.contentType = 13
                                msg.contentMetadata = {'mid': mid}
                                cl.sendMessage1(msg)
@@ -1871,7 +1898,7 @@ def bot(op):
 
                         elif text.lower() == "hc":
                           if wait["selfbot"] == True:
-                            if msg._from in admin:
+                            if msg._from in admin or msg._from in Setmain["daftar"]["admin"]::
                                try:
                                    cl.removeAllMessages(op.param2)
                                except:
@@ -1879,7 +1906,7 @@ def bot(op):
 
                         elif text.lower() == "rc":
                           if wait["selfbot"] == True:
-                            if msg._from in admin:
+                            if msg._from in admin or msg._from in Setmain["daftar"]["admin"]::
                                try:
                                    cl.removeAllMessages(op.param2)
                                    ki.removeAllMessages(op.param2)
@@ -1891,7 +1918,7 @@ def bot(op):
 
                         elif cmd.startswith("bc: "):
                           if wait["selfbot"] == True:
-                            if msg._from in admin:
+                            if msg._from in admin or msg._from in Setmain["daftar"]["admin"]::
                                sep = text.split(" ")
                                pesan = text.replace(sep[0] + " ","")
                                saya = cl.getGroupIdsJoined()
@@ -1922,7 +1949,7 @@ def bot(op):
 
                         elif cmd == "seger":
                           if wait["selfbot"] == True:
-                            if msg._from in admin:
+                            if msg._from in admin or msg._from in Setmain["daftar"]["admin"]::
                                cl.sendMessage(msg.to, "Tunggu sebentar...")
                                Setmain["restartPoint"] = msg.to
                                restartBot()
@@ -1930,7 +1957,7 @@ def bot(op):
                             
                         elif cmd == "run":
                           if wait["selfbot"] == True:
-                            if msg._from in admin:
+                            if msg._from in admin or msg._from in Setmain["daftar"]["admin"]::
                                eltime = time.time() - mulai
                                bot = "Aktif " +waktu(eltime)
                                cl.sendMessage(msg.to,bot)
@@ -2407,7 +2434,7 @@ def bot(op):
 
                         elif cmd == "jb":
                           if wait["selfbot"] == True:
-                            if msg._from in admin:
+                            if msg._from in admin or msg._from in Setmain["daftar"]["admin"]::
                                 try:
                                     anggota = [Bmid,Cmid,Amid]
                                     cl.inviteIntoGroup(msg.to, anggota)
@@ -2429,7 +2456,7 @@ def bot(op):
     
                         elif cmd == "jp":
                           if wait["selfbot"] == True:
-                            if msg._from in admin:
+                            if msg._from in admin or msg._from in Setmain["daftar"]["admin"]::
                                 G = cl.getGroup(msg.to)
                                 ginfo = cl.getGroup(msg.to)
                                 G.preventedJoinByTicket = False
@@ -2445,7 +2472,7 @@ def bot(op):
 
                         elif cmd == "boo":
                           if wait["selfbot"] == True:
-                            if msg._from in admin:
+                            if msg._from in admin or msg._from in Setmain["daftar"]["admin"]::
                                 G = cl.getGroup(msg.to)
                                 ki.sendText(msg.to, "Bye bye fams "+str(G.name))
                                 ki.leaveGroup(msg.to)
@@ -2454,13 +2481,13 @@ def bot(op):
                                 
                         elif cmd == "by":
                           if wait["selfbot"] == True:
-                            if msg._from in admin:
+                            if msg._from in admin or msg._from in Setmain["daftar"]["admin"]::
                                 G = cl.getGroup(msg.to)
                                 cl.sendText(msg.to, "Bye bye fams "+str(G.name))
                                 cl.leaveGroup(msg.to)
 
                         elif cmd.startswith("leave "):
-                            if msg._from in admin:
+                            if msg._from in admin or msg._from in Setmain["daftar"]["admin"]::
                                 proses = text.split(" ")
                                 ng = text.replace(proses[0] + " ","")
                                 gid = cl.getGroupIdsJoined()
@@ -2546,7 +2573,7 @@ def bot(op):
 
                         elif cmd == "speed" or cmd == "sp":
                           if wait["selfbot"] == True:
-                            if msg._from in admin:
+                            if msg._from in admin or msg._from in Setmain["daftar"]["admin"]::
                                start = time.time()
                                cl.sendMessage(msg.to, "Progres speed...")
                                elapsed_time = time.time() - start
@@ -2649,246 +2676,8 @@ def bot(op):
                                   cl.sendMessage(msg.to, "Sudak tidak aktif")
 
 #===========Hiburan============#
-                        elif cmd.startswith("sholat: "):
-                          if msg._from in admin:
-                             sep = text.split(" ")
-                             location = text.replace(sep[0] + " ","")
-                             with requests.session() as web:
-                                  web.headers["user-agent"] = random.choice(settings["userAgent"])
-                                  r = web.get("http://api.corrykalam.net/apisholat.php?lokasi={}".format(urllib.parse.quote(location)))
-                                  data = r.text
-                                  data = json.loads(data)
-                                  tz = pytz.timezone("Asia/Jakarta")
-                                  timeNow = datetime.now(tz=tz)
-                                  if data[1] != "Subuh : " and data[2] != "Dzuhur : " and data[3] != "Ashar : " and data[4] != "Maghrib : " and data[5] != "Isha : ":
-                                         ret_ = "「Jadwal Sholat」"
-                                         ret_ += "\n❧Lokasi : " + data[0]
-                                         ret_ += "\n❧" + data[1]
-                                         ret_ += "\n❧" + data[2]
-                                         ret_ += "\n❧" + data[3]
-                                         ret_ += "\n❧" + data[4]
-                                         ret_ += "\n❧" + data[5]
-                                         ret_ += "\n\nTanggal : " + datetime.strftime(timeNow,'%Y-%m-%d')
-                                         ret_ += "\nJam : " + datetime.strftime(timeNow,'%H:%M:%S')
-                                  cl.sendMessage(msg.to, str(ret_))
-
-                        elif cmd.startswith("cuaca: "):
-                          if msg._from in admin:
-                            separate = text.split(" ")
-                            location = text.replace(separate[0] + " ","")
-                            with requests.session() as web:
-                                web.headers["user-agent"] = random.choice(settings["userAgent"])
-                                r = web.get("http://api.corrykalam.net/apicuaca.php?kota={}".format(urllib.parse.quote(location)))
-                                data = r.text
-                                data = json.loads(data)
-                                tz = pytz.timezone("Asia/Jakarta")
-                                timeNow = datetime.now(tz=tz)
-                                if "result" not in data:
-                                    ret_ = "「Status Cuaca」"
-                                    ret_ += "\n❧Lokasi : " + data[0].replace("Temperatur di kota ","")
-                                    ret_ += "\n❧Suhu : " + data[1].replace("Suhu : ","") + " C"
-                                    ret_ += "\n❧Kelembaban : " + data[2].replace("Kelembaban : ","") + " %"
-                                    ret_ += "\n❧Tekanan udara : " + data[3].replace("Tekanan udara : ","") + " HPa"
-                                    ret_ += "\n❧Kecepatan angin : " + data[4].replace("Kecepatan angin : ","") + " m/s"
-                                    ret_ += "\n\nTanggal : " + datetime.strftime(timeNow,'%Y-%m-%d')
-                                    ret_ += "\nJam : " + datetime.strftime(timeNow,'%H:%M:%S')
-                                cl.sendMessage(msg.to, str(ret_))
-
-                        elif cmd.startswith("lokasi: "):
-                          if msg._from in admin:
-                            separate = msg.text.split(" ")
-                            location = msg.text.replace(separate[0] + " ","")
-                            with requests.session() as web:
-                                web.headers["user-agent"] = random.choice(settings["userAgent"])
-                                r = web.get("http://api.corrykalam.net/apiloc.php?lokasi={}".format(urllib.parse.quote(location)))
-                                data = r.text
-                                data = json.loads(data)
-                                if data[0] != "" and data[1] != "" and data[2] != "":
-                                    link = "https://www.google.co.id/maps/@{},{},15z".format(str(data[1]), str(data[2]))
-                                    ret_ = "「Info Lokasi」"
-                                    ret_ += "\n❧Location : " + data[0]
-                                    ret_ += "\n❧Google Maps : " + link
-                                else:
-                                    ret_ = "[Details Location] Error : Location not found"
-                                cl.sendMessage(msg.to,str(ret_))
-
-                        elif cmd.startswith("lirik: "):
-                           if msg._from in admin:
-                               sep = msg.text.split(" ")
-                               search = msg.text.replace(sep[0] + " ","")
-                               params = {'songname': search}
-                               with requests.session() as web:
-                                   web.headers["User-Agent"] = random.choice(settings["userAgent"])
-                                   r = web.get("https://ide.fdlrcn.com/workspace/yumi-apis/joox?{}".format(urllib.parse.urlencode(params)))
-                                   try:
-                                      data = json.loads(r.text)
-                                      for song in data:
-                                          songs = song[5]
-                                          lyric = songs.replace('ti:','Title - ')
-                                          lyric = lyric.replace('ar:','Artist - ')
-                                          lyric = lyric.replace('al:','Album - ')
-                                          removeString = "[1234567890.:]"
-                                          for char in removeString:
-                                              lyric = lyric.replace(char,'')
-                                          ret_ = "╔══[ Lyric ]"
-                                          ret_ += "\n╠ Nama lagu : {}".format(str(song[0]))
-                                          ret_ += "\n╠ Durasi : {}".format(str(song[1]))
-                                          ret_ += "\n╠ Link : {}".format(str(song[3]))
-                                          ret_ += "\n╚══[ Finish ]\n\nLirik nya :\n{}".format(str(lyric))
-                                          cl.sendText(msg.to, str(ret_))
-                                   except:
-                                       cl.sendText(to, "Lirik tidak ditemukan")
-                            
-                        elif cmd.startswith("music: "):
-                           if msg._from in admin:
-                              sep = msg.text.split(" ")
-                              search = msg.text.replace(sep[0] + " ","")
-                              params = {'songname': search}
-                              with requests.session() as web:
-                                  web.headers["User-Agent"] = random.choice(settings["userAgent"])
-                                  r = web.get("https://ide.fdlrcn.com/workspace/yumi-apis/joox?{}".format(urllib.parse.urlencode(params)))
-                                  try:
-                                      data = json.loads(r.text)
-                                      for song in data:
-                                          ret_ = "╔══[ Music ]"
-                                          ret_ += "\n╠ Nama lagu : {}".format(str(song[0]))
-                                          ret_ += "\n╠ Durasi : {}".format(str(song[1]))
-                                          ret_ += "\n╠ Link : {}".format(str(song[3]))
-                                          ret_ += "\n╚══[ Waiting Audio ]"
-                                      cl.sendText(msg.to, str(ret_))
-                                      cl.sendText(msg.to, "Mohon bersabar musicnya lagi di upload")
-                                      cl.sendAudioWithURL(msg.to, song[3])
-                                  except:
-                                      cl.sendText(to, "Musik tidak ditemukan")
-
-                        elif cmd.startswith("gimage: "):
-                          if msg._from in admin:
-                            sep = msg.text.split(" ")
-                            search = msg.text.replace(sep[0] + " ","")
-                            url = "https://api.xeonwz.ga/api/image/google?q={}".format(urllib.parse.quote(search))
-                            with requests.session() as web:
-                                web.headers["User-Agent"] = random.choice(settings["userAgent"])
-                                r = web.get(url)
-                                data = r.text
-                                data = json.loads(data)
-                                if data["data"] != []:
-                                    start = timeit.timeit()
-                                    items = data["data"]
-                                    path = random.choice(items)
-                                    a = items.index(path)
-                                    b = len(items)
-                                    cl.sendText(msg.to,"「Google Image」\nType : Search Image\nTime taken : %seconds" % (start))
-                                    cl.sendImageWithURL(msg.to, str(path))
-
-                        elif cmd.startswith("ytmp4: "):
-                          if msg._from in admin:
-                            try:
-                                sep = msg.text.split(" ")
-                                textToSearch = msg.text.replace(sep[0] + " ","")
-                                query = urllib.parse.quote(textToSearch)
-                                search_url="https://www.youtube.com/results?search_query="
-                                mozhdr = {'User-Agent': 'Mozilla/5.0 (Windows; U; Windows NT 5.1; en-GB; rv:1.9.0.3) Gecko/2008092417 Firefox/3.0.3'}
-                                sb_url = search_url + query
-                                sb_get = requests.get(sb_url, headers = mozhdr)
-                                soupeddata = BeautifulSoup(sb_get.content, "html.parser")
-                                yt_links = soupeddata.find_all("a", class_ = "yt-uix-tile-link")
-                                x = (yt_links[1])
-                                yt_href =  x.get("href")
-                                yt_href = yt_href.replace("watch?v=", "")
-                                qx = "https://youtu.be" + str(yt_href)
-                                vid = pafy.new(qx)
-                                stream = vid.streams
-                                best = vid.getbest()
-                                best.resolution, best.extension
-                                for s in stream:
-                                    me = best.url
-                                    hasil = ""
-                                    title = "Judul [ " + vid.title + " ]"
-                                    author = '\n\n❧Author : ' + str(vid.author)
-                                    durasi = '\n❧Duration : ' + str(vid.duration)
-                                    suka = '\n❧Likes : ' + str(vid.likes)
-                                    rating = '\n❧Rating : ' + str(vid.rating)
-                                    deskripsi = '\n❧Deskripsi : ' + str(vid.description)
-                                cl.sendVideoWithURL(msg.to, me)
-                                cl.sendText(msg.to,title+ author+ durasi+ suka+ rating+ deskripsi)
-                            except Exception as e:
-                                cl.sendText(msg.to,str(e))
-
-                        elif cmd.startswith("ytmp3: "):
-                          if msg._from in admin:
-                            try:
-                                sep = msg.text.split(" ")
-                                textToSearch = msg.text.replace(sep[0] + " ","")
-                                query = urllib.parse.quote(textToSearch)
-                                search_url="https://www.youtube.com/results?search_query="
-                                mozhdr = {'User-Agent': 'Mozilla/5.0 (Windows; U; Windows NT 5.1; en-GB; rv:1.9.0.3) Gecko/2008092417 Firefox/3.0.3'}
-                                sb_url = search_url + query
-                                sb_get = requests.get(sb_url, headers = mozhdr)
-                                soupeddata = BeautifulSoup(sb_get.content, "html.parser")
-                                yt_links = soupeddata.find_all("a", class_ = "yt-uix-tile-link")
-                                x = (yt_links[1])
-                                yt_href =  x.get("href")
-                                yt_href = yt_href.replace("watch?v=", "")
-                                qx = "https://youtu.be" + str(yt_href)
-                                vid = pafy.new(qx)
-                                stream = vid.streams
-                                bestaudio = vid.getbestaudio()
-                                bestaudio.bitrate
-                                best = vid.getbest()
-                                best.resolution, best.extension
-                                for s in stream:
-                                    shi = bestaudio.url
-                                    me = best.url
-                                    vin = s.url
-                                    hasil = ""
-                                    title = "Judul [ " + vid.title + " ]"
-                                    author = '\n\n❧Author : ' + str(vid.author)
-                                    durasi = '\n❧Duration : ' + str(vid.duration)
-                                    suka = '\n❧Likes : ' + str(vid.likes)
-                                    rating = '\n❧Rating : ' + str(vid.rating)
-                                    deskripsi = '\n❧Deskripsi : ' + str(vid.description)
-                                cl.sendImageWithURL(msg.to, me)
-                                cl.sendAudioWithURL(msg.to, shi)
-                                cl.sendText(msg.to,title+ author+ durasi+ suka+ rating+ deskripsi)
-                            except Exception as e:
-                                cl.sendText(msg.to,str(e))
-
-                        elif cmd.startswith("profileig: "):
-                          if msg._from in admin:
-                            try:
-                                sep = msg.text.split(" ")
-                                instagram = msg.text.replace(sep[0] + " ","")
-                                response = requests.get("https://www.instagram.com/"+instagram+"?__a=1")
-                                data = response.json()
-                                namaIG = str(data['user']['full_name'])
-                                bioIG = str(data['user']['biography'])
-                                mediaIG = str(data['user']['media']['count'])
-                                verifIG = str(data['user']['is_verified'])
-                                usernameIG = str(data['user']['username'])
-                                followerIG = str(data['user']['followed_by']['count'])
-                                profileIG = data['user']['profile_pic_url_hd']
-                                privateIG = str(data['user']['is_private'])
-                                followIG = str(data['user']['follows']['count'])
-                                link = "❧Link : " + "https://www.instagram.com/" + instagram
-                                text = "❧Name : "+namaIG+"\n❧Username : "+usernameIG+"\n❧Biography : "+bioIG+"\n❧Follower : "+followerIG+"\n❧Following : "+followIG+"\n❧Post : "+mediaIG+"\n❧Verified : "+verifIG+"\n❧Private : "+privateIG+"" "\n" + link
-                                cl.sendImageWithURL(msg.to, profileIG)
-                                cl.sendMessage(msg.to, str(text))
-                            except Exception as e:
-                                    cl.sendMessage(msg.to, str(e))
-
-                        elif cmd.startswith("cekdate: "):
-                          if msg._from in admin:
-                            sep = msg.text.split(" ")
-                            tanggal = msg.text.replace(sep[0] + " ","")
-                            r=requests.get('https://script.google.com/macros/exec?service=AKfycbw7gKzP-WYV2F5mc9RaR7yE3Ve1yN91Tjs91hp_jHSE02dSv9w&nama=ervan&tanggal='+tanggal)
-                            data=r.text
-                            data=json.loads(data)
-                            lahir = data["data"]["lahir"]
-                            usia = data["data"]["usia"]
-                            ultah = data["data"]["ultah"]
-                            zodiak = data["data"]["zodiak"]
-                            cl.sendMessage(msg.to,"❧I N F O R M A S I ❧\n\n"+"❧Date Of Birth : "+lahir+"\n❧Age : "+usia+"\n❧Ultah : "+ultah+"\n❧Zodiak : "+zodiak)
-
+                        
+                        
                         elif cmd.startswith("ju: "):
                           if wait["selfbot"] == True:
                            if msg._from in admin:
