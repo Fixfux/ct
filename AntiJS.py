@@ -2775,40 +2775,48 @@ def bot(op):
                                          msgs = "Welcome Msg sudah tidak aktif"
                                     cl.sendMessage(msg.to, "「Dinonaktifkan」\n" + msgs)
 
-                        elif 'Pu ' in msg.text:
+                        elif 'Proqr ' in msg.text:
                            if msg._from in admin:
-                              spl = msg.text.replace('Pu ','')
+                              spl = msg.text.replace('Proqr ','')
                               if spl == 'on':
-                                  if msg.to in protectqr:
+                                  if msg.to in Setmain["pro"]["qr"]:
                                        msgs = "Protect url sudah aktif"
                                   else:
-                                       protectqr.append(msg.to)
+                                       Setmain["pro"]["qr"][msg.to] = True
+                                       f = codecs.open("setting.json","w","utf-8")
+                                       json.dump(Setmain, f, sort_keys=True, indent=4,ensure_ascii=False)
                                        ginfo = cl.getGroup(msg.to)
                                        msgs = "Protect url diaktifkan\nDi Group : " +str(ginfo.name)
                                   cl.sendMessage(msg.to, "「Diaktifkan」\n" + msgs)
                               elif spl == 'off':
-                                    if msg.to in protectqr:
-                                         protectqr.remove(msg.to)
+                                    if msg.to in Setmain["pro"]["qr"]:
+                                         del setmain["pro"]["qr"][msg.to]
+                                         f = codecs.open("setting.json","w","utf-8")
+                                         json.dump(Setmain, f, sort_keys=True, indent=4,ensure_ascii=False)
                                          ginfo = cl.getGroup(msg.to)
                                          msgs = "Protect url dinonaktifkan\nDi Group : " +str(ginfo.name)
                                     else:
                                          msgs = "Protect url sudah tidak aktif"
                                     cl.sendMessage(msg.to, "「Dinonaktifkan」\n" + msgs)
 
-                        elif 'Pk ' in msg.text:
+                        elif 'Prokick ' in msg.text:
                            if msg._from in admin:
-                              spl = msg.text.replace('Pk ','')
+                              spl = msg.text.replace('Prokick ','')
                               if spl == 'on':
-                                  if msg.to in protectkick:
+                                  if msg.to in Setmain["pro"]["kick"]:
                                        msgs = "Protect kick sudah aktif"
                                   else:
-                                       protectkick.append(msg.to)
+                                       Setmain["pro"]["kick"][msg.to] = True
+                                       f = codecs.open("setting.json","w","utf-8")
+                                       json.dump(Setmain, f, sort_keys=True, indent=4,ensure_ascii=False)
                                        ginfo = cl.getGroup(msg.to)
                                        msgs = "Protect kick diaktifkan\nDi Group : " +str(ginfo.name)
                                   cl.sendMessage(msg.to, "「Diaktifkan」\n" + msgs)
                               elif spl == 'off':
-                                    if msg.to in protectkick:
-                                         protectkick.remove(msg.to)
+                                    if msg.to in Setmain["pro"]["kick"]:
+                                         del setmain["pro"]["kick"][msg.to]
+                                         f = codecs.open("setting.json","w","utf-8")
+                                         json.dump(Setmain, f, sort_keys=True, indent=4,ensure_ascii=False)
                                          ginfo = cl.getGroup(msg.to)
                                          msgs = "Protect kick dinonaktifkan\nDi Group : " +str(ginfo.name)
                                     else:
@@ -2835,20 +2843,24 @@ def bot(op):
                                          msgs = "Protect join sudah tidak aktif"
                                     cl.sendMessage(msg.to, "「Dinonaktifkan」\n" + msgs)
 
-                        elif 'Pc ' in msg.text:
+                        elif 'Procancel ' in msg.text:
                            if msg._from in admin:
-                              spl = msg.text.replace('Pc ','')
+                              spl = msg.text.replace('Procancel ','')
                               if spl == 'on':
-                                  if msg.to in protectcancel:
+                                  if msg.to in Setmain["pro"]["cancel"]:
                                        msgs = "Protect cancel sudah aktif"
                                   else:
-                                       protectcancel.append(msg.to)
+                                       Setmain["pro"]["cancel"][msg.to] = True
+                                       f = codecs.open("setting.json","w","utf-8")
+                                       json.dump(Setmain, f, sort_keys=True, indent=4,ensure_ascii=False)
                                        ginfo = cl.getGroup(msg.to)
                                        msgs = "Protect cancel diaktifkan\nDi Group : " +str(ginfo.name)
                                   cl.sendMessage(msg.to, "「Diaktifkan」\n" + msgs)
                               elif spl == 'off':
-                                    if msg.to in protectcancel:
-                                         protectcancel.remove(msg.to)
+                                    if msg.to in Setmain["pro"]["cancel"]:
+                                         del setmain["pro"]["cancel"][msg.to]
+                                         f = codecs.open("setting.json","w","utf-8")
+                                         json.dump(Setmain, f, sort_keys=True, indent=4,ensure_ascii=False)
                                          ginfo = cl.getGroup(msg.to)
                                          msgs = "Protect cancel dinonaktifkan\nDi Group : " +str(ginfo.name)
                                     else:
@@ -2895,27 +2907,29 @@ def bot(op):
                                          msgs = "Ghost Sudah Tidak Aktif"
                                     cl.sendMessage(msg.to, "「Dinonaktifkan」\n" + msgs)                                    
 
-                        elif 'A ' in msg.text:
+                        elif 'allpro ' in msg.text:
                            if msg._from in admin:
                               spl = msg.text.replace('A ','')
                               if spl == 'on':
-                                  if msg.to in protectqr:
+                                  if msg.to in Setmain["pro"]["qr"]:
                                        msgs = ""
                                   else:
-                                       protectqr.append(msg.to)
-                                  if msg.to in protectkick:
+                                       Setmain["pro"]["qr"][msg.to] = True
+                                       f = codecs.open("setting.json","w","utf-8")
+                                       json.dump(Setmain, f, sort_keys=True, indent=4,ensure_ascii=False)
+                                  if msg.to in Setmain["pro"]["kick"]:
                                       msgs = ""
                                   else:
-                                      protectkick.append(msg.to)
-                                  if msg.to in protectjoin:
-                                      msgs = ""
-                                  else:
-                                      protectjoin.append(msg.to)
-                                  if msg.to in protectcancel:
+                                       Setmain["pro"]["kick"][msg.to] = True
+                                       f = codecs.open("setting.json","w","utf-8")
+                                       json.dump(Setmain, f, sort_keys=True, indent=4,ensure_ascii=False)
+                                  if msg.to in Setmain["pro"]["cancel"]:
                                       ginfo = cl.getGroup(msg.to)
                                       msgs = "Semua protect sudah on\nDi Group : " +str(ginfo.name)
                                   else:
-                                      protectcancel.append(msg.to)
+                                      Setmain["pro"]["cancel"][msg.to] = True
+                                       f = codecs.open("setting.json","w","utf-8")
+                                       json.dump(Setmain, f, sort_keys=True, indent=4,ensure_ascii=False)
                                       ginfo = cl.getGroup(msg.to)
                                       msgs = "Berhasil mengaktifkan semua protect\nDi Group : " +str(ginfo.name)
                                   cl.sendMessage(msg.to, "「Diaktifkan」\n" + msgs)
