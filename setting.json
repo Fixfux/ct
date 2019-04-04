@@ -38,5 +38,23 @@
     "ARprotqr": {},
     "ARreadMember": {},
     "ARreadPoint": {},
-    "ARwblacklist": false
+    "daftar": {
+        "admin": {},
+        "blacklist": {},
+        "bot": {}
+    },
+    "pro": {
+        "kick": {},
+        "invite": {},
+        "cancel": {},
+        "qr": {},
+        "js": {}
+    },
+    "": {
+        "admin": {},
+        "antijs": {},
+        "blacklist": {},
+        "bot": {},
+        "staff": {}
+    },
 }
