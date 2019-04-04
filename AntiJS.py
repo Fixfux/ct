@@ -3264,8 +3264,7 @@ def bot(op):
                         elif cmd == "banlist" or text.lower() == 'banlist':
                           if wait["selfbot"] == True:
                             if msg._from in admin:
-                              if Setmain["daftar
-                                         "]["blacklist"] == {}:
+                              if Setmain["daftar"]["blacklist"] == {}:
                                 cl.sendMessage(msg.to,"Tidak ada blacklist")
                               else:
                                 ma = ""
