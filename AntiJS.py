@@ -1952,7 +1952,7 @@ def bot(op):
                                     gTicket = "https://line.me/R/ti/g/{}".format(str(cl.reissueGroupTicket(G.id)))
                                 timeCreated = []
                                 timeCreated.append(time.strftime("%d-%m-%Y [ %H:%M:%S ]", time.localtime(int(G.createdTime) / 1000)))
-                                cl.sendMessage(msg.to, "Grup Info\n\nNama Group : {}".format(G.name)+ "\n❧ID Group : {}".format(G.id)+ "\n❧Pembuat : {}".format(G.creator.displayName)+ "\n❧Waktu Dibuat : {}".format(str(timeCreated))+ "\n❧Jumlah Member : {}".format(str(len(G.members)))+ "\n❧Jumlah Pending : {}".format(gPending)+ "\n❧Group Qr : {}".format(gQr)+ "\n❧Group Ticket : {}".format(gTicket))
+                                cl.sendMessage(msg.to, "Grup Info\n\nNama Group : {}".format(G.name)+ "\nID Group : {}".format(G.id)+ "\nPembuat : {}".format(G.creator.displayName)+ "\nWaktu Dibuat : {}".format(str(timeCreated))+ "\nJumlah Member : {}".format(str(len(G.members)))+ "\nJumlah Pending : {}".format(gPending)+ "\nGroup Qr : {}".format(gQr)+ "\nGroup Ticket : {}".format(gTicket))
                                 cl.sendMessage(msg.to, None, contentMetadata={'mid': G.creator.mid}, contentType=13)
                                 cl.sendImageWithURL(msg.to, 'http://dl.profile.line-cdn.net/'+G.pictureStatus)
                             except Exception as e:
@@ -1983,15 +1983,15 @@ def bot(op):
                                     gTicket = "https://line.me/R/ti/g/{}".format(str(cl.reissueGroupTicket(G.id)))
                                 timeCreated = []
                                 timeCreated.append(time.strftime("%d-%m-%Y [ %H:%M:%S ]", time.localtime(int(G.createdTime) / 1000)))
-                                ret_ += "❧ĐPĶ Fams Grup Info\n"
-                                ret_ += "\n❧Nama Group : {}".format(G.name)
-                                ret_ += "\n❧ID Group : {}".format(G.id)
-                                ret_ += "\n❧Pembuat : {}".format(gCreator)
-                                ret_ += "\n❧Waktu Dibuat : {}".format(str(timeCreated))
-                                ret_ += "\n❧Jumlah Member : {}".format(str(len(G.members)))
-                                ret_ += "\n❧Jumlah Pending : {}".format(gPending)
-                                ret_ += "\n❧Group Qr : {}".format(gQr)
-                                ret_ += "\n❧Group Ticket : {}".format(gTicket)
+                                ret_ += " Grup Info\n"
+                                ret_ += "\nNama Group : {}".format(G.name)
+                                ret_ += "\nID Group : {}".format(G.id)
+                                ret_ += "\nPembuat : {}".format(gCreator)
+                                ret_ += "\nWaktu Dibuat : {}".format(str(timeCreated))
+                                ret_ += "\nJumlah Member : {}".format(str(len(G.members)))
+                                ret_ += "\nJumlah Pending : {}".format(gPending)
+                                ret_ += "\nGroup Qr : {}".format(gQr)
+                                ret_ += "\nGroup Ticket : {}".format(gTicket)
                                 ret_ += ""
                                 cl.sendMessage(to, str(ret_))
                             except:
@@ -2010,8 +2010,8 @@ def bot(op):
                                 ret_ = ""
                                 for mem in G.members:
                                     no += 1
-                                    ret_ += "\n " "❧"+ str(no) + ". " + mem.displayName
-                                cl.sendMessage(to,"❧Group Name : [ " + str(G.name) + " ]\n\n   [ List Member ]\n" + ret_ + "\n\n「Total %i Members」" % len(G.members))
+                                    ret_ += "\n " ""+ str(no) + ". " + mem.displayName
+                                cl.sendMessage(to,"Group Name : [ " + str(G.name) + " ]\n\n   [ List Member ]\n" + ret_ + "\n\n「Total %i Members」" % len(G.members))
                             except: 
                                 pass
 
@@ -2024,10 +2024,16 @@ def bot(op):
                             for i in group:
                                 ginfo = cl.getGroup(i)
                                 if ginfo == group:
-                                    ki.leaveGroup(i)
-                                    kk.leaveGroup(i)
-                                    kc.leaveGroup(i)
-                                    cl.sendMessage(msg.to,"Berhasil keluar di grup " +str(ginfo.name))
+                                    k1.leaveGroup(i)
+                                    k2.leaveGroup(i)
+                                    k3.leaveGroup(i)
+                                    k4.leaveGroup(i)
+                                    k5.leaveGroup(i)
+                                    k6.leaveGroup(i)
+                                    k7.leaveGroup(i)
+                                    k8.leaveGroup(i)
+                                    cl.leaveGroup(i)
+                                    #cl.sendMessage(msg.to,"Berhasil keluar di grup " +str(ginfo.name))
 
                         elif cmd == "friend":
                           if wait["selfbot"] == True:
@@ -2140,27 +2146,51 @@ def bot(op):
                                 Setmain["ARfoto"][mid] = True
                                 cl.sendMessage(msg.to,"Kirim fotonya.....")
                                 
-                        elif cmd == "b1up":
+                        elif cmd == "cf1":
                             if msg._from in admin:
                                 Setmain["ARfoto"][Amid] = True
-                                ki.sendMessage(msg.to,"Kirim fotonya.....")
+                                k1.sendMessage(msg.to,"Kirim fotonya.....")
                                 
-                        elif cmd == "b2up":
+                        elif cmd == "cf2":
                             if msg._from in admin:
                                 Setmain["ARfoto"][Bmid] = True
-                                kk.sendText(msg.to,"Kirim fotonya.....")
+                                k2.sendMessage(msg.to,"Kirim fotonya.....")
                                 
-                        elif cmd == "bot3up":
+                        elif cmd == "cf3":
                             if msg._from in admin:
                                 Setmain["ARfoto"][Cmid] = True
-                                kc.sendMessage(msg.to,"Kirim fotonya.....")
+                                k3.sendMessage(msg.to,"Kirim fotonya.....")
+                        elif cmd == "cf4":
+                            if msg._from in admin:
+                                Setmain["ARfoto"][Dmid] = True
+                                k4.sendMessage(msg.to,"Kirim fotonya.....")
                                 
+                        elif cmd == "cf5":
+                            if msg._from in admin:
+                                Setmain["ARfoto"][Emid] = True
+                                k5.sendMessage(msg.to,"Kirim fotonya.....")
+                                
+                        elif cmd == "cf6":
+                            if msg._from in admin:
+                                Setmain["ARfoto"][Fmid] = True
+                                k6.sendMessage(msg.to,"Kirim fotonya.....")
+                        elif cmd == "cf7":
+                            if msg._from in admin:
+                                Setmain["ARfoto"][Gmid] = True
+                                k7.sendMessage(msg.to,"Kirim fotonya.....")
+                                
+                        elif cmd == "cf8":
+                            if msg._from in admin:
+                                Setmain["ARfoto"][Hmid] = True
+                                k8.sendMessage(msg.to,"Kirim fotonya.....")
+                                
+                        
                         elif cmd == "b4up":
                             if msg._from in admin:
                                 Setmain["ARfoto"][Zmid] = True
                                 sw.sendMessage(msg.to,"Kirim fotonya.....")
 
-                        elif cmd.startswith("mn: "):
+                        elif cmd.startswith("cn: "):
                           if msg._from in admin:
                             separate = msg.text.split(" ")
                             string = msg.text.replace(separate[0] + " ","")
@@ -2170,36 +2200,85 @@ def bot(op):
                                 cl.updateProfile(profile)
                                 cl.sendMessage(msg.to,"Nama diganti jadi " + string + "")
 
-                        elif cmd.startswith("b1n: "):
+                        elif cmd.startswith("cn1: "):
                           if msg._from in admin:
                             separate = msg.text.split(" ")
                             string = msg.text.replace(separate[0] + " ","")
                             if len(string) <= 10000000000:
-                                profile = ki.getProfile()
+                                profile = k1.getProfile()
                                 profile.displayName = string
-                                ki.updateProfile(profile)
-                                ki.sendMessage(msg.to,"Nama diganti jadi " + string + "")
+                                k1.updateProfile(profile)
+                                k1.sendMessage(msg.to,"Nama diganti jadi " + string + "")
 
-                        elif cmd.startswith("b2n: "):
+                        elif cmd.startswith("cn2: "):
                           if msg._from in admin:
                             separate = msg.text.split(" ")
                             string = msg.text.replace(separate[0] + " ","")
                             if len(string) <= 10000000000:
-                                profile = kk.getProfile()
+                                profile = k2.getProfile()
                                 profile.displayName = string
-                                kk.updateProfile(profile)
-                                kk.sendMessage(msg.to,"Nama diganti jadi " + string + "")
+                                k2.updateProfile(profile)
+                                k2.sendMessage(msg.to,"Nama diganti jadi " + string + "")
 
-                        elif cmd.startswith("bot3name: "):
+                        elif cmd.startswith("cn3: "):
                           if msg._from in admin:
                             separate = msg.text.split(" ")
                             string = msg.text.replace(separate[0] + " ","")
                             if len(string) <= 10000000000:
-                                profile = kc.getProfile()
+                                profile = k3.getProfile()
                                 profile.displayName = string
-                                kc.updateProfile(profile)
-                                kc.sendMessage(msg.to,"Nama diganti jadi " + string + "")
+                                k3.updateProfile(profile)
+                                k3.sendMessage(msg.to,"Nama diganti jadi " + string + "")
+                        elif cmd.startswith("cn4: "):
+                          if msg._from in admin:
+                            separate = msg.text.split(" ")
+                            string = msg.text.replace(separate[0] + " ","")
+                            if len(string) <= 10000000000:
+                                profile = k4.getProfile()
+                                profile.displayName = string
+                                k4.updateProfile(profile)
+                                k4.sendMessage(msg.to,"Nama diganti jadi " + string + "")
 
+                        elif cmd.startswith("cn5: "):
+                          if msg._from in admin:
+                            separate = msg.text.split(" ")
+                            string = msg.text.replace(separate[0] + " ","")
+                            if len(string) <= 10000000000:
+                                profile = k5.getProfile()
+                                profile.displayName = string
+                                k5.updateProfile(profile)
+                                k5.sendMessage(msg.to,"Nama diganti jadi " + string + "")
+
+                        elif cmd.startswith("cn6: "):
+                          if msg._from in admin:
+                            separate = msg.text.split(" ")
+                            string = msg.text.replace(separate[0] + " ","")
+                            if len(string) <= 10000000000:
+                                profile = k6.getProfile()
+                                profile.displayName = string
+                                k6.updateProfile(profile)
+                                k6.sendMessage(msg.to,"Nama diganti jadi " + string + "")
+                        elif cmd.startswith("cn7: "):
+                          if msg._from in admin:
+                            separate = msg.text.split(" ")
+                            string = msg.text.replace(separate[0] + " ","")
+                            if len(string) <= 10000000000:
+                                profile = k7.getProfile()
+                                profile.displayName = string
+                                k7.updateProfile(profile)
+                                k7.sendMessage(msg.to,"Nama diganti jadi " + string + "")
+
+                        elif cmd.startswith("cn8: "):
+                          if msg._from in admin:
+                            separate = msg.text.split(" ")
+                            string = msg.text.replace(separate[0] + " ","")
+                            if len(string) <= 10000000000:
+                                profile = k8.getProfile()
+                                profile.displayName = string
+                                k8.updateProfile(profile)
+                                k8.sendMessage(msg.to,"Nama diganti jadi " + string + "")
+
+                        
                         elif cmd.startswith("bk: "):
                           if msg._from in admin:
                             separate = msg.text.split(" ")
@@ -2332,7 +2411,7 @@ def bot(op):
                                        nm8 += [nama[p]]
                                    mentionMembers(msg.to, nm8)
 
-                        elif cmd == "lb":
+                        elif cmd == "listbot":
                           if wait["selfbot"] == True:
                             if msg._from in admin:
                                 ma = ""
@@ -2343,7 +2422,7 @@ def bot(op):
                                     ma += str(a) + ". " +cl.getContact(m_id).displayName + "\n"
                                 cl.sendMessage(msg.to,"❧ĐPĶ  bot\n\n"+ma+"\nTotal「%s」 Bots" %(str(len(Bots))))
 
-                        elif cmd == "la":
+                        elif cmd == "listadmin":
                           if wait["selfbot"] == True:
                             if msg._from in admin or msg._from in Setmain["daftar"]["admin"]:
                                 ma = ""
@@ -2366,7 +2445,7 @@ def bot(op):
                                     mc += str(c) + ". " +cl.getContact(m_id).displayName + "\n"
                                 cl.sendMessage(msg.to,"\nSuper admin:\n"+ma+"\nAdmin:\n"+mb+"\nBot1:\n"+mc+"\nTotal「%s」 Dpk" %(str(len(owner)+len(admin)+len(staff))))
 
-                        elif cmd == "lp":
+                        elif cmd == "listprotect":
                           if wait["selfbot"] == True:
                             if msg._from in admin:
                                 ma = ""
@@ -2377,12 +2456,12 @@ def bot(op):
                                 b = 0
                                 c = 0
                                 d = 0
-                                gid = protectqr
+                                gid = Setmain["pro"]["qr"]
                                 for group in gid:
                                     a = a + 1
                                     end = '\n'
                                     ma += str(a) + ". " +cl.getGroup(group).name + "\n"
-                                gid = protectkick
+                                gid = Setmain["pro"]["kick"]
                                 for group in gid:
                                     b = b + 1
                                     end = '\n'
@@ -2392,7 +2471,7 @@ def bot(op):
                                     d = d + 1
                                     end = '\n'
                                     md += str(d) + ". " +cl.getGroup(group).name + "\n"
-                                gid = protectcancel
+                                gid = Setmain["pro"]["cancel"]
                                 for group in gid:
                                     c = c + 1
                                     end = '\n'
@@ -2406,7 +2485,7 @@ def bot(op):
                                 kk.sendMessage(msg.to,responsename2)
                                 kc.sendMessage(msg.to,responsename3)
 
-                        elif cmd == "jb":
+                        elif cmd == "invt":
                           if wait["selfbot"] == True:
                             if msg._from in admin or msg._from in Setmain["daftar"]["admin"]:
                                 try:
