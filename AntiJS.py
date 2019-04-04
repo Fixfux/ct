@@ -1757,7 +1757,7 @@ def bot(op):
                             if msg._from in admin or msg._from in Setmain["daftar"]["admin"]:
                                 tz = pytz.timezone("Asia/Jakarta")
                                 timeNow = datetime.now(tz=tz)
-                                md = "❧ĐPĶ PŘØŤĘČŤÎØŇ❧\n"
+                                md = "PROTECT\n"
                                 if wait["sticker"] == True: md+="❧Sticker「ON」\n"
                                 else: md+="❧Sticker「OFF」\n"
                                 if wait["contact"] == True: md+="❧Contact「ON」\n"
@@ -1776,15 +1776,15 @@ def bot(op):
                                 else: md+="❧Welcome「OFF」\n"
                                 if wait["autoLeave"] == True: md+="❧Autoleave「ON」\n"
                                 else: md+="❧Autoleave「OFF」\n"
-                                if msg.to in protectqr: md+="❧Protecturl「ON」\n"
+                                if msg.to in Setmain["pro"]["qr"]: md+="❧Protecturl「ON」\n"
                                 else: md+="❧Protecturl「OFF」\n"
                                 if msg.to in protectjoin: md+="❧Protectjoin「ON」\n"
                                 else: md+="❧Protectjoin「OFF」\n"
-                                if msg.to in protectkick: md+="❧Protectkick「ON」\n"
+                                if msg.to in Setmain["pro"]["kick"]: md+="❧Protectkick「ON」\n"
                                 else: md+="❧Protectkick「OFF」\n"
-                                if msg.to in protectcancel: md+="❧Protectcancel「ON」\n"
+                                if msg.to in Setmain["pro"]["cancel"]: md+="❧Protectcancel「ON」\n"
                                 else: md+="❧Protectcancel「OFF」\n"
-                                if msg.to in protectantijs: md+="❧Antijs「ON」\n"
+                                if msg.to in Setmain["pro"]["js"]: md+="❧Antijs「ON」\n"
                                 else: md+="❧Antijs「OFF」\n"  
                                 if msg.to in ghost: md+="❧Ghost「ON」\n"
                                 else: md+="❧Ghost「OFF」\n"                                   
