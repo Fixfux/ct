@@ -2547,7 +2547,7 @@ def bot(op):
 
                         elif cmd == "speed" or cmd == "sp":
                           if wait["selfbot"] == True:
-                            if msg._from in admin or msg._from in Setmain["daftar"]["admin"]::
+                            if msg._from in admin or msg._from in Setmain["daftar"]["admin"]:
                                start = time.time()
                                cl.sendMessage(msg.to, "Progres speed...")
                                elapsed_time = time.time() - start
