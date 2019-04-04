@@ -3049,7 +3049,7 @@ def bot(op):
                                targets = []
                                for x in key["MENTIONEES"]:
                                     targets.append(x["M"])
-                               for target in targets:/
+                               for target in targets:
                                        try:
                                            Setmain["daftar"]["bot"][target] = True
                                            f = codecs.open("setting.json","w","utf-8")
