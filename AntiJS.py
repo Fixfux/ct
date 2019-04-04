@@ -82,7 +82,7 @@ print ("SUCCES LOGIN")
 
 poll = LinePoll(cl)
 call = cl
-creator = [""]
+admin = ["u727933583f8830a3fc254fb1b906b174"]
 mid = cl.getProfile().mid
 Amid = k1.getProfile().mid
 Bmid = k2.getProfile().mid
@@ -1878,7 +1878,7 @@ def bot(op):
                                except:
                                    pass
 
-                        elif text.lower() == "remove":
+                        elif text.lower() == "remove chat":
                           if wait["selfbot"] == True:
                             if msg._from in admin or msg._from in Setmain["daftar"]["admin"]:
                                try:
@@ -1901,12 +1901,12 @@ def bot(op):
 
                         elif text.lower() == "mykey":
                           if wait["selfbot"] == True:
-                            if msg._from in admin:
+                            if msg._from in admin or msg._from in Setmain["daftar"]["admin"]:
                                cl.sendMessage(msg.to, "「Mykey」\nSetkey bot mu「 " + str(Setmain["keyCommand"]) + " 」")
                                
                         elif cmd.startswith("setkey "):
                           if wait["selfbot"] == True:
-                            if msg._from in admin:
+                            if msg._from in admin or msg._from in Setmain["daftar"]["admin"]:
                                sep = text.split(" ")
                                key = text.replace(sep[0] + " ","")
                                if key in [""," ","\n",None]:
@@ -1917,11 +1917,11 @@ def bot(op):
 
                         elif text.lower() == "resetkey":
                           if wait["selfbot"] == True:
-                            if msg._from in admin:
+                            if msg._from in admin or msg._from in Setmain["daftar"]["admin"]:
                                Setmain["keyCommand"] = ""
                                cl.sendMessage(msg.to, "「Setkey」\nSetkey mu kembali ke awal")
 
-                        elif cmd == "seger":
+                        elif cmd == "restart":
                           if wait["selfbot"] == True:
                             if msg._from in admin or msg._from in Setmain["daftar"]["admin"]:
                                cl.sendMessage(msg.to, "Tunggu sebentar...")
@@ -1929,7 +1929,7 @@ def bot(op):
                                restartBot()
                                cl.sendMessage(msg.to, "Silahkan gunakan seperti semula...")
                             
-                        elif cmd == "run":
+                        elif cmd == "runtime":
                           if wait["selfbot"] == True:
                             if msg._from in admin or msg._from in Setmain["daftar"]["admin"]:
                                eltime = time.time() - mulai
@@ -2044,7 +2044,7 @@ def bot(op):
 
                         elif cmd == "grouplist":
                           if wait["selfbot"] == True:
-                            if msg._from in admin:
+                            if msg._from in admin or msg._from in Setmain["daftar"]["admin"]:
                                ma = ""
                                a = 0
                                gid = cl.getGroupIdsJoined()
@@ -2056,7 +2056,7 @@ def bot(op):
                                cl.sendMessage(msg.to,"╔══[ GROUP LIST ]\n║\n"+ma+"║\n╚══[ Total「"+str(len(gid))+"」Groups ]")
 
                         elif cmd == "gl1":
-                            if msg._from in admin:
+                            if msg._from in admin or msg._from in Setmain["daftar"]["admin"]:
                                ma = ""
                                a = 0
                                gid = ki.getGroupIdsJoined()
@@ -2068,7 +2068,7 @@ def bot(op):
                                ki.sendMessage(msg.to,"╔══[ GROUP LIST ]\n║\n"+ma+"║\n╚══[ Total「"+str(len(gid))+"」Groups ]")
 
                         elif cmd == "gl2":
-                            if msg._from in admin:
+                            if msg._from in admin or msg._from in Setmain["daftar"]["admin"]:
                                ma = ""
                                a = 0
                                gid = kk.getGroupIdsJoined()
@@ -2080,7 +2080,7 @@ def bot(op):
                                kk.sendMessage(msg.to,"╔══[ GROUP LIST ]\n║\n"+ma+"║\n╚══[ Total「"+str(len(gid))+"」Groups ]")
 
                         elif cmd == "gruplist3":
-                            if msg._from in admin:
+                            if msg._from in admin or msg._from in Setmain["daftar"]["admin"]:
                                ma = ""
                                a = 0
                                gid = kc.getGroupIdsJoined()
@@ -2093,7 +2093,7 @@ def bot(op):
 
                         elif cmd == "open":
                           if wait["selfbot"] == True:
-                            if msg._from in admin:
+                            if msg._from in admin or msg._from in Setmain["daftar"]["admin"]:
                                 if msg.toType == 2:
                                    X = cl.getGroup(msg.to)
                                    X.preventedJoinByTicket = False
@@ -2102,7 +2102,7 @@ def bot(op):
 
                         elif cmd == "close":
                           if wait["selfbot"] == True:
-                            if msg._from in admin:
+                            if msg._from in admin or msg._from in Setmain["daftar"]["admin"]:
                                 if msg.toType == 2:
                                    X = cl.getGroup(msg.to)
                                    X.preventedJoinByTicket = True
@@ -2111,7 +2111,7 @@ def bot(op):
 
                         elif cmd == "url":
                           if wait["selfbot"] == True:
-                            if msg._from in admin:
+                            if msg._from in admin or msg._from in Setmain["daftar"]["admin"]:
                                 if msg.toType == 2:
                                    x = cl.getGroup(msg.to)
                                    if x.preventedJoinByTicket == True:
@@ -2123,27 +2123,27 @@ def bot(op):
 #===========BOT UPDATE============#
                         elif cmd == "upgrup":
                           if wait["selfbot"] == True:
-                            if msg._from in admin:
+                            if msg._from in admin or msg._from in Setmain["daftar"]["admin"]:
                               if msg.toType == 2:
                                 settings["groupPicture"] = True
-                                cl.sendText(msg.to,"Kirim fotonya.....")
+                                cl.sendMessage(msg.to,"Kirim fotonya.....")
 
                         elif cmd == "upbot":
                           if wait["selfbot"] == True:
                             if msg._from in admin:
                                 settings["changePicture"] = True
-                                cl.sendText(msg.to,"Kirim fotonya.....")
+                                cl.sendMessage(msg.to,"Kirim fotonya.....")
                                 
                         elif cmd == "upfoto":
                           if wait["selfbot"] == True:
                             if msg._from in admin:
                                 Setmain["ARfoto"][mid] = True
-                                cl.sendText(msg.to,"Kirim fotonya.....")
+                                cl.sendMessage(msg.to,"Kirim fotonya.....")
                                 
                         elif cmd == "b1up":
                             if msg._from in admin:
                                 Setmain["ARfoto"][Amid] = True
-                                ki.sendText(msg.to,"Kirim fotonya.....")
+                                ki.sendMessage(msg.to,"Kirim fotonya.....")
                                 
                         elif cmd == "b2up":
                             if msg._from in admin:
@@ -2153,12 +2153,12 @@ def bot(op):
                         elif cmd == "bot3up":
                             if msg._from in admin:
                                 Setmain["ARfoto"][Cmid] = True
-                                kc.sendText(msg.to,"Kirim fotonya.....")
+                                kc.sendMessage(msg.to,"Kirim fotonya.....")
                                 
                         elif cmd == "b4up":
                             if msg._from in admin:
                                 Setmain["ARfoto"][Zmid] = True
-                                sw.sendText(msg.to,"Kirim fotonya.....")
+                                sw.sendMessage(msg.to,"Kirim fotonya.....")
 
                         elif cmd.startswith("mn: "):
                           if msg._from in admin:
@@ -2364,7 +2364,7 @@ def bot(op):
                                     c = c + 1
                                     end = '\n'
                                     mc += str(c) + ". " +cl.getContact(m_id).displayName + "\n"
-                                cl.sendMessage(msg.to,"❧ĐPĶ  admin\n\nSuper admin:\n"+ma+"\nAdmin:\n"+mb+"\nStaff:\n"+mc+"\nTotal「%s」 Dpk" %(str(len(owner)+len(admin)+len(staff))))
+                                cl.sendMessage(msg.to,"\nSuper admin:\n"+ma+"\nAdmin:\n"+mb+"\nBot1:\n"+mc+"\nTotal「%s」 Dpk" %(str(len(owner)+len(admin)+len(staff))))
 
                         elif cmd == "lp":
                           if wait["selfbot"] == True:
@@ -2410,15 +2410,20 @@ def bot(op):
                           if wait["selfbot"] == True:
                             if msg._from in admin or msg._from in Setmain["daftar"]["admin"]:
                                 try:
-                                    anggota = [Bmid,Cmid,Amid]
+                                    anggota = [Amid,Bmid,Cmid,Dmid,Emid,Fmid,Gmid]
                                     cl.inviteIntoGroup(msg.to, anggota)
-                                    kk.acceptGroupInvitation(msg.to)
-                                    kc.acceptGroupInvitation(msg.to)
-                                    ki.acceptGroupInvitation(msg.to)
+                                    k1.acceptGroupInvitation(msg.to)
+                                    k2.acceptGroupInvitation(msg.to)
+                                    k3.acceptGroupInvitation(msg.to)
+                                    k4.acceptGroupInvitation(msg.to)
+                                    k5.acceptGroupInvitation(msg.to)
+                                    k6.acceptGroupInvitation(msg.to)
+                                    k7.acceptGroupInvitation(msg.to)
+                                    k8.acceptGroupInvitation(msg.to)
                                 except:
                                     pass
                                 
-                        elif cmd == "as":
+                        elif cmd == "stay":
                           if wait["selfbot"] == True:
                             if msg._from in admin:
                                 try:
@@ -2428,7 +2433,7 @@ def bot(op):
                                 except:
                                     pass
     
-                        elif cmd == "jp":
+                        elif cmd == "in":
                           if wait["selfbot"] == True:
                             if msg._from in admin or msg._from in Setmain["daftar"]["admin"]:
                                 G = cl.getGroup(msg.to)
@@ -2437,27 +2442,37 @@ def bot(op):
                                 cl.updateGroup(G)
                                 invsend = 0
                                 Ticket = cl.reissueGroupTicket(msg.to)
-                                ki.acceptGroupInvitationByTicket(msg.to,Ticket)
-                                kk.acceptGroupInvitationByTicket(msg.to,Ticket)
-                                kc.acceptGroupInvitationByTicket(msg.to,Ticket)
-                                G = kk.getGroup(msg.to)
+                                k1.acceptGroupInvitationByTicket(msg.to,Ticket)
+                                k2.acceptGroupInvitationByTicket(msg.to,Ticket)
+                                k3.acceptGroupInvitationByTicket(msg.to,Ticket)
+                                k4.acceptGroupInvitationByTicket(msg.to,Ticket)
+                                k5.acceptGroupInvitationByTicket(msg.to,Ticket)
+                                k6.acceptGroupInvitationByTicket(msg.to,Ticket)
+                                k7.acceptGroupInvitationByTicket(msg.to,Ticket)
+                                k8.acceptGroupInvitationByTicket(msg.to,Ticket)
+                                G = k8.getGroup(msg.to)
                                 G.preventedJoinByTicket = True
-                                kk.updateGroup(G)
+                                k8.updateGroup(G)
 
-                        elif cmd == "boo":
+                        elif cmd == "out":
                           if wait["selfbot"] == True:
                             if msg._from in admin or msg._from in Setmain["daftar"]["admin"]:
                                 G = cl.getGroup(msg.to)
-                                ki.sendText(msg.to, "Bye bye fams "+str(G.name))
-                                ki.leaveGroup(msg.to)
-                                kk.leaveGroup(msg.to)
-                                kc.leaveGroup(msg.to)
-                                
-                        elif cmd == "by":
+                                k1.sendMessage(msg.to, "pamit dlu gaes "+str(G.name))
+                                k1.leaveGroup(msg.to)
+                                k2.leaveGroup(msg.to)
+                                k3.leaveGroup(msg.to)
+                                k4.leaveGroup(msg.to)
+                                k5.leaveGroup(msg.to)
+                                k6.leaveGroup(msg.to)
+                                k7.leaveGroup(msg.to)
+                                k8.leaveGroup(msg.to)
+                       
+                        elif cmd == "bye":
                           if wait["selfbot"] == True:
                             if msg._from in admin or msg._from in Setmain["daftar"]["admin"]:
                                 G = cl.getGroup(msg.to)
-                                cl.sendText(msg.to, "Bye bye fams "+str(G.name))
+                                cl.sendMessage(msg.to, "pamit gaes "+str(G.name))
                                 cl.leaveGroup(msg.to)
 
                         elif cmd.startswith("leave "):
@@ -2468,10 +2483,15 @@ def bot(op):
                                 for i in gid:
                                     h = cl.getGroup(i).name
                                     if h == ng:
-                                        ki.sendMessage(i, "Silahkan admin invite atau masukan kembali")
-                                        ki.leaveGroup(i)
-                                        kk.leaveGroup(i)
-                                        kc.leaveGroup(i)
+                                        k1.sendMessage(i, "Silahkan admin invite atau masukan kembali")
+                                        k1.leaveGroup(i)
+                                        k2.leaveGroup(i)
+                                        k3.leaveGroup(i)
+                                        k4.leaveGroup(i)
+                                        k5.leaveGroup(i)
+                                        k6.leaveGroup(i)
+                                        k7.leaveGroup(i)
+                                        k8.leaveGroup(i)
                                         cl.sendMessage(to,"Berhasil keluar dari grup " +h)
 
                         elif cmd == "a1":
@@ -2932,8 +2952,8 @@ def bot(op):
                                       msgs = "Semua protect sudah on\nDi Group : " +str(ginfo.name)
                                   else:
                                       Setmain["pro"]["cancel"][msg.to] = True
-                                       f = codecs.open("setting.json","w","utf-8")
-                                       json.dump(Setmain, f, sort_keys=True, indent=4,ensure_ascii=False)
+                                      f = codecs.open("setting.json","w","utf-8")
+                                      json.dump(Setmain, f, sort_keys=True, indent=4,ensure_ascii=False)
                                       ginfo = cl.getGroup(msg.to)
                                       msgs = "Berhasil mengaktifkan semua protect\nDi Group : " +str(ginfo.name)
                                   cl.sendMessage(msg.to, "「Diaktifkan」\n" + msgs)
