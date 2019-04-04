@@ -1617,7 +1617,7 @@ def bot(op):
                      if msg.contentMetadata["mid"] not in Setmain["daftar"]["admin"]:
                          cl.sendMessage(msg.to,"{} tidak pernah menjadi admin".format(str(cl.getContact(msg.contentMetadata["mid"]).displayName)))
                      else:
-                         del Setmain["daftar"]["admin"][msg.contentMetadata["mid"]] = True
+                         del Setmain["daftar"]["admin"][msg.contentMetadata["mid"]]
                          f = codecs.open("setting.json","w","utf-8")
                          json.dump(Setmain, f, sort_keys=True, indent=4,ensure_ascii=False)
                          cl.sendMessage(msg.to,"{} di copot menjadi admin".format(str(cl.getContact(msg.contentMetadata["mid"]).displayName)))
@@ -1634,7 +1634,7 @@ def bot(op):
                      if msg.contentMetadata["mid"] not in Setmain["daftar"]["daftar"]:
                          cl.sendMessage(msg.to,"{} tidak pernah menjadi bots".format(str(cl.getContact(msg.contentMetadata["mid"]).displayName)))
                      else:
-                         del Setmain["daftar"]["bot"][msg.contentMetadata["mid"]] = True
+                         del Setmain["daftar"]["bot"][msg.contentMetadata["mid"]]
                          f = codecs.open("setting.json","w","utf-8")
                          json.dump(Setmain, f, sort_keys=True, indent=4,ensure_ascii=False)
                          cl.sendMessage(msg.to,"{} di copot menjadi bots".format(str(cl.getContact(msg.contentMetadata["mid"]).displayName)))
@@ -1816,7 +1816,7 @@ def bot(op):
 
                         elif ("Mid " in msg.text):
                           if wait["selfbot"] == True:
-                            if msg._from in admin or msg._from in Setmain["daftar"]["admin"]::
+                            if msg._from in admin or msg._from in Setmain["daftar"]["admin"]:
                                key = eval(msg.contentMetadata["MENTION"])
                                key1 = key["MENTIONEES"][0]["M"]
                                mi = cl.getContact(key1)
@@ -1825,7 +1825,7 @@ def bot(op):
 
                         elif ("Info " in msg.text):
                           if wait["selfbot"] == True:
-                            if msg._from in admin or msg._from in Setmain["daftar"]["admin"]::
+                            if msg._from in admin or msg._from in Setmain["daftar"]["admin"]:
                                key = eval(msg.contentMetadata["MENTION"])
                                key1 = key["MENTIONEES"][0]["M"]
                                mi = cl.getContact(key1)
@@ -1838,7 +1838,7 @@ def bot(op):
 
                         elif cmd == "contact bot1":
                           if wait["selfbot"] == True:
-                            if msg._from in admin or msg._from in Setmain["daftar"]["admin"]::
+                            if msg._from in admin or msg._from in Setmain["daftar"]["admin"]:
                                msg.contentType = 13
                                msg.contentMetadata = {'mid': mid}
                                cl.sendMessage1(msg)
@@ -1872,7 +1872,7 @@ def bot(op):
 
                         elif text.lower() == "clear chat":
                           if wait["selfbot"] == True:
-                            if msg._from in admin or msg._from in Setmain["daftar"]["admin"]::
+                            if msg._from in admin or msg._from in Setmain["daftar"]["admin"]:
                                try:
                                    cl.removeAllMessages(op.param2)
                                except:
@@ -1880,7 +1880,7 @@ def bot(op):
 
                         elif text.lower() == "remove":
                           if wait["selfbot"] == True:
-                            if msg._from in admin or msg._from in Setmain["daftar"]["admin"]::
+                            if msg._from in admin or msg._from in Setmain["daftar"]["admin"]:
                                try:
                                    cl.removeAllMessages(op.param2)
                                    ki.removeAllMessages(op.param2)
@@ -2408,7 +2408,7 @@ def bot(op):
 
                         elif cmd == "jb":
                           if wait["selfbot"] == True:
-                            if msg._from in admin or msg._from in Setmain["daftar"]["admin"]::
+                            if msg._from in admin or msg._from in Setmain["daftar"]["admin"]:
                                 try:
                                     anggota = [Bmid,Cmid,Amid]
                                     cl.inviteIntoGroup(msg.to, anggota)
@@ -2430,7 +2430,7 @@ def bot(op):
     
                         elif cmd == "jp":
                           if wait["selfbot"] == True:
-                            if msg._from in admin or msg._from in Setmain["daftar"]["admin"]::
+                            if msg._from in admin or msg._from in Setmain["daftar"]["admin"]:
                                 G = cl.getGroup(msg.to)
                                 ginfo = cl.getGroup(msg.to)
                                 G.preventedJoinByTicket = False
@@ -2446,7 +2446,7 @@ def bot(op):
 
                         elif cmd == "boo":
                           if wait["selfbot"] == True:
-                            if msg._from in admin or msg._from in Setmain["daftar"]["admin"]::
+                            if msg._from in admin or msg._from in Setmain["daftar"]["admin"]:
                                 G = cl.getGroup(msg.to)
                                 ki.sendText(msg.to, "Bye bye fams "+str(G.name))
                                 ki.leaveGroup(msg.to)
@@ -2455,13 +2455,13 @@ def bot(op):
                                 
                         elif cmd == "by":
                           if wait["selfbot"] == True:
-                            if msg._from in admin or msg._from in Setmain["daftar"]["admin"]::
+                            if msg._from in admin or msg._from in Setmain["daftar"]["admin"]:
                                 G = cl.getGroup(msg.to)
                                 cl.sendText(msg.to, "Bye bye fams "+str(G.name))
                                 cl.leaveGroup(msg.to)
 
                         elif cmd.startswith("leave "):
-                            if msg._from in admin or msg._from in Setmain["daftar"]["admin"]::
+                            if msg._from in admin or msg._from in Setmain["daftar"]["admin"]:
                                 proses = text.split(" ")
                                 ng = text.replace(proses[0] + " ","")
                                 gid = cl.getGroupIdsJoined()
