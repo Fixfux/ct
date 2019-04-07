@@ -64,13 +64,13 @@ k7 = LineClient()
 #k7 = LineClient(authToken='Token Luu')
 k7.log("Auth Token : " + str(k7.authToken))
 channel7 = LineChannel(k7)
-k7.log("Channel Access Token : " + str(channel8.channelAccessToken))
+k7.log("Channel Access Token : " + str(channel7.channelAccessToken))
 
 k8 = LineClient()
 #k8 = LineClient(authToken='Token Luu')
 k8.log("Auth Token : " + str(k8.authToken))
 channel8 = LineChannel(k8)
-kk.log("Channel Access Token : " + str(channel8.channelAccessToken))
+k8.log("Channel Access Token : " + str(channel8.channelAccessToken))
 
 sw= LineClient()
 #sw = LineClient(authToken='Token Luu')
@@ -96,7 +96,7 @@ Zmid = sw.getProfile().mid
 KAC = [cl,k1,k2,k3,k4,k5,k6,k7,k8,sw]
 ABC = [k1,k2,k3,k4,k5,k6,k7,k8]
 Bots = [mid,Amid,Bmid,Cmid,Dmid,Emid,Fmid,Gmid,Hmid,Zmid]
-Dpk = creator + owner + admin + staff
+Dpk = admin
 
 responsename1 = k1.getProfile().displayName
 responsename2 = k2.getProfile().displayName
@@ -170,7 +170,7 @@ wait = {
     "mention":"Wooooyyyy Ngintip² Baee Sini Gabung Chat Biar Rame...!!!",
     "Respontag":"Ngapain Ngetag² Aim ??? Nakal Yah Sini Tak Cubit...!!!",
     "welcome":"Selamat datang, Salken & semoga betah",
-    "comment":"Like like & like by Abi ♡ Riny",
+    "comment":"Like by anu",
     "message":"Terimakasih sudah add saya 😃",
     }
 
@@ -194,14 +194,14 @@ with open('owner.json', 'r') as fp:
 with open('admin.json', 'r') as fp:
     owner = json.load(fp)
 
-Setbot1 = codecs.open("setting.json","r","utf-8")
-Setmain = json.load(Setbot1)
-Setbot2 = codecs.open("settings.json","r","utf-8")
-settings = json.load(Setbot2)
-Setbot3 = codecs.open("wait.json","r","utf-8")
-wait = json.load(Setbot3)
-Setbot4 = codecs.open("read.json","r","utf-8")
-read = json.load(Setbot4)
+Setbot = codecs.open("setting.json","r","utf-8")
+Setmain = json.load(Setbot)
+#Setbot2 = codecs.open("settings.json","r","utf-8")
+#settings = json.load(Setbot2)
+#Setbot3 = codecs.open("wait.json","r","utf-8")
+#wait = json.load(Setbot3)
+#Setbot4 = codecs.open("read.json","r","utf-8")
+#/read = json.load(Setbot4)
 
 mulai = time.time()
 
@@ -715,7 +715,150 @@ def bot(op):
                                                     json.dump(Setmain, f, sort_keys=True, indent=4,ensure_ascii=False)
                                                 except:
                                                     pass
-
+            if op.param3 in Setmain["daftar"]["blacklist"]:
+                if op.param2 not in Bots and op.param2 not in Setmain["daftar"]["bot"] and op.param2 not in Setmain["daftar"]["admin"]:
+                    try:
+                        group = k2.getGroup(op.param1)
+                        gMembMids = [contact.mid for contact in group.invitee]
+                        for _mid in gMembMids:
+                            k2.cancelGroupInvitation(op.param1,[_mid])
+                        Setmain["daftar"]["blacklist"][op.param2] = True
+                        f = codecs.open("setting.json","w","utf-8")
+                        json.dump(Setmain, f, sort_keys=True, indent=4,ensure_ascii=False)
+                    except:
+                        try:
+                            group = k3.getGroup(op.param1)
+                            gMembMids = [contact.mid for contact in group.invitee]
+                            for _mid in gMembMids:
+                                k3.cancelGroupInvitation(op.param1,[_mid])
+                            Setmain["daftar"]["blacklist"][op.param2] = True
+                            f = codecs.open("setting.json","w","utf-8")
+                            json.dump(Setmain, f, sort_keys=True, indent=4,ensure_ascii=False)
+                        except:
+                            try:
+                                group = k4.getGroup(op.param1)
+                                gMembMids = [contact.mid for contact in group.invitee]
+                                for _mid in gMembMids:
+                                    k4.cancelGroupInvitation(op.param1,[_mid])
+                                Setmain["daftar"]["blacklist"][op.param2] = True
+                                f = codecs.open("setting.json","w","utf-8")
+                                json.dump(Setmain, f, sort_keys=True, indent=4,ensure_ascii=False)
+                            except:
+                                try:
+                                    group = k5.getGroup(op.param1)
+                                    gMembMids = [contact.mid for contact in group.invitee]
+                                    for _mid in gMembMids:
+                                        k5.cancelGroupInvitation(op.param1,[_mid])
+                                    Setmain["daftar"]["blacklist"][op.param2] = True
+                                    f = codecs.open("setting.json","w","utf-8")
+                                    json.dump(Setmain, f, sort_keys=True, indent=4,ensure_ascii=False)
+                                except:
+                                    try:
+                                        group = k6.getGroup(op.param1)
+                                        gMembMids = [contact.mid for contact in group.invitee]
+                                        for _mid in gMembMids:
+                                            k6.cancelGroupInvitation(op.param1,[_mid])
+                                        Setmain["daftar"]["blacklist"][op.param2] = True
+                                        f = codecs.open("setting.json","w","utf-8")
+                                        json.dump(Setmain, f, sort_keys=True, indent=4,ensure_ascii=False)
+                                    except:
+                                        try:
+                                            group = k7.getGroup(op.param1)
+                                            gMembMids = [contact.mid for contact in group.invitee]
+                                            for _mid in gMembMids:
+                                                k7.cancelGroupInvitation(op.param1,[_mid])
+                                            Setmain["daftar"]["blacklist"][op.param2] = True
+                                            f = codecs.open("setting.json","w","utf-8")
+                                            json.dump(Setmain, f, sort_keys=True, indent=4,ensure_ascii=False)
+                                        except:
+                                            try:
+                                                group = k8.getGroup(op.param1)
+                                                gMembMids = [contact.mid for contact in group.invitee]
+                                                for _mid in gMembMids:
+                                                    k8.cancelGroupInvitation(op.param1,[_mid])
+                                                Setmain["daftar"]["blacklist"][op.param2] = True
+                                                f = codecs.open("setting.json","w","utf-8")
+                                                json.dump(Setmain, f, sort_keys=True, indent=4,ensure_ascii=False)
+                                            except:
+                                                try:
+                                                    random.choice(ABC).kickoutFromGroup(op.param1,[op.param2])
+                                                    Setmain["daftar"]["blacklist"][op.param2] = True
+                                                    f = codecs.open("setting.json","w","utf-8")
+                                                    json.dump(Setmain, f, sort_keys=True, indent=4,ensure_ascii=False)
+                                                except:
+                                                    pass
+            if op.param2 in Setmain["daftar"]["blacklist"]:
+                if op.param2 not in Bots and op.param2 not in Setmain["daftar"]["bot"] and op.param2 not in Setmain["daftar"]["admin"]:
+                    try:
+                        group = k2.getGroup(op.param1)
+                        gMembMids = [contact.mid for contact in group.invitee]
+                        for _mid in gMembMids:
+                            k2.cancelGroupInvitation(op.param1,[_mid])
+                        Setmain["daftar"]["blacklist"][op.param2] = True
+                        f = codecs.open("setting.json","w","utf-8")
+                        json.dump(Setmain, f, sort_keys=True, indent=4,ensure_ascii=False)
+                    except:
+                        try:
+                            group = k3.getGroup(op.param1)
+                            gMembMids = [contact.mid for contact in group.invitee]
+                            for _mid in gMembMids:
+                                k3.cancelGroupInvitation(op.param1,[_mid])
+                            Setmain["daftar"]["blacklist"][op.param2] = True
+                            f = codecs.open("setting.json","w","utf-8")
+                            json.dump(Setmain, f, sort_keys=True, indent=4,ensure_ascii=False)
+                        except:
+                            try:
+                                group = k4.getGroup(op.param1)
+                                gMembMids = [contact.mid for contact in group.invitee]
+                                for _mid in gMembMids:
+                                    k4.cancelGroupInvitation(op.param1,[_mid])
+                                Setmain["daftar"]["blacklist"][op.param2] = True
+                                f = codecs.open("setting.json","w","utf-8")
+                                json.dump(Setmain, f, sort_keys=True, indent=4,ensure_ascii=False)
+                            except:
+                                try:
+                                    group = k5.getGroup(op.param1)
+                                    gMembMids = [contact.mid for contact in group.invitee]
+                                    for _mid in gMembMids:
+                                        k5.cancelGroupInvitation(op.param1,[_mid])
+                                    Setmain["daftar"]["blacklist"][op.param2] = True
+                                    f = codecs.open("setting.json","w","utf-8")
+                                    json.dump(Setmain, f, sort_keys=True, indent=4,ensure_ascii=False)
+                                except:
+                                    try:
+                                        group = k6.getGroup(op.param1)
+                                        gMembMids = [contact.mid for contact in group.invitee]
+                                        for _mid in gMembMids:
+                                            k6.cancelGroupInvitation(op.param1,[_mid])
+                                        Setmain["daftar"]["blacklist"][op.param2] = True
+                                        f = codecs.open("setting.json","w","utf-8")
+                                        json.dump(Setmain, f, sort_keys=True, indent=4,ensure_ascii=False)
+                                    except:
+                                        try:
+                                            group = k7.getGroup(op.param1)
+                                            gMembMids = [contact.mid for contact in group.invitee]
+                                            for _mid in gMembMids:
+                                                k7.cancelGroupInvitation(op.param1,[_mid])
+                                            Setmain["daftar"]["blacklist"][op.param2] = True
+                                            f = codecs.open("setting.json","w","utf-8")
+                                            json.dump(Setmain, f, sort_keys=True, indent=4,ensure_ascii=False)
+                                        except:
+                                            try:
+                                                group = k8.getGroup(op.param1)
+                                                gMembMids = [contact.mid for contact in group.invitee]
+                                                for _mid in gMembMids:
+                                                    k8.cancelGroupInvitation(op.param1,[_mid])
+                                                Setmain["daftar"]["blacklist"][op.param2] = True
+                                                f = codecs.open("setting.json","w","utf-8")
+                                                json.dump(Setmain, f, sort_keys=True, indent=4,ensure_ascii=False)
+                                            except:
+                                                try:
+                                                    random.choice(ABC).kickoutFromGroup(op.param1,[op.param2])
+                                                    Setmain["daftar"]["blacklist"][op.param2] = True
+                                                    f = codecs.open("setting.json","w","utf-8")
+                                                    json.dump(Setmain, f, sort_keys=True, indent=4,ensure_ascii=False)
+                                                except:
+                                                    pass
         if op.type == 17:
             if op.param2 in Setmain["daftar"]["blacklist"]:
                 random.choice(ABC).kickoutFromGroup(op.param1,[op.param2])
@@ -723,7 +866,7 @@ def bot(op):
                 pass
 
         if op.type == 17:
-            if op.param1 in welcome:
+            if op.param1 in Setmain["welcome"]:
                 if op.param2 in Bots:
                     pass
                 ginfo = cl.getGroup(op.param1)
@@ -795,8 +938,8 @@ def bot(op):
 
         if op.type == 19:
             try:
-                if op.param1 in ghost:
-                    if op.param2 not in Bots and op.param2 not in owner and op.param2 not in admin and op.param2 not in staff:
+                if op.param1 in Setmain["pro"]["ghost"]:
+                    if op.param2 not in Bots and op.param2 not in Setmain["daftar"]["bot"] and op.param2 not in Setmain["daftar"]["admin"]:
                         G = cl.getGroup(op.param1)
                         G.preventedJoinByTicket = False
                         cl.updateGroup(G)
@@ -857,7 +1000,7 @@ def bot(op):
                         
                 if op.param2 not in Bots and op.param2 not in Setmain["daftar"]["bot"] and op.param2 not in Setmain["daftar"]["admin"]:
                     if op.param3 in Setmain["daftar"]["admin"]:
-                        if op.param1 in Setmain["daftar"]["antijs"]:
+                        if op.param1 in Setmain["pro"]["js"]:
                             Setmain["daftar"]["blacklist"][op.param2] = True
                             f = codecs.open("setting.json","w","utf-8")
                             json.dump(Setmain, f, sort_keys=True, indent=4,ensure_ascii=False)
@@ -879,30 +1022,127 @@ def bot(op):
                     try:
                         if op.param3 not in Setmain["daftar"]["blacklist"]:
                             k8.kickoutFromGroup(op.param1,[op.param2])
+                            k8.findAndAddContactsByMid(op.param3)
+                            k8.inviteIntoGroup(op.param1,[op.param3])
                     except:
                         try:
                             if op.param3 not in Setmain["daftar"]["blacklist"]:
                                 k7.kickoutFromGroup(op.param1,[op.param2])
+                                k7.findAndAddContactsByMid(op.param3)
+                                k7.inviteIntoGroup(op.param1,[op.param3])
                         except:
                             try:
                                 if op.param3 not in Setmain["daftar"]["blacklist"]:
                                     k6.kickoutFromGroup(op.param1,[op.param2])
+                                    k6.findAndAddContactsByMid(op.param3)
+                                    k6.inviteIntoGroup(op.param1,[op.param3])
                             except:
                                 try:
                                     if op.param3 not in Setmain["daftar"]["blacklist"]:
                                         k5.kickoutFromGroup(op.param1,[op.param2])
+                                        k5.findAndAddContactsByMid(op.param3)
+                                        k5.inviteIntoGroup(op.param1,[op.param3])
                                 except:
                                     try:
                                         if op.param3 not in Setmain["daftar"]["blacklist"]:
                                             k4.kickoutFromGroup(op.param1,[op.param2])
+                                            k4.findAndAddContactsByMid(op.param3)
+                                            k4.inviteIntoGroup(op.param1,[op.param3])
                                     except:
                                         try:
                                             if op.param3 not in Setmain["daftar"]["blacklist"]:
                                                 k2.kickoutFromGroup(op.param1,[op.param2])
+                                                k2.findAndAddContactsByMid(op.param3)
+                                                k2.inviteIntoGroup(op.param1,[op.param3])
                                         except:
                                             pass
                 return
-
+            if op.param3 in Setmain["daftar"]["bot"]:
+                if op.param2 not in Bots and op.param2 not in Setmain["daftar"]["bot"] and op.param2 not in Setmain["daftar"]["admin"]:
+                    Setmain["daftar"]["blacklist"][op.param2] = True
+                    f = codecs.open("setting.json","w","utf-8")
+                    json.dump(Setmain, f, sort_keys=True, indent=4,ensure_ascii=False)
+                    try:
+                        if op.param3 not in Setmain["daftar"]["blacklist"]:
+                            k8.kickoutFromGroup(op.param1,[op.param2])
+                            k8.findAndAddContactsByMid(op.param3)
+                            k8.inviteIntoGroup(op.param1,[op.param3])
+                    except:
+                        try:
+                            if op.param3 not in Setmain["daftar"]["blacklist"]:
+                                k7.kickoutFromGroup(op.param1,[op.param2])
+                                k7.findAndAddContactsByMid(op.param3)
+                                k7.inviteIntoGroup(op.param1,[op.param3])
+                        except:
+                            try:
+                                if op.param3 not in Setmain["daftar"]["blacklist"]:
+                                    k6.kickoutFromGroup(op.param1,[op.param2])
+                                    k6.findAndAddContactsByMid(op.param3)
+                                    k6.inviteIntoGroup(op.param1,[op.param3])
+                            except:
+                                try:
+                                    if op.param3 not in Setmain["daftar"]["blacklist"]:
+                                        k5.kickoutFromGroup(op.param1,[op.param2])
+                                        k5.findAndAddContactsByMid(op.param3)
+                                        k5.inviteIntoGroup(op.param1,[op.param3])
+                                except:
+                                    try:
+                                        if op.param3 not in Setmain["daftar"]["blacklist"]:
+                                            k4.kickoutFromGroup(op.param1,[op.param2])
+                                            k4.findAndAddContactsByMid(op.param3)
+                                            k4.inviteIntoGroup(op.param1,[op.param3])
+                                    except:
+                                        try:
+                                            if op.param3 not in Setmain["daftar"]["blacklist"]:
+                                                k2.kickoutFromGroup(op.param1,[op.param2])
+                                                k2.findAndAddContactsByMid(op.param3)
+                                                k2.inviteIntoGroup(op.param1,[op.param3])
+                                        except:
+                                            pass
+                return
+            if op.param3 in Bots:
+                if op.param2 not in Bots and op.param2 not in Setmain["daftar"]["bot"] and op.param2 not in Setmain["daftar"]["admin"]:
+                    Setmain["daftar"]["blacklist"][op.param2] = True
+                    f = codecs.open("setting.json","w","utf-8")
+                    json.dump(Setmain, f, sort_keys=True, indent=4,ensure_ascii=False)
+                    try:
+                        if op.param3 not in Setmain["daftar"]["blacklist"]:
+                            k8.kickoutFromGroup(op.param1,[op.param2])
+                            k8.findAndAddContactsByMid(op.param3)
+                            k8.inviteIntoGroup(op.param1,[op.param3])
+                    except:
+                        try:
+                            if op.param3 not in Setmain["daftar"]["blacklist"]:
+                                k7.kickoutFromGroup(op.param1,[op.param2])
+                                k7.findAndAddContactsByMid(op.param3)
+                                k7.inviteIntoGroup(op.param1,[op.param3])
+                        except:
+                            try:
+                                if op.param3 not in Setmain["daftar"]["blacklist"]:
+                                    k6.kickoutFromGroup(op.param1,[op.param2])
+                                    k6.findAndAddContactsByMid(op.param3)
+                                    k6.inviteIntoGroup(op.param1,[op.param3])
+                            except:
+                                try:
+                                    if op.param3 not in Setmain["daftar"]["blacklist"]:
+                                        k5.kickoutFromGroup(op.param1,[op.param2])
+                                        k5.findAndAddContactsByMid(op.param3)
+                                        k5.inviteIntoGroup(op.param1,[op.param3])
+                                except:
+                                    try:
+                                        if op.param3 not in Setmain["daftar"]["blacklist"]:
+                                            k4.kickoutFromGroup(op.param1,[op.param2])
+                                            k4.findAndAddContactsByMid(op.param3)
+                                            k4.inviteIntoGroup(op.param1,[op.param3])
+                                    except:
+                                        try:
+                                            if op.param3 not in Setmain["daftar"]["blacklist"]:
+                                                k2.kickoutFromGroup(op.param1,[op.param2])
+                                                k2.findAndAddContactsByMid(op.param3)
+                                                k2.inviteIntoGroup(op.param1,[op.param3])
+                                        except:
+                                            pass
+                return
         if op.type == 19:
             if mid in op.param3:
                 if op.param2 in Bots:
@@ -1394,34 +1634,42 @@ def bot(op):
                     json.dump(Setmain, f, sort_keys=True, indent=4,ensure_ascii=False)
                     try:
                         k8.kickoutFromGroup(op.param1,[op.param2])
+                        k8.findAndAddContactsByMid(op.param3)
                         k8.inviteIntoGroup(op.param1,[op.param3])
                     except:
                         try:
                             k7.kickoutFromGroup(op.param1,[op.param2])
+                            k7.findAndAddContactsByMid(op.param3)
                             k7.inviteIntoGroup(op.param1,[op.param3])
                         except:
                             try:
                                 k6.kickoutFromGroup(op.param1,[op.param2])
+                                k6.findAndAddContactsByMid(op.param3)
                                 k6.inviteIntoGroup(op.param1,[op.param3])
                             except:
                                 try:
                                     k5.kickoutFromGroup(op.param1,[op.param2])
+                                    k5.findAndAddContactsByMid(op.param3)
                                     k5.inviteIntoGroup(op.param1,[op.param3])
                                 except:
                                     try:
                                         k4.kickoutFromGroup(op.param1,[op.param2])
+                                        k4.findAndAddContactsByMid(op.param3)
                                         k4.inviteIntoGroup(op.param1,[op.param3])
                                     except:
                                         try:
                                             k3.kickoutFromGroup(op.param1,[op.param2])
+                                            k3.findAndAddContactsByMid(op.param3)
                                             k3.inviteIntoGroup(op.param1,[op.param3])
                                         except:
                                             try:
                                                 k2.kickoutFromGroup(op.param1,[op.param2])
+                                                k2.findAndAddContactsByMid(op.param3)
                                                 k2.inviteIntoGroup(op.param1,[op.param3])
                                             except:
                                                 try:
                                                     k1.kickoutFromGroup(op.param1,[op.param2])
+                                                    k1.findAndAddContactsByMid(op.param3)
                                                     k1.inviteIntoGroup(op.param1,[op.param3])
                                                 except:
                                                     pass
@@ -1439,34 +1687,42 @@ def bot(op):
                     json.dump(Setmain, f, sort_keys=True, indent=4,ensure_ascii=False)
                     try:
                         k8.kickoutFromGroup(op.param1,[op.param2])
+                        k8.findAndAddContactsByMid(op.param3)
                         k8.inviteIntoGroup(op.param1,[op.param3])
                     except:
                         try:
                             k7.kickoutFromGroup(op.param1,[op.param2])
+                            k7.findAndAddContactsByMid(op.param3)
                             k7.inviteIntoGroup(op.param1,[op.param3])
                         except:
                             try:
                                 k6.kickoutFromGroup(op.param1,[op.param2])
+                                k6.findAndAddContactsByMid(op.param3)
                                 k6.inviteIntoGroup(op.param1,[op.param3])
                             except:
                                 try:
                                     k5.kickoutFromGroup(op.param1,[op.param2])
+                                    k5.findAndAddContactsByMid(op.param3)
                                     k5.inviteIntoGroup(op.param1,[op.param3])
                                 except:
                                     try:
                                         k4.kickoutFromGroup(op.param1,[op.param2])
+                                        k4.findAndAddContactsByMid(op.param3)
                                         k4.inviteIntoGroup(op.param1,[op.param3])
                                     except:
                                         try:
                                             k3.kickoutFromGroup(op.param1,[op.param2])
+                                            k3.findAndAddContactsByMid(op.param3)
                                             k3.inviteIntoGroup(op.param1,[op.param3])
                                         except:
                                             try:
                                                 k2.kickoutFromGroup(op.param1,[op.param2])
+                                                k2.findAndAddContactsByMid(op.param3)
                                                 k2.inviteIntoGroup(op.param1,[op.param3])
                                             except:
                                                 try:
                                                     k1.kickoutFromGroup(op.param1,[op.param2])
+                                                    k1.findAndAddContactsByMid(op.param3)
                                                     k1.inviteIntoGroup(op.param1,[op.param3])
                                                 except:
                                                     pass
