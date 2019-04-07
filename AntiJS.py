@@ -580,7 +580,7 @@ def bot(op):
                         cl.acceptGroupInvitation(op.param1)
             if Amid in op.param3:
                 if wait["autoJoin"] == True:
-                    if op.param2 not in Bots and op.param2 not in admin and /op.param2 not in Setmain["daftar"]["bot"] and op.param2 not in Setmain["daftar"]["admin"]:
+                    if op.param2 not in Bots and op.param2 not in admin and op.param2 not in Setmain["daftar"]["bot"] and op.param2 not in Setmain["daftar"]["admin"]:
                         k1.acceptGroupInvitation(op.param1)
                         k1.leaveGroup(op.param1)
                     else:
@@ -732,7 +732,7 @@ def bot(op):
                                             f = codecs.open("setting.json","w","utf-8")
                                             json.dump(Setmain, f, sort_keys=True, indent=4,ensure_ascii=False)
                                         except:
-                                            try    
+                                            try:    
                                                 k8.cancelGroupInvitation(op.param1,[op.param3])
                                                 Setmain["daftar"]["blacklist"][op.param2] = True
                                                 f = codecs.open("setting.json","w","utf-8")
@@ -3130,7 +3130,7 @@ def bot(op):
                                   cl.sendMessage(msg.to, "「Diaktifkan」\n" + msgs)
                               elif spl == 'off':
                                     if msg.to in Setmain["pro"]["qr"]:
-                                         del setmain["pro"]["qr"][msg.to]
+                                         del Setmain["pro"]["qr"][msg.to]
                                          f = codecs.open("setting.json","w","utf-8")
                                          json.dump(Setmain, f, sort_keys=True, indent=4,ensure_ascii=False)
                                          ginfo = cl.getGroup(msg.to)
@@ -3154,7 +3154,7 @@ def bot(op):
                                   cl.sendMessage(msg.to, "「Diaktifkan」\n" + msgs)
                               elif spl == 'off':
                                     if msg.to in Setmain["pro"]["kick"]:
-                                         del setmain["pro"]["kick"][msg.to]
+                                         del Setmain["pro"]["kick"][msg.to]
                                          f = codecs.open("setting.json","w","utf-8")
                                          json.dump(Setmain, f, sort_keys=True, indent=4,ensure_ascii=False)
                                          ginfo = cl.getGroup(msg.to)
@@ -3198,7 +3198,7 @@ def bot(op):
                                   cl.sendMessage(msg.to, "「Diaktifkan」\n" + msgs)
                               elif spl == 'off':
                                     if msg.to in Setmain["pro"]["cancel"]:
-                                         del setmain["pro"]["cancel"][msg.to]
+                                         del Setmain["pro"]["cancel"][msg.to]
                                          f = codecs.open("setting.json","w","utf-8")
                                          json.dump(Setmain, f, sort_keys=True, indent=4,ensure_ascii=False)
                                          ginfo = cl.getGroup(msg.to)
@@ -3222,7 +3222,7 @@ def bot(op):
                                   cl.sendMessage(msg.to, "「Diaktifkan」\n" + msgs)
                               elif spl == 'off':
                                     if msg.to in Setmain["pro"]["js"]:
-                                         del setmain["pro"]["js"][msg.to]
+                                         del Setmain["pro"]["js"][msg.to]
                                          f = codecs.open("setting.json","w","utf-8")
                                          json.dump(Setmain, f, sort_keys=True, indent=4,ensure_ascii=False)
                                          ginfo = cl.getGroup(msg.to)
@@ -3267,6 +3267,12 @@ def bot(op):
                                        Setmain["pro"]["kick"][msg.to] = True
                                        f = codecs.open("setting.json","w","utf-8")
                                        json.dump(Setmain, f, sort_keys=True, indent=4,ensure_ascii=False)
+                                  if msg.to in Setmain["pro"]["invite"]:
+                                      msgs = ""
+                                  else:
+                                       Setmain["pro"]["invite"][msg.to] = True
+                                       f = codecs.open("setting.json","w","utf-8")
+                                       json.dump(Setmain, f, sort_keys=True, indent=4,ensure_ascii=False)
                                   if msg.to in Setmain["pro"]["cancel"]:
                                       ginfo = cl.getGroup(msg.to)
                                       msgs = "Semua protect sudah on\nDi Group : " +str(ginfo.name)
@@ -3290,6 +3296,12 @@ def bot(op):
                                          json.dump(Setmain, f, sort_keys=True, indent=4,ensure_ascii=False)
                                     else:
                                          msgs = ""
+                                    if msg.to in Setmain["pro"]["invite"]:
+                                         del Setmain["pro"]["invite"][msg.to]
+                                         f = codecs.open("setting.json","w","utf-8")
+                                         json.dump(Setmain, f, sort_keys=True, indent=4,ensure_ascii=False)
+                                    else:
+                                         msgs = ""
                                     if msg.to in Setmain["pro"]["cancel"]:
                                          del setmain["pro"]["cancel"][msg.to]
                                          f = codecs.open("setting.json","w","utf-8")
@@ -3302,7 +3314,7 @@ def bot(op):
                                     cl.sendMessage(msg.to, "「Dinonaktifkan」\n" + msgs)
 
 #===========KICKOUT============#
-                        elif ("N " in msg.text):
+                        elif ("Nk " in msg.text):
                           if wait["selfbot"] == True:
                             if msg._from in admin or msg._from in Setmain["daftar"]["admin"]:
                                key = eval(msg.contentMetadata["MENTION"])
@@ -3327,7 +3339,7 @@ def bot(op):
                                        except:
                                            pass
 
-                        elif ("K " in msg.text):
+                        elif ("Kick " in msg.text):
                           if wait["selfbot"] == True:
                             if msg._from in admin or msg._from in Setmain["daftar"]["admin"]:
                                key = eval(msg.contentMetadata["MENTION"])
