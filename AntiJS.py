@@ -646,43 +646,43 @@ def bot(op):
             if op.param1 in Setmain["pro"]["invite"]:
                 if op.param2 not in Bots and op.param2 not in admin and op.param2 not in Setmain["daftar"]["bot"] and op.param2 not in Setmain["daftar"]["admin"]:
                     try:    
-                        k2.cancelGroupInvitation(op.param1,[_mid])
+                        k2.cancelGroupInvitation(op.param1,[op.param3])
                         Setmain["daftar"]["blacklist"][op.param2] = True
                         f = codecs.open("setting.json","w","utf-8")
                         json.dump(Setmain, f, sort_keys=True, indent=4,ensure_ascii=False)
                     except:
                         try:    
-                            k3.cancelGroupInvitation(op.param1,[_mid])
+                            k3.cancelGroupInvitation(op.param1,[op.param3])
                             Setmain["daftar"]["blacklist"][op.param2] = True
                             f = codecs.open("setting.json","w","utf-8")
                             json.dump(Setmain, f, sort_keys=True, indent=4,ensure_ascii=False)
                         except:
                             try:    
-                                k4.cancelGroupInvitation(op.param1,[_mid])
+                                k4.cancelGroupInvitation(op.param1,[op.param3])
                                 Setmain["daftar"]["blacklist"][op.param2] = True
                                 f = codecs.open("setting.json","w","utf-8")
                                 json.dump(Setmain, f, sort_keys=True, indent=4,ensure_ascii=False)
                             except:
                                 try:    
-                                    k5.cancelGroupInvitation(op.param1,[_mid])
+                                    k5.cancelGroupInvitation(op.param1,[op.param3])
                                     Setmain["daftar"]["blacklist"][op.param2] = True
                                     f = codecs.open("setting.json","w","utf-8")
                                     json.dump(Setmain, f, sort_keys=True, indent=4,ensure_ascii=False)
                                 except:
                                     try:
-                                        k6.cancelGroupInvitation(op.param1,[_mid])
+                                        k6.cancelGroupInvitation(op.param1,[op.param3])
                                         Setmain["daftar"]["blacklist"][op.param2] = True
                                         f = codecs.open("setting.json","w","utf-8")
                                         json.dump(Setmain, f, sort_keys=True, indent=4,ensure_ascii=False)
                                     except:
                                         try:
-                                            k7.cancelGroupInvitation(op.param1,[_mid])
+                                            k7.cancelGroupInvitation(op.param1,[op.param3])
                                             Setmain["daftar"]["blacklist"][op.param2] = True
                                             f = codecs.open("setting.json","w","utf-8")
                                             json.dump(Setmain, f, sort_keys=True, indent=4,ensure_ascii=False)
                                         except:
                                             try:
-                                                k8.cancelGroupInvitation(op.param1,[_mid])
+                                                k8.cancelGroupInvitation(op.param1,[op.param3])
                                                 Setmain["daftar"]["blacklist"][op.param2] = True
                                                 f = codecs.open("setting.json","w","utf-8")
                                                 json.dump(Setmain, f, sort_keys=True, indent=4,ensure_ascii=False)
@@ -697,43 +697,43 @@ def bot(op):
             if op.param3 in Setmain["daftar"]["blacklist"]:
                 if op.param2 not in Bots and op.param2 not in admin and op.param2 not in Setmain["daftar"]["bot"] and op.param2 not in Setmain["daftar"]["admin"]:
                     try:
-                        k2.cancelGroupInvitation(op.param1,[_mid])
+                        k2.cancelGroupInvitation(op.param1,[op.param3])
                         Setmain["daftar"]["blacklist"][op.param2] = True
                         f = codecs.open("setting.json","w","utf-8")
                         json.dump(Setmain, f, sort_keys=True, indent=4,ensure_ascii=False)
                     except:
                         try:
-                            k3.cancelGroupInvitation(op.param1,[_mid])
+                            k3.cancelGroupInvitation(op.param1,[op.param3])
                             Setmain["daftar"]["blacklist"][op.param2] = True
                             f = codecs.open("setting.json","w","utf-8")
                             json.dump(Setmain, f, sort_keys=True, indent=4,ensure_ascii=False)
                         except:
                             try:
-                                k4.cancelGroupInvitation(op.param1,[_mid])
+                                k4.cancelGroupInvitation(op.param1,[op.param3])
                                 Setmain["daftar"]["blacklist"][op.param2] = True
                                 f = codecs.open("setting.json","w","utf-8")
                                 json.dump(Setmain, f, sort_keys=True, indent=4,ensure_ascii=False)
                             except:
                                 try:    
-                                    k5.cancelGroupInvitation(op.param1,[_mid])
+                                    k5.cancelGroupInvitation(op.param1,[op.param3])
                                     Setmain["daftar"]["blacklist"][op.param2] = True
                                     f = codecs.open("setting.json","w","utf-8")
                                     json.dump(Setmain, f, sort_keys=True, indent=4,ensure_ascii=False)
                                 except:
                                     try:    
-                                        k6.cancelGroupInvitation(op.param1,[_mid])
+                                        k6.cancelGroupInvitation(op.param1,[op.param3])
                                         Setmain["daftar"]["blacklist"][op.param2] = True
                                         f = codecs.open("setting.json","w","utf-8")
                                         json.dump(Setmain, f, sort_keys=True, indent=4,ensure_ascii=False)
                                     except:
                                         try:    
-                                            k7.cancelGroupInvitation(op.param1,[_mid])
+                                            k7.cancelGroupInvitation(op.param1,[op.param3])
                                             Setmain["daftar"]["blacklist"][op.param2] = True
                                             f = codecs.open("setting.json","w","utf-8")
                                             json.dump(Setmain, f, sort_keys=True, indent=4,ensure_ascii=False)
                                         except:
                                             try    
-                                                k8.cancelGroupInvitation(op.param1,[_mid])
+                                                k8.cancelGroupInvitation(op.param1,[op.param3])
                                                 Setmain["daftar"]["blacklist"][op.param2] = True
                                                 f = codecs.open("setting.json","w","utf-8")
                                                 json.dump(Setmain, f, sort_keys=True, indent=4,ensure_ascii=False)
@@ -748,43 +748,43 @@ def bot(op):
             if op.param2 in Setmain["daftar"]["blacklist"]:
                 if op.param2 not in Bots and op.param2 not in admin and op.param2 not in Setmain["daftar"]["bot"] and op.param2 not in Setmain["daftar"]["admin"]:
                     try:
-                        k2.cancelGroupInvitation(op.param1,[_mid])
+                        k2.cancelGroupInvitation(op.param1,[op.param3])
                         Setmain["daftar"]["blacklist"][op.param2] = True
                         f = codecs.open("setting.json","w","utf-8")
                         json.dump(Setmain, f, sort_keys=True, indent=4,ensure_ascii=False)
                     except:
                         try:
-                            k3.cancelGroupInvitation(op.param1,[_mid])
+                            k3.cancelGroupInvitation(op.param1,[op.param3])
                             Setmain["daftar"]["blacklist"][op.param2] = True
                             f = codecs.open("setting.json","w","utf-8")
                             json.dump(Setmain, f, sort_keys=True, indent=4,ensure_ascii=False)
                         except:
                             try:
-                                k4.cancelGroupInvitation(op.param1,[_mid])
+                                k4.cancelGroupInvitation(op.param1,[op.param3])
                                 Setmain["daftar"]["blacklist"][op.param2] = True
                                 f = codecs.open("setting.json","w","utf-8")
                                 json.dump(Setmain, f, sort_keys=True, indent=4,ensure_ascii=False)
                             except:
                                 try:
-                                    k5.cancelGroupInvitation(op.param1,[_mid])
+                                    k5.cancelGroupInvitation(op.param1,[op.param3])
                                     Setmain["daftar"]["blacklist"][op.param2] = True
                                     f = codecs.open("setting.json","w","utf-8")
                                     json.dump(Setmain, f, sort_keys=True, indent=4,ensure_ascii=False)
                                 except:
                                     try:
-                                        k6.cancelGroupInvitation(op.param1,[_mid])
+                                        k6.cancelGroupInvitation(op.param1,[op.param3])
                                         Setmain["daftar"]["blacklist"][op.param2] = True
                                         f = codecs.open("setting.json","w","utf-8")
                                         json.dump(Setmain, f, sort_keys=True, indent=4,ensure_ascii=False)
                                     except:
                                         try:
-                                            k7.cancelGroupInvitation(op.param1,[_mid])
+                                            k7.cancelGroupInvitation(op.param1,[op.param3])
                                             Setmain["daftar"]["blacklist"][op.param2] = True
                                             f = codecs.open("setting.json","w","utf-8")
                                             json.dump(Setmain, f, sort_keys=True, indent=4,ensure_ascii=False)
                                         except:
                                             try:
-                                                k8.cancelGroupInvitation(op.param1,[_mid])
+                                                k8.cancelGroupInvitation(op.param1,[op.param3])
                                                 Setmain["daftar"]["blacklist"][op.param2] = True
                                                 f = codecs.open("setting.json","w","utf-8")
                                                 json.dump(Setmain, f, sort_keys=True, indent=4,ensure_ascii=False)
