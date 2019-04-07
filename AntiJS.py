@@ -573,21 +573,21 @@ def bot(op):
         if op.type == 13:
             if mid in op.param3:
                 if wait["autoJoin"] == True:
-                    if op.param2 not in Bots and op.param2 not in Setmain["daftar"]["bot"] and op.param2 not in Setmain["daftar"]["admin"]:
+                    if op.param2 not in Bots and op.param2 not in admin and op.param2 not in Setmain["daftar"]["bot"] and op.param2 not in Setmain["daftar"]["admin"]:
                         cl.acceptGroupInvitation(op.param1)
                         cl.leaveGroup(op.param1)
                     else:
                         cl.acceptGroupInvitation(op.param1)
             if Amid in op.param3:
                 if wait["autoJoin"] == True:
-                    if op.param2 not in Bots and op.param2 not in Setmain["daftar"]["bot"] and op.param2 not in Setmain["daftar"]["admin"]:
+                    if op.param2 not in Bots and op.param2 not in admin and /op.param2 not in Setmain["daftar"]["bot"] and op.param2 not in Setmain["daftar"]["admin"]:
                         k1.acceptGroupInvitation(op.param1)
                         k1.leaveGroup(op.param1)
                     else:
                         k1.acceptGroupInvitation(op.param1)
             if Bmid in op.param3:
                 if wait["autoJoin"] == True:
-                    if op.param2 not in Bots and op.param2 not in Setmain["daftar"]["bot"] and op.param2 not in Setmain["daftar"]["admin"]:
+                    if op.param2 not in Bots and op.param2 not in admin and op.param2 not in Setmain["daftar"]["bot"] and op.param2 not in Setmain["daftar"]["admin"]:
                         k2.acceptGroupInvitation(op.param1)
                         k2.leaveGroup(op.param1)
                     else:
@@ -595,7 +595,7 @@ def bot(op):
                         
             if Cmid in op.param3:
                 if wait["autoJoin"] == True:
-                    if op.param2 not in Bots and op.param2 not in Setmain["daftar"]["bot"] and op.param2 not in Setmain["daftar"]["admin"]:
+                    if op.param2 not in Bots and op.param2 not in admin and op.param2 not in Setmain["daftar"]["bot"] and op.param2 not in Setmain["daftar"]["admin"]:
                         k3.acceptGroupInvitation(op.param1)
                         k3.leaveGroup(op.param1)
                     else:
@@ -603,7 +603,7 @@ def bot(op):
                         
             if Dmid in op.param3:
                 if wait["autoJoin"] == True:
-                    if op.param2 not in Bots and op.param2 not in Setmain["daftar"]["bot"] and op.param2 not in Setmain["daftar"]["admin"]:
+                    if op.param2 not in Bots and op.param2 not in admin and op.param2 not in Setmain["daftar"]["bot"] and op.param2 not in Setmain["daftar"]["admin"]:
                         k4.acceptGroupInvitation(op.param1)
                         k4.leaveGroup(op.param1)
                     else:
@@ -611,7 +611,7 @@ def bot(op):
                         
             if Emid in op.param3:
                 if wait["autoJoin"] == True:
-                    if op.param2 not in Bots and op.param2 not in Setmain["daftar"]["bot"] and op.param2 not in Setmain["daftar"]["admin"]:
+                    if op.param2 not in Bots and op.param2 not in admin and op.param2 not in Setmain["daftar"]["bot"] and op.param2 not in Setmain["daftar"]["admin"]:
                         k5.acceptGroupInvitation(op.param1)
                         k5.leaveGroup(op.param1)
                     else:
@@ -619,7 +619,7 @@ def bot(op):
                         
             if Fmid in op.param3:
                 if wait["autoJoin"] == True:
-                    if op.param2 not in Bots and op.param2 not in Setmain["daftar"]["bot"] and op.param2 not in Setmain["daftar"]["admin"]:
+                    if op.param2 not in Bots and op.param2 not in admin and op.param2 not in Setmain["daftar"]["bot"] and op.param2 not in Setmain["daftar"]["admin"]:
                         k6.acceptGroupInvitation(op.param1)
                         k6.leaveGroup(op.param1)
                     else:
@@ -627,7 +627,7 @@ def bot(op):
                         
             if Gmid in op.param3:
                 if wait["autoJoin"] == True:
-                    if op.param2 not in Bots and op.param2 not in Setmain["daftar"]["bot"] and op.param2 not in Setmain["daftar"]["admin"]:
+                    if op.param2 not in Bots and op.param2 not in admin and op.param2 not in Setmain["daftar"]["bot"] and op.param2 not in Setmain["daftar"]["admin"]:
                         k7.acceptGroupInvitation(op.param1)
                         k7.leaveGroup(op.param1)
                     else:
@@ -636,7 +636,7 @@ def bot(op):
 
             if Hmid in op.param3:
                 if wait["autoJoin"] == True:
-                    if op.param2 not in Bots and op.param2 not in Setmain["daftar"]["bot"] and op.param2 not in Setmain["daftar"]["admin"]:
+                    if op.param2 not in Bots and op.param2 not in admin and op.param2 not in Setmain["daftar"]["bot"] and op.param2 not in Setmain["daftar"]["admin"]:
                         k8.acceptGroupInvitation(op.param1)
                         k8.leaveGroup(op.param1)
                     else:
@@ -644,66 +644,45 @@ def bot(op):
                         
         if op.type == 13:
             if op.param1 in Setmain["pro"]["invite"]:
-                if op.param2 not in Bots and op.param2 not in Setmain["daftar"]["bot"] and op.param2 not in Setmain["daftar"]["admin"]:
-                    try:
-                        group = k2.getGroup(op.param1)
-                        gMembMids = [contact.mid for contact in group.invitee]
-                        for _mid in gMembMids:
-                            k2.cancelGroupInvitation(op.param1,[_mid])
+                if op.param2 not in Bots and op.param2 not in admin and op.param2 not in Setmain["daftar"]["bot"] and op.param2 not in Setmain["daftar"]["admin"]:
+                    try:    
+                        k2.cancelGroupInvitation(op.param1,[_mid])
                         Setmain["daftar"]["blacklist"][op.param2] = True
                         f = codecs.open("setting.json","w","utf-8")
                         json.dump(Setmain, f, sort_keys=True, indent=4,ensure_ascii=False)
                     except:
-                        try:
-                            group = k3.getGroup(op.param1)
-                            gMembMids = [contact.mid for contact in group.invitee]
-                            for _mid in gMembMids:
-                                k3.cancelGroupInvitation(op.param1,[_mid])
+                        try:    
+                            k3.cancelGroupInvitation(op.param1,[_mid])
                             Setmain["daftar"]["blacklist"][op.param2] = True
                             f = codecs.open("setting.json","w","utf-8")
                             json.dump(Setmain, f, sort_keys=True, indent=4,ensure_ascii=False)
                         except:
-                            try:
-                                group = k4.getGroup(op.param1)
-                                gMembMids = [contact.mid for contact in group.invitee]
-                                for _mid in gMembMids:
-                                    k4.cancelGroupInvitation(op.param1,[_mid])
+                            try:    
+                                k4.cancelGroupInvitation(op.param1,[_mid])
                                 Setmain["daftar"]["blacklist"][op.param2] = True
                                 f = codecs.open("setting.json","w","utf-8")
                                 json.dump(Setmain, f, sort_keys=True, indent=4,ensure_ascii=False)
                             except:
-                                try:
-                                    group = k5.getGroup(op.param1)
-                                    gMembMids = [contact.mid for contact in group.invitee]
-                                    for _mid in gMembMids:
-                                        k5.cancelGroupInvitation(op.param1,[_mid])
+                                try:    
+                                    k5.cancelGroupInvitation(op.param1,[_mid])
                                     Setmain["daftar"]["blacklist"][op.param2] = True
                                     f = codecs.open("setting.json","w","utf-8")
                                     json.dump(Setmain, f, sort_keys=True, indent=4,ensure_ascii=False)
                                 except:
                                     try:
-                                        group = k6.getGroup(op.param1)
-                                        gMembMids = [contact.mid for contact in group.invitee]
-                                        for _mid in gMembMids:
-                                            k6.cancelGroupInvitation(op.param1,[_mid])
+                                        k6.cancelGroupInvitation(op.param1,[_mid])
                                         Setmain["daftar"]["blacklist"][op.param2] = True
                                         f = codecs.open("setting.json","w","utf-8")
                                         json.dump(Setmain, f, sort_keys=True, indent=4,ensure_ascii=False)
                                     except:
                                         try:
-                                            group = k7.getGroup(op.param1)
-                                            gMembMids = [contact.mid for contact in group.invitee]
-                                            for _mid in gMembMids:
-                                                k7.cancelGroupInvitation(op.param1,[_mid])
+                                            k7.cancelGroupInvitation(op.param1,[_mid])
                                             Setmain["daftar"]["blacklist"][op.param2] = True
                                             f = codecs.open("setting.json","w","utf-8")
                                             json.dump(Setmain, f, sort_keys=True, indent=4,ensure_ascii=False)
                                         except:
                                             try:
-                                                group = k8.getGroup(op.param1)
-                                                gMembMids = [contact.mid for contact in group.invitee]
-                                                for _mid in gMembMids:
-                                                    k8.cancelGroupInvitation(op.param1,[_mid])
+                                                k8.cancelGroupInvitation(op.param1,[_mid])
                                                 Setmain["daftar"]["blacklist"][op.param2] = True
                                                 f = codecs.open("setting.json","w","utf-8")
                                                 json.dump(Setmain, f, sort_keys=True, indent=4,ensure_ascii=False)
@@ -716,66 +695,45 @@ def bot(op):
                                                 except:
                                                     pass
             if op.param3 in Setmain["daftar"]["blacklist"]:
-                if op.param2 not in Bots and op.param2 not in Setmain["daftar"]["bot"] and op.param2 not in Setmain["daftar"]["admin"]:
+                if op.param2 not in Bots and op.param2 not in admin and op.param2 not in Setmain["daftar"]["bot"] and op.param2 not in Setmain["daftar"]["admin"]:
                     try:
-                        group = k2.getGroup(op.param1)
-                        gMembMids = [contact.mid for contact in group.invitee]
-                        for _mid in gMembMids:
-                            k2.cancelGroupInvitation(op.param1,[_mid])
+                        k2.cancelGroupInvitation(op.param1,[_mid])
                         Setmain["daftar"]["blacklist"][op.param2] = True
                         f = codecs.open("setting.json","w","utf-8")
                         json.dump(Setmain, f, sort_keys=True, indent=4,ensure_ascii=False)
                     except:
                         try:
-                            group = k3.getGroup(op.param1)
-                            gMembMids = [contact.mid for contact in group.invitee]
-                            for _mid in gMembMids:
-                                k3.cancelGroupInvitation(op.param1,[_mid])
+                            k3.cancelGroupInvitation(op.param1,[_mid])
                             Setmain["daftar"]["blacklist"][op.param2] = True
                             f = codecs.open("setting.json","w","utf-8")
                             json.dump(Setmain, f, sort_keys=True, indent=4,ensure_ascii=False)
                         except:
                             try:
-                                group = k4.getGroup(op.param1)
-                                gMembMids = [contact.mid for contact in group.invitee]
-                                for _mid in gMembMids:
-                                    k4.cancelGroupInvitation(op.param1,[_mid])
+                                k4.cancelGroupInvitation(op.param1,[_mid])
                                 Setmain["daftar"]["blacklist"][op.param2] = True
                                 f = codecs.open("setting.json","w","utf-8")
                                 json.dump(Setmain, f, sort_keys=True, indent=4,ensure_ascii=False)
                             except:
-                                try:
-                                    group = k5.getGroup(op.param1)
-                                    gMembMids = [contact.mid for contact in group.invitee]
-                                    for _mid in gMembMids:
-                                        k5.cancelGroupInvitation(op.param1,[_mid])
+                                try:    
+                                    k5.cancelGroupInvitation(op.param1,[_mid])
                                     Setmain["daftar"]["blacklist"][op.param2] = True
                                     f = codecs.open("setting.json","w","utf-8")
                                     json.dump(Setmain, f, sort_keys=True, indent=4,ensure_ascii=False)
                                 except:
-                                    try:
-                                        group = k6.getGroup(op.param1)
-                                        gMembMids = [contact.mid for contact in group.invitee]
-                                        for _mid in gMembMids:
-                                            k6.cancelGroupInvitation(op.param1,[_mid])
+                                    try:    
+                                        k6.cancelGroupInvitation(op.param1,[_mid])
                                         Setmain["daftar"]["blacklist"][op.param2] = True
                                         f = codecs.open("setting.json","w","utf-8")
                                         json.dump(Setmain, f, sort_keys=True, indent=4,ensure_ascii=False)
                                     except:
-                                        try:
-                                            group = k7.getGroup(op.param1)
-                                            gMembMids = [contact.mid for contact in group.invitee]
-                                            for _mid in gMembMids:
-                                                k7.cancelGroupInvitation(op.param1,[_mid])
+                                        try:    
+                                            k7.cancelGroupInvitation(op.param1,[_mid])
                                             Setmain["daftar"]["blacklist"][op.param2] = True
                                             f = codecs.open("setting.json","w","utf-8")
                                             json.dump(Setmain, f, sort_keys=True, indent=4,ensure_ascii=False)
                                         except:
-                                            try:
-                                                group = k8.getGroup(op.param1)
-                                                gMembMids = [contact.mid for contact in group.invitee]
-                                                for _mid in gMembMids:
-                                                    k8.cancelGroupInvitation(op.param1,[_mid])
+                                            try    
+                                                k8.cancelGroupInvitation(op.param1,[_mid])
                                                 Setmain["daftar"]["blacklist"][op.param2] = True
                                                 f = codecs.open("setting.json","w","utf-8")
                                                 json.dump(Setmain, f, sort_keys=True, indent=4,ensure_ascii=False)
@@ -788,66 +746,45 @@ def bot(op):
                                                 except:
                                                     pass
             if op.param2 in Setmain["daftar"]["blacklist"]:
-                if op.param2 not in Bots and op.param2 not in Setmain["daftar"]["bot"] and op.param2 not in Setmain["daftar"]["admin"]:
+                if op.param2 not in Bots and op.param2 not in admin and op.param2 not in Setmain["daftar"]["bot"] and op.param2 not in Setmain["daftar"]["admin"]:
                     try:
-                        group = k2.getGroup(op.param1)
-                        gMembMids = [contact.mid for contact in group.invitee]
-                        for _mid in gMembMids:
-                            k2.cancelGroupInvitation(op.param1,[_mid])
+                        k2.cancelGroupInvitation(op.param1,[_mid])
                         Setmain["daftar"]["blacklist"][op.param2] = True
                         f = codecs.open("setting.json","w","utf-8")
                         json.dump(Setmain, f, sort_keys=True, indent=4,ensure_ascii=False)
                     except:
                         try:
-                            group = k3.getGroup(op.param1)
-                            gMembMids = [contact.mid for contact in group.invitee]
-                            for _mid in gMembMids:
-                                k3.cancelGroupInvitation(op.param1,[_mid])
+                            k3.cancelGroupInvitation(op.param1,[_mid])
                             Setmain["daftar"]["blacklist"][op.param2] = True
                             f = codecs.open("setting.json","w","utf-8")
                             json.dump(Setmain, f, sort_keys=True, indent=4,ensure_ascii=False)
                         except:
                             try:
-                                group = k4.getGroup(op.param1)
-                                gMembMids = [contact.mid for contact in group.invitee]
-                                for _mid in gMembMids:
-                                    k4.cancelGroupInvitation(op.param1,[_mid])
+                                k4.cancelGroupInvitation(op.param1,[_mid])
                                 Setmain["daftar"]["blacklist"][op.param2] = True
                                 f = codecs.open("setting.json","w","utf-8")
                                 json.dump(Setmain, f, sort_keys=True, indent=4,ensure_ascii=False)
                             except:
                                 try:
-                                    group = k5.getGroup(op.param1)
-                                    gMembMids = [contact.mid for contact in group.invitee]
-                                    for _mid in gMembMids:
-                                        k5.cancelGroupInvitation(op.param1,[_mid])
+                                    k5.cancelGroupInvitation(op.param1,[_mid])
                                     Setmain["daftar"]["blacklist"][op.param2] = True
                                     f = codecs.open("setting.json","w","utf-8")
                                     json.dump(Setmain, f, sort_keys=True, indent=4,ensure_ascii=False)
                                 except:
                                     try:
-                                        group = k6.getGroup(op.param1)
-                                        gMembMids = [contact.mid for contact in group.invitee]
-                                        for _mid in gMembMids:
-                                            k6.cancelGroupInvitation(op.param1,[_mid])
+                                        k6.cancelGroupInvitation(op.param1,[_mid])
                                         Setmain["daftar"]["blacklist"][op.param2] = True
                                         f = codecs.open("setting.json","w","utf-8")
                                         json.dump(Setmain, f, sort_keys=True, indent=4,ensure_ascii=False)
                                     except:
                                         try:
-                                            group = k7.getGroup(op.param1)
-                                            gMembMids = [contact.mid for contact in group.invitee]
-                                            for _mid in gMembMids:
-                                                k7.cancelGroupInvitation(op.param1,[_mid])
+                                            k7.cancelGroupInvitation(op.param1,[_mid])
                                             Setmain["daftar"]["blacklist"][op.param2] = True
                                             f = codecs.open("setting.json","w","utf-8")
                                             json.dump(Setmain, f, sort_keys=True, indent=4,ensure_ascii=False)
                                         except:
                                             try:
-                                                group = k8.getGroup(op.param1)
-                                                gMembMids = [contact.mid for contact in group.invitee]
-                                                for _mid in gMembMids:
-                                                    k8.cancelGroupInvitation(op.param1,[_mid])
+                                                k8.cancelGroupInvitation(op.param1,[_mid])
                                                 Setmain["daftar"]["blacklist"][op.param2] = True
                                                 f = codecs.open("setting.json","w","utf-8")
                                                 json.dump(Setmain, f, sort_keys=True, indent=4,ensure_ascii=False)
@@ -877,7 +814,7 @@ def bot(op):
 
         if op.type == 17:
             if op.param1 in Setmain["pro"]["join"]:
-                if op.param2 not in Bots and op.param2 not in Setmain["daftar"]["bot"] and op.param2 not in Setmain["daftar"]["admin"]:
+                if op.param2 not in Bots and op.param2 not in admin and op.param2 not in Setmain["daftar"]["bot"] and op.param2 not in Setmain["daftar"]["admin"]:
                     Setmain["daftar"]["blacklist"][op.param2] = True
                     f = codecs.open("setting.json","w","utf-8")
                     json.dump(Setmain, f, sort_keys=True, indent=4,ensure_ascii=False)
@@ -920,7 +857,7 @@ def bot(op):
             return
         if op.type == 5:
             if wait["autoAdd"] == True:
-                if op.param2 not in Bots and op.param2 not in Setmain["daftar"]["bot"] and op.param2 not in Setmain["daftar"]["admin"]:
+                if op.param2 not in Bots and op.param2 not in admin and op.param2 not in Setmain["daftar"]["bot"] and op.param2 not in Setmain["daftar"]["admin"]:
                     if (wait["message"] in [" "," ","\n",None]):
                         pass
                     else:
@@ -928,7 +865,7 @@ def bot(op):
 
         if op.type == 19:
             if op.param1 in Setmain["pro"]["kick"]:
-                if op.param2 not in Bots and op.param2 not in Setmain["daftar"]["bot"] and op.param2 not in Setmain["daftar"]["admin"]:
+                if op.param2 not in Bots and op.param2 not in admin and op.param2 not in Setmain["daftar"]["bot"] and op.param2 not in Setmain["daftar"]["admin"]:
                     Setmain["daftar"]["blacklist"][op.param2] = True
                     f = codecs.open("setting.json","w","utf-8")
                     json.dump(Setmain, f, sort_keys=True, indent=4,ensure_ascii=False)
@@ -939,7 +876,7 @@ def bot(op):
         if op.type == 19:
             try:
                 if op.param1 in Setmain["pro"]["ghost"]:
-                    if op.param2 not in Bots and op.param2 not in Setmain["daftar"]["bot"] and op.param2 not in Setmain["daftar"]["admin"]:
+                    if op.param2 not in Bots and op.param2 not in admin and op.param2 not in Setmain["daftar"]["bot"] and op.param2 not in Setmain["daftar"]["admin"]:
                         G = cl.getGroup(op.param1)
                         G.preventedJoinByTicket = False
                         cl.updateGroup(G)
@@ -958,7 +895,7 @@ def bot(op):
             try:
                 if op.param1 in Setmain["pro"]["js"]:
                   if op.param3 in mid:
-                    if op.param2 not in Bots and op.param2 not in Setmain["daftar"]["bot"] and op.param2 not in Setmain["daftar"]["admin"]:
+                    if op.param2 not in Bots and op.param2 not in admin and op.param2 not in Setmain["daftar"]["bot"] and op.param2 not in Setmain["daftar"]["admin"]:
                         sw.acceptGroupInvitation(op.param1)
                         G = sw.getGroup(op.param1)
                         G.preventedJoinByTicket = False
@@ -987,7 +924,7 @@ def bot(op):
                         pass
                         
                 if op.param3 in Zmid:
-                    if op.param2 not in Bots and op.param2 not in Setmain["daftar"]["bot"] and op.param2 not in Setmain["daftar"]["admin"]:
+                    if op.param2 not in Bots and op.param2 not in admin and op.param2 not in Setmain["daftar"]["bot"] and op.param2 not in Setmain["daftar"]["admin"]:
                         k1.kickoutFromGroup(op.param1,[op.param2])
                         k1.findAndAddContactsByMid(op.param3)
                         k1.inviteIntoGroup(op.param1,[Zmid])
@@ -998,7 +935,7 @@ def bot(op):
                         k1.inviteIntoGroup(op.param1,[Zmid])
                         #k1.sendMessage(op.param1,"=AntiJS Invited=")
                         
-                if op.param2 not in Bots and op.param2 not in Setmain["daftar"]["bot"] and op.param2 not in Setmain["daftar"]["admin"]:
+                if op.param2 not in Bots and op.param2 not in admin and op.param2 not in Setmain["daftar"]["bot"] and op.param2 not in Setmain["daftar"]["admin"]:
                     if op.param3 in Setmain["daftar"]["admin"]:
                         if op.param1 in Setmain["pro"]["js"]:
                             Setmain["daftar"]["blacklist"][op.param2] = True
@@ -1015,7 +952,7 @@ def bot(op):
 #-------------------------------------------------------------------------------                
         if op.type == 32:
             if op.param1 in Setmain["pro"]["cancel"]:
-                if op.param2 not in Bots and op.param2 not in Setmain["daftar"]["bot"] and op.param2 not in Setmain["daftar"]["admin"]:
+                if op.param2 not in Bots and op.param2 not in admin and op.param2 not in Setmain["daftar"]["bot"] and op.param2 not in Setmain["daftar"]["admin"]:
                     Setmain["daftar"]["blacklist"][op.param2] = True
                     f = codecs.open("setting.json","w","utf-8")
                     json.dump(Setmain, f, sort_keys=True, indent=4,ensure_ascii=False)
@@ -1058,7 +995,7 @@ def bot(op):
                                             pass
                 return
             if op.param3 in Setmain["daftar"]["bot"]:
-                if op.param2 not in Bots and op.param2 not in Setmain["daftar"]["bot"] and op.param2 not in Setmain["daftar"]["admin"]:
+                if op.param2 not in Bots and op.param2 not in admin and op.param2 not in Setmain["daftar"]["bot"] and op.param2 not in Setmain["daftar"]["admin"]:
                     Setmain["daftar"]["blacklist"][op.param2] = True
                     f = codecs.open("setting.json","w","utf-8")
                     json.dump(Setmain, f, sort_keys=True, indent=4,ensure_ascii=False)
@@ -1101,7 +1038,7 @@ def bot(op):
                                             pass
                 return
             if op.param3 in Bots:
-                if op.param2 not in Bots and op.param2 not in Setmain["daftar"]["bot"] and op.param2 not in Setmain["daftar"]["admin"]:
+                if op.param2 not in Bots and op.param2 not in admin and op.param2 not in Setmain["daftar"]["bot"] and op.param2 not in Setmain["daftar"]["admin"]:
                     Setmain["daftar"]["blacklist"][op.param2] = True
                     f = codecs.open("setting.json","w","utf-8")
                     json.dump(Setmain, f, sort_keys=True, indent=4,ensure_ascii=False)
@@ -1146,6 +1083,8 @@ def bot(op):
         if op.type == 19:
             if mid in op.param3:
                 if op.param2 in Bots:
+                    pass
+                if op.param2 in admin:
                     pass
                 if op.param2 in Setmain["daftar"]["admin"]:
                     pass
@@ -1200,6 +1139,8 @@ def bot(op):
             if Amid in op.param3:
                 if op.param2 in Bots:
                     pass
+                if op.param2 in admin:
+                    pass
                 if op.param2 in Setmain["daftar"]["admin"]:
                     pass
                 if op.param2 in Setmain["daftar"]["bot"]:
@@ -1252,6 +1193,8 @@ def bot(op):
                 return
             if Bmid in op.param3:
                 if op.param2 in Bots:
+                    pass
+                if op.param2 in admin:
                     pass
                 if op.param2 in Setmain["daftar"]["admin"]:
                     pass
@@ -1306,6 +1249,8 @@ def bot(op):
             if Cmid in op.param3:
                 if op.param2 in Bots:
                     pass
+                if op.param2 in admin:
+                    pass
                 if op.param2 in Setmain["daftar"]["admin"]:
                     pass
                 if op.param2 in Setmain["daftar"]["bot"]:
@@ -1358,6 +1303,8 @@ def bot(op):
                 return
             if Dmid in op.param3:
                 if op.param2 in Bots:
+                    pass
+                if op.param2 in admin:
                     pass
                 if op.param2 in Setmain["daftar"]["admin"]:
                     pass
@@ -1412,6 +1359,8 @@ def bot(op):
             if Emid in op.param3:
                 if op.param2 in Bots:
                     pass
+                if op.param2 in admin:
+                    pass
                 if op.param2 in Setmain["daftar"]["admin"]:
                     pass
                 if op.param2 in Setmain["daftar"]["bot"]:
@@ -1464,6 +1413,8 @@ def bot(op):
                 return
             if Fmid in op.param3:
                 if op.param2 in Bots:
+                    pass
+                if op.param2 in admin:
                     pass
                 if op.param2 in Setmain["daftar"]["admin"]:
                     pass
@@ -1518,6 +1469,8 @@ def bot(op):
             if Gmid in op.param3:
                 if op.param2 in Bots:
                     pass
+                if op.param2 in admin:
+                    pass
                 if op.param2 in Setmain["daftar"]["admin"]:
                     pass
                 if op.param2 in Setmain["daftar"]["bot"]:
@@ -1571,6 +1524,8 @@ def bot(op):
             if Hmid in op.param3:
                 if op.param2 in Bots:
                     pass
+                if op.param2 in admin:
+                    pass
                 if op.param2 in Setmain["daftar"]["admin"]:
                     pass
                 if op.param2 in Setmain["daftar"]["bot"]:
@@ -1623,6 +1578,8 @@ def bot(op):
                 return
             if Setmain["daftar"]["admin"] in op.param3:
                 if op.param2 in Bots:
+                    pass
+                if op.param2 in admin:
                     pass
                 if op.param2 in Setmain["daftar"]["admin"]:
                     pass
