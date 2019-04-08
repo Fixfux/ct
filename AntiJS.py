@@ -80,7 +80,7 @@ sw.log("Channel Access Token : " + str(channel11.channelAccessToken))
 
 print ("SUCCES LOGIN")
 
-poll = LinePoll(cl)
+oepoll = OEPoll(cl)
 call = cl
 admin = ["u727933583f8830a3fc254fb1b906b174"]
 mid = cl.getProfile().mid
@@ -3718,10 +3718,10 @@ def bot(op):
 
 while True:
     try:
-        ops = poll.singleTrace(count=50)
+        ops = oepoll.singleTrace(count=50)
         if ops is not None:
             for op in ops:
-                poll.setRevision(op.revision)
+                oepoll.setRevision(op.revision)
                 thread1 = threading.Thread(target=bot, args=(op,))#self.OpInterrupt[op.type], args=(op,)
                 thread1.start()
                 thread1.join()
