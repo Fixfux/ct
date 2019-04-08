@@ -347,130 +347,91 @@ def command(text):
 def help():
     key = Setmain["keyCommand"]
     key = key.title()
-    helpMessage = "❧MENU HELP❧\n" + \
-                  "❧" + key + "Me\n" + \
-                  "❧" + key + "Mid「@」\n" + \
-                  "❧" + key + "Info「@」\n" + \
-                  "❧" + key + "Nk「@」\n" + \
-                  "❧" + key + "Kick1「@」\n" + \
-                  "❧" + key + "Mybot\n" + \
-                  "❧" + key + "Status\n" + \
-                  "❧" + key + "About\n" + \
-                  "❧" + key + "Restart\n" + \
-                  "❧" + key + "Runtime\n" + \
-                  "❧" + key + "Creator\n" + \
-                  "❧" + key + "Speed/Sp\n" + \
-                  "❧" + key + "Sprespon\n" + \
-                  "❧" + key + "Tagall\n" + \
-                  "❧" + key + "Joinall\n" + \
-                  "❧" + key + "Byeall\n" + \
-                  "❧" + key + "Byeme\n" + \
-                  "❧" + key + "Leave「Namagrup」\n" + \
-                  "❧" + key + "Ginfo\n" + \
-                  "❧" + key + "Open\n" + \
-                  "❧" + key + "Close\n" + \
-                  "❧" + key + "Url grup\n" + \
-                  "❧" + key + "Gruplist\n" + \
-                  "❧" + key + "Infogrup「angka」\n" + \
-                  "❧" + key + "Infomem「angka」\n" + \
-                  "❧" + key + "Remove chat\n" + \
-                  "❧" + key + "Lurking「on/off」\n" + \
-                  "❧" + key + "Lurkers\n" + \
-                  "❧" + key + "Sider「on/off」\n" + \
-                  "❧" + key + "Updatefoto\n" + \
-                  "❧" + key + "Updategrup\n" + \
-                  "❧" + key + "Updatebot\n" + \
-                  "❧" + key + "Broadcast:「Text」\n" + \
-                  "❧" + key + "Setkey「New Key」\n" + \
-                  "❧" + key + "Mykey\n" + \
-                  "❧" + key + "Resetkey\n" + \
-                  "❧" + key + "ID line:「Id Line nya」\n" + \
-                  "❧" + key + "Sholat:「Nama Kota」\n" + \
-                  "❧" + key + "Cuaca:「Nama Kota」\n" + \
-                  "❧" + key + "Lokasi:「Nama Kota」\n" + \
-                  "❧" + key + "Music:「Judul Lagu」\n" + \
-                  "❧" + key + "Lirik:「Judul Lagu」\n" + \
-                  "❧" + key + "Ytmp3:「Judul Lagu」\n" + \
-                  "❧" + key + "Ytmp4:「Judul Video」\n" + \
-                  "❧" + key + "Profileig:「Nama IG」\n" + \
-                  "❧" + key + "Cekdate:「tgl-bln-thn」\n" + \
-                  "❧" + key + "Jumlah:「angka」\n" + \
-                  "❧" + key + "Spamtag「@」\n" + \
-                  "❧" + key + "Spamcall:「jumlahnya」\n" + \
-                  "❧" + key + "Spamcall\n" + \
-                  "❧" + key + "Notag「on/off」\n" + \
-                  "❧" + key + "Allpro「on/off」\n" + \
-                  "❧" + key + "Protecturl「on/off」\n" + \
-                  "❧" + key + "Protectjoin「on/off」\n" + \
-                  "❧" + key + "Protectkick「on/off」\n" + \
-                  "❧" + key + "Protectcancel「on/off」\n" + \
-                  "❧" + key + "Antijs「on/off」\n" + \
-                  "❧" + key + "Antijs stay\n" + \
-                  "❧" + key + "Ghost「on/off」\n" + \
-                  "❧" + key + "Sticker「on/off」\n" + \
-                  "❧" + key + "Respon「on/off」\n" + \
-                  "❧" + key + "Contact「on/off」\n" + \
-                  "❧" + key + "Autojoin「on/off」\n" + \
-                  "❧" + key + "Autoadd「on/off」\n" + \
-                  "❧" + key + "Welcome「on/off」\n" + \
-                  "❧" + key + "Autoleave「on/off」\n" + \
-                  "❧" + key + "Admin:on\n" + \
-                  "❧" + key + "Admin:repeat\n" + \
-                  "❧" + key + "Staff:on\n" + \
-                  "❧" + key + "Staff:repeat\n" + \
-                  "❧" + key + "Bot:on\n" + \
-                  "❧" + key + "Bot:repeat\n" + \
-                  "❧" + key + "Adminadd「@」\n" + \
-                  "❧" + key + "Admindell「@」\n" + \
-                  "❧" + key + "Staffadd「@」\n" + \
-                  "❧" + key + "Staffdell「@」\n" + \
-                  "❧" + key + "Botadd「@」\n" + \
-                  "❧" + key + "Botdell「@」\n" + \
-                  "❧" + key + "Refresh\n" + \
-                  "❧" + key + "Listbot\n" + \
-                  "❧" + key + "Listadmin\n" + \
-                  "❧" + key + "Listprotect\n" + \
-                  "❧JANGAN TYPO❧"
+    helpMessage = "⎆ɪᴅ ʙᴏᴛs\n" + \
+                  "⎆" + key + "Me\n" + \
+                  "⎆" + key + "Mid「@」\n" + \
+                  "⎆" + key + "Info「@」\n" + \
+                  "⎆" + key + "Nk「@」\n" + \
+                  "⎆" + key + "Kick1「@」\n" + \
+                  "⎆" + key + "Mybot\n" + \
+                  "⎆" + key + "Status\n" + \
+                  "⎆" + key + "About\n" + \
+                  "⎆" + key + "Restart\n" + \
+                  "⎆" + key + "Runtime\n" + \
+                  "⎆" + key + "Creator\n" + \
+                  "⎆" + key + "Speed/Sp\n" + \
+                  "⎆" + key + "Sprespon\n" + \
+                  "⎆" + key + "Tagall\n" + \
+                  "⎆" + key + "Joinall\n" + \
+                  "⎆" + key + "Byeall\n" + \
+                  "⎆" + key + "Byeme\n" + \
+                  "⎆" + key + "Leave「Namagrup」\n" + \
+                  "⎆" + key + "Ginfo\n" + \
+                  "⎆" + key + "Open\n" + \
+                  "⎆" + key + "Close\n" + \
+                  "⎆" + key + "Url grup\n" + \
+                  "⎆" + key + "Gruplist\n" + \
+                  "⎆" + key + "Infogrup「angka」\n" + \
+                  "⎆" + key + "Infomem「angka」\n" + \
+                  "⎆" + key + "Remove chat\n" + \
+                  "⎆" + key + "Lurking「on/off」\n" + \
+                  "⎆" + key + "Lurkers\n" + \
+                  "⎆" + key + "Sider「on/off」\n" + \
+                  "⎆" + key + "Updatefoto\n" + \
+                  "⎆" + key + "Updategrup\n" + \
+                  "⎆" + key + "Updatebot\n" + \
+                  "⎆" + key + "Broadcast:「Text」\n" + \
+                  "⎆" + key + "Setkey「New Key」\n" + \
+                  "⎆" + key + "Mykey\n" + \
+                  "⎆" + key + "Resetkey\n" + \
+                  "⎆" + key + "ID line:「Id Line nya」\n" + \
+                  "⎆" + key + "Sholat:「Nama Kota」\n" + \
+                  "⎆" + key + "Cuaca:「Nama Kota」\n" + \
+                  "⎆" + key + "Lokasi:「Nama Kota」\n" + \
+                  "⎆" + key + "Music:「Judul Lagu」\n" + \
+                  "⎆" + key + "Lirik:「Judul Lagu」\n" + \
+                  "⎆" + key + "Ytmp3:「Judul Lagu」\n" + \
+                  "⎆" + key + "Ytmp4:「Judul Video」\n" + \
+                  "⎆" + key + "Profileig:「Nama IG」\n" + \
+                  "⎆" + key + "Cekdate:「tgl-bln-thn」\n" + \
+                  "⎆" + key + "Jumlah:「angka」\n" + \
+                  "⎆" + key + "Spamtag「@」\n" + \
+                  "⎆" + key + "Spamcall:「jumlahnya」\n" + \
+                  "⎆" + key + "Spamcall\n" + \
+                  "⎆" + key + "Notag「on/off」\n" + \
+                  "⎆" + key + "Allpro「on/off」\n" + \
+                  "⎆" + key + "Protecturl「on/off」\n" + \
+                  "⎆" + key + "Protectjoin「on/off」\n" + \
+                  "⎆" + key + "Protectkick「on/off」\n" + \
+                  "⎆" + key + "Protectcancel「on/off」\n" + \
+                  "⎆" + key + "Antijs「on/off」\n" + \
+                  "⎆" + key + "Antijs stay\n" + \
+                  "⎆" + key + "Ghost「on/off」\n" + \
+                  "⎆" + key + "Sticker「on/off」\n" + \
+                  "⎆" + key + "Respon「on/off」\n" + \
+                  "⎆" + key + "Contact「on/off」\n" + \
+                  "⎆" + key + "Autojoin「on/off」\n" + \
+                  "⎆" + key + "Autoadd「on/off」\n" + \
+                  "⎆" + key + "Welcome「on/off」\n" + \
+                  "⎆" + key + "Autoleave「on/off」\n" + \
+                  "⎆" + key + "Admin:on\n" + \
+                  "⎆" + key + "Admin:repeat\n" + \
+                  "⎆" + key + "Staff:on\n" + \
+                  "⎆" + key + "Staff:repeat\n" + \
+                  "⎆" + key + "Bot:on\n" + \
+                  "⎆" + key + "Bot:repeat\n" + \
+                  "⎆" + key + "Adminadd「@」\n" + \
+                  "⎆" + key + "Admindell「@」\n" + \
+                  "⎆" + key + "Staffadd「@」\n" + \
+                  "⎆" + key + "Staffdell「@」\n" + \
+                  "⎆" + key + "Botadd「@」\n" + \
+                  "⎆" + key + "Botdell「@」\n" + \
+                  "⎆" + key + "Refresh\n" + \
+                  "⎆" + key + "Listbot\n" + \
+                  "⎆" + key + "Listadmin\n" + \
+                  "⎆" + key + "Listprotect\n" + \
+                  "⎆ᴄʀᴇᴀᴛᴏʀ"
     return helpMessage
-
-def helpbot():
-    key = Setmain["keyCommand"]
-    key = key.title()
-    helpMessage1 = "❧HELP BOT❧\n" + \
-                  "❧" + key + "Blc\n" + \
-                  "❧" + key + "Ban:on\n" + \
-                  "❧" + key + "Unban:on\n" + \
-                  "❧" + key + "Ban「@」\n" + \
-                  "❧" + key + "Unban「@」\n" + \
-                  "❧" + key + "Talkban「@」\n" + \
-                  "❧" + key + "Untalkban「@」\n" + \
-                  "❧" + key + "Talkban:on\n" + \
-                  "❧" + key + "Untalkban:on\n" + \
-                  "❧" + key + "Banlist\n" + \
-                  "❧" + key + "Talkbanlist\n" + \
-                  "❧" + key + "Clearban\n" + \
-                  "❧" + key + "Refresh\n" + \
-                  "❧" + key + "Cek sider\n" + \
-                  "❧" + key + "Cek spam\n" + \
-                  "❧" + key + "Cek pesan \n" + \
-                  "❧" + key + "Cek respon \n" + \
-                  "❧" + key + "Cek welcome\n" + \
-                  "❧" + key + "Set sider:「Text」\n" + \
-                  "❧" + key + "Set spam:「Text」\n" + \
-                  "❧" + key + "Set pesan:「Text」\n" + \
-                  "❧" + key + "Set respon:「Text」\n" + \
-                  "❧" + key + "Set welcome:「Text」\n" + \
-                  "❧" + key + "Myname:「Nama」\n" + \
-                  "❧" + key + "Bot1name:「Nama」\n" + \
-                  "❧" + key + "Bot2name:「Nama」\n" + \
-                  "❧" + key + "Bot3name:「Nama」\n" + \
-                  "❧" + key + "Bot1up「Kirim fotonya」\n" + \
-                  "❧" + key + "Bot2up「Kirim fotonya」\n" + \
-                  "❧" + key + "Bot3up「Kirim fotonya」\n" + \
-                  "❧" + key + "Gift:「Mid korban」「Jumlah」\n" + \
-                  "❧" + key + "Spam:「Mid korban」「Jumlah」\n" + \
-                  "❧ANTI JS V-2❧"
-    return helpMessage1
 
 def bot(op):
     global time
@@ -2006,7 +1967,7 @@ def bot(op):
                             if msg._from in admin or msg._from in Setmain["daftar"]["admin"]:
                                 tz = pytz.timezone("Asia/Jakarta")
                                 timeNow = datetime.now(tz=tz)
-                                md = "PROTECT\n"
+                                md = "sᴛᴀᴛᴜs ᴘʀᴏᴛᴇᴄᴛɪᴏɴ\n"
                                 if wait["sticker"] == True: md+="❧Sticker「ON」\n"
                                 else: md+="❧Sticker「OFF」\n"
                                 if wait["contact"] == True: md+="❧Contact「ON」\n"
@@ -2041,7 +2002,7 @@ def bot(op):
 
                         elif cmd == "creator" or text.lower() == 'creator':
                             if msg._from in admin or msg._from in Setmain["daftar"]["admin"]:
-                                cl.sendMessage(msg.to,"ID BOTS") 
+                                cl.sendMessage(msg.to,"ɪᴅ ʙᴏᴛs") 
                                 ma = ""
                                 for i in admin:
                                     ma = cl.getContact(i)
@@ -2050,7 +2011,7 @@ def bot(op):
                         elif cmd == "about" or cmd == "informasi":
                           if wait["selfbot"] == True:
                             if msg._from in admin:
-                               sendMention(msg.to, sender, "「 Type Selfbot 」\n")
+                               sendMention(msg.to, sender, "⎆sᴇʟғʙᴏᴛs ᴀsɪsᴛ⎆\n")
                                cl.sendMessage(msg.to, None, contentMetadata={'mid': mid}, contentType=13)
 
                         elif cmd == "me" or text.lower() == 'me':
@@ -2078,7 +2039,7 @@ def bot(op):
                                key = eval(msg.contentMetadata["MENTION"])
                                key1 = key["MENTIONEES"][0]["M"]
                                mi = cl.getContact(key1)
-                               cl.sendMessage(msg.to, "❧Nama : "+str(mi.displayName)+"\n❧Mid : " +key1+"\n❧Status Msg"+str(mi.statusMessage))
+                               cl.sendMessage(msg.to, "❧Nama : "+str(mi.displayName)+"\n⎆Mid : " +key1+"\n⎆Status Msg"+str(mi.statusMessage))
                                cl.sendMessage(msg.to, None, contentMetadata={'mid': key1}, contentType=13)
                                if "videoProfile='{" in str(cl.getContact(key1)):
                                    cl.sendVideoWithURL(msg.to, 'http://dl.profile.line.naver.jp'+str(mi.picturePath)+'/vp.small')
@@ -2150,7 +2111,7 @@ def bot(op):
                                pesan = text.replace(sep[0] + " ","")
                                saya = cl.getGroupIdsJoined()
                                for group in saya:
-                                   cl.sendMessage(group,"[ ID BOTS ]\n" + str(pesan))
+                                   cl.sendMessage(group,"ɪᴅ ʙᴏᴛs\n" + str(pesan))
 
                         elif text.lower() == "mykey":
                           if wait["selfbot"] == True:
@@ -2186,7 +2147,7 @@ def bot(op):
                           if wait["selfbot"] == True:
                             if msg._from in admin or msg._from in Setmain["daftar"]["admin"]:
                                eltime = time.time() - mulai
-                               bot = "Aktif " +waktu(eltime)
+                               bot = "ᴀᴋᴛɪᴠ " +waktu(eltime)
                                cl.sendMessage(msg.to,bot)
                             
                         elif cmd == "groupinfo":
@@ -2385,63 +2346,63 @@ def bot(op):
                             if msg._from in admin or msg._from in Setmain["daftar"]["admin"]:
                               if msg.toType == 2:
                                 settings["groupPicture"] = True
-                                cl.sendMessage(msg.to,"Kirim fotonya.....")
+                                cl.sendMessage(msg.to,"send the picture")
 
                         elif cmd == "upbot":
                           if wait["selfbot"] == True:
                             if msg._from in admin or msg._from in Setmain["daftar"]["admin"]:
                                 settings["changePicture"] = True
-                                cl.sendMessage(msg.to,"Kirim fotonya.....")
+                                cl.sendMessage(msg.to,"send the picture")
                                 
                         elif cmd == "upfoto":
                           if wait["selfbot"] == True:
                             if msg._from in admin or msg._from in Setmain["daftar"]["admin"]:
                                 Setmain["ARfoto"][mid] = True
-                                cl.sendMessage(msg.to,"Kirim fotonya.....")
+                                cl.sendMessage(msg.to,"send the picture")
                                 
                         elif cmd == "cf1":
                             if msg._from in admin or msg._from in Setmain["daftar"]["admin"]:
                                 Setmain["ARfoto"][Amid] = True
-                                k1.sendMessage(msg.to,"Kirim fotonya.....")
+                                k1.sendMessage(msg.to,"send the picture")
                                 
                         elif cmd == "cf2":
                             if msg._from in admin or msg._from in Setmain["daftar"]["admin"]:
                                 Setmain["ARfoto"][Bmid] = True
-                                k2.sendMessage(msg.to,"Kirim fotonya.....")
+                                k2.sendMessage(msg.to,"send the picture")
                                 
                         elif cmd == "cf3":
                             if msg._from in admin or msg._from in Setmain["daftar"]["admin"]:
                                 Setmain["ARfoto"][Cmid] = True
-                                k3.sendMessage(msg.to,"Kirim fotonya.....")
+                                k3.sendMessage(msg.to,"send the picture")
                         elif cmd == "cf4":
                             if msg._from in admin or msg._from in Setmain["daftar"]["admin"]:
                                 Setmain["ARfoto"][Dmid] = True
-                                k4.sendMessage(msg.to,"Kirim fotonya.....")
+                                k4.sendMessage(msg.to,"send the picture")
                                 
                         elif cmd == "cf5":
                             if msg._from in admin or msg._from in Setmain["daftar"]["admin"]:
                                 Setmain["ARfoto"][Emid] = True
-                                k5.sendMessage(msg.to,"Kirim fotonya.....")
+                                k5.sendMessage(msg.to,"send the picture")
                                 
                         elif cmd == "cf6":
                             if msg._from in admin or msg._from in Setmain["daftar"]["admin"]:
                                 Setmain["ARfoto"][Fmid] = True
-                                k6.sendMessage(msg.to,"Kirim fotonya.....")
+                                k6.sendMessage(msg.to,"send the picture")
                         elif cmd == "cf7":
                             if msg._from in admin or msg._from in Setmain["daftar"]["admin"]:
                                 Setmain["ARfoto"][Gmid] = True
-                                k7.sendMessage(msg.to,"Kirim fotonya.....")
+                                k7.sendMessage(msg.to,"send the picture")
                                 
                         elif cmd == "cf8":
                             if msg._from in admin or msg._from in Setmain["daftar"]["admin"]:
                                 Setmain["ARfoto"][Hmid] = True
-                                k8.sendMessage(msg.to,"Kirim fotonya.....")
+                                k8.sendMessage(msg.to,"send the picture")
                                 
                         
                         elif cmd == "b4up":
                             if msg._from in admin or msg._from in Setmain["daftar"]["admin"]:
                                 Setmain["ARfoto"][Zmid] = True
-                                sw.sendMessage(msg.to,"Kirim fotonya.....")
+                                sw.sendMessage(msg.to,"send the picture")
 
                         elif cmd.startswith("cn: "):
                           if msg._from in admin or msg._from in Setmain["daftar"]["admin"]:
@@ -2673,7 +2634,7 @@ def bot(op):
                                     a = a + 1
                                     end = '\n'
                                     ma += str(a) + ". " +cl.getContact(m_id).displayName + "\n"
-                                cl.sendMessage(msg.to,"bot\n\n"+ma+"\nTotal「%s」 Bots" %(str(len(Bots))))
+                                cl.sendMessage(msg.to,"ɪᴅ ʙᴏᴛs\n\n"+ma+"\nTotal「%s」 Bots" %(str(len(Bots))))
 
                         elif cmd == "listadmin":
                           if wait["selfbot"] == True:
@@ -2729,7 +2690,7 @@ def bot(op):
                                     c = c + 1
                                     end = '\n'
                                     mc += str(c) + ". " +cl.getGroup(group).name + "\n"
-                                cl.sendMessage(msg.to,"Protection\n\nPROTECT URL :\n"+ma+"\nPROTECT KICK :\n"+mb+"\nPROTECT JOIN :\n"+md+"\nPROTECT CANCEL:\n"+mc+"\nTotal「%s」Grup yg dijaga" %(str(len(Setmain["pro"]["qr"])+len(Setmain["pro"]["kick"])+len(Setmain["pro"]["join"])+len(Setmain["pro"]["cancel"]))))
+                                cl.sendMessage(msg.to,"Protection\n\nᴘʀᴏᴛᴇᴄᴛ ǫʀ:\n"+ma+"\nᴘʀᴏᴛᴇᴄᴛ ᴋɪᴄᴋ:\n"+mb+"\nᴘʀᴏᴛᴇᴄᴛ ᴊᴏɪɴ:\n"+md+"\nᴘʀᴏᴛᴇᴄᴛ ᴄᴀɴᴄᴇʟ:\n"+mc+"\nTotal「%s」Grup yg dijaga" %(str(len(Setmain["pro"]["qr"])+len(Setmain["pro"]["kick"])+len(Setmain["pro"]["join"])+len(Setmain["pro"]["cancel"]))))
 
                         elif cmd == "respon":
                           if wait["selfbot"] == True:
