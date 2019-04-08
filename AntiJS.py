@@ -647,42 +647,49 @@ def bot(op):
                 if op.param2 not in Bots and op.param2 not in admin and op.param2 not in Setmain["daftar"]["bot"] and op.param2 not in Setmain["daftar"]["admin"]:
                     try:    
                         k2.cancelGroupInvitation(op.param1,[op.param3])
+                        random.choice(ABC).kickoutFromGroup(op.param1,[op.param2])
                         Setmain["daftar"]["blacklist"][op.param2] = True
                         f = codecs.open("setting.json","w","utf-8")
                         json.dump(Setmain, f, sort_keys=True, indent=4,ensure_ascii=False)
                     except:
                         try:    
                             k3.cancelGroupInvitation(op.param1,[op.param3])
+                            random.choice(ABC).kickoutFromGroup(op.param1,[op.param2])
                             Setmain["daftar"]["blacklist"][op.param2] = True
                             f = codecs.open("setting.json","w","utf-8")
                             json.dump(Setmain, f, sort_keys=True, indent=4,ensure_ascii=False)
                         except:
                             try:    
                                 k4.cancelGroupInvitation(op.param1,[op.param3])
+                                random.choice(ABC).kickoutFromGroup(op.param1,[op.param2])
                                 Setmain["daftar"]["blacklist"][op.param2] = True
                                 f = codecs.open("setting.json","w","utf-8")
                                 json.dump(Setmain, f, sort_keys=True, indent=4,ensure_ascii=False)
                             except:
                                 try:    
                                     k5.cancelGroupInvitation(op.param1,[op.param3])
+                                    random.choice(ABC).kickoutFromGroup(op.param1,[op.param2])
                                     Setmain["daftar"]["blacklist"][op.param2] = True
                                     f = codecs.open("setting.json","w","utf-8")
                                     json.dump(Setmain, f, sort_keys=True, indent=4,ensure_ascii=False)
                                 except:
                                     try:
                                         k6.cancelGroupInvitation(op.param1,[op.param3])
+                                        random.choice(ABC).kickoutFromGroup(op.param1,[op.param2])
                                         Setmain["daftar"]["blacklist"][op.param2] = True
                                         f = codecs.open("setting.json","w","utf-8")
                                         json.dump(Setmain, f, sort_keys=True, indent=4,ensure_ascii=False)
                                     except:
                                         try:
                                             k7.cancelGroupInvitation(op.param1,[op.param3])
+                                            random.choice(ABC).kickoutFromGroup(op.param1,[op.param2])
                                             Setmain["daftar"]["blacklist"][op.param2] = True
                                             f = codecs.open("setting.json","w","utf-8")
                                             json.dump(Setmain, f, sort_keys=True, indent=4,ensure_ascii=False)
                                         except:
                                             try:
                                                 k8.cancelGroupInvitation(op.param1,[op.param3])
+                                                random.choice(ABC).kickoutFromGroup(op.param1,[op.param2])
                                                 Setmain["daftar"]["blacklist"][op.param2] = True
                                                 f = codecs.open("setting.json","w","utf-8")
                                                 json.dump(Setmain, f, sort_keys=True, indent=4,ensure_ascii=False)
@@ -698,42 +705,49 @@ def bot(op):
                 if op.param2 not in Bots and op.param2 not in admin and op.param2 not in Setmain["daftar"]["bot"] and op.param2 not in Setmain["daftar"]["admin"]:
                     try:
                         k2.cancelGroupInvitation(op.param1,[op.param3])
+                        random.choice(ABC).kickoutFromGroup(op.param1,[op.param2])
                         Setmain["daftar"]["blacklist"][op.param2] = True
                         f = codecs.open("setting.json","w","utf-8")
                         json.dump(Setmain, f, sort_keys=True, indent=4,ensure_ascii=False)
                     except:
                         try:
                             k3.cancelGroupInvitation(op.param1,[op.param3])
+                            random.choice(ABC).kickoutFromGroup(op.param1,[op.param2])
                             Setmain["daftar"]["blacklist"][op.param2] = True
                             f = codecs.open("setting.json","w","utf-8")
                             json.dump(Setmain, f, sort_keys=True, indent=4,ensure_ascii=False)
                         except:
                             try:
                                 k4.cancelGroupInvitation(op.param1,[op.param3])
+                                random.choice(ABC).kickoutFromGroup(op.param1,[op.param2])
                                 Setmain["daftar"]["blacklist"][op.param2] = True
                                 f = codecs.open("setting.json","w","utf-8")
                                 json.dump(Setmain, f, sort_keys=True, indent=4,ensure_ascii=False)
                             except:
                                 try:    
                                     k5.cancelGroupInvitation(op.param1,[op.param3])
+                                    random.choice(ABC).kickoutFromGroup(op.param1,[op.param2])
                                     Setmain["daftar"]["blacklist"][op.param2] = True
                                     f = codecs.open("setting.json","w","utf-8")
                                     json.dump(Setmain, f, sort_keys=True, indent=4,ensure_ascii=False)
                                 except:
                                     try:    
                                         k6.cancelGroupInvitation(op.param1,[op.param3])
+                                        random.choice(ABC).kickoutFromGroup(op.param1,[op.param2])
                                         Setmain["daftar"]["blacklist"][op.param2] = True
                                         f = codecs.open("setting.json","w","utf-8")
                                         json.dump(Setmain, f, sort_keys=True, indent=4,ensure_ascii=False)
                                     except:
                                         try:    
                                             k7.cancelGroupInvitation(op.param1,[op.param3])
+                                            random.choice(ABC).kickoutFromGroup(op.param1,[op.param2])
                                             Setmain["daftar"]["blacklist"][op.param2] = True
                                             f = codecs.open("setting.json","w","utf-8")
                                             json.dump(Setmain, f, sort_keys=True, indent=4,ensure_ascii=False)
                                         except:
                                             try:    
                                                 k8.cancelGroupInvitation(op.param1,[op.param3])
+                                                random.choice(ABC).kickoutFromGroup(op.param1,[op.param2])
                                                 Setmain["daftar"]["blacklist"][op.param2] = True
                                                 f = codecs.open("setting.json","w","utf-8")
                                                 json.dump(Setmain, f, sort_keys=True, indent=4,ensure_ascii=False)
@@ -749,42 +763,49 @@ def bot(op):
                 if op.param2 not in Bots and op.param2 not in admin and op.param2 not in Setmain["daftar"]["bot"] and op.param2 not in Setmain["daftar"]["admin"]:
                     try:
                         k2.cancelGroupInvitation(op.param1,[op.param3])
+                        random.choice(ABC).kickoutFromGroup(op.param1,[op.param2])
                         Setmain["daftar"]["blacklist"][op.param2] = True
                         f = codecs.open("setting.json","w","utf-8")
                         json.dump(Setmain, f, sort_keys=True, indent=4,ensure_ascii=False)
                     except:
                         try:
                             k3.cancelGroupInvitation(op.param1,[op.param3])
+                            random.choice(ABC).kickoutFromGroup(op.param1,[op.param2])
                             Setmain["daftar"]["blacklist"][op.param2] = True
                             f = codecs.open("setting.json","w","utf-8")
                             json.dump(Setmain, f, sort_keys=True, indent=4,ensure_ascii=False)
                         except:
                             try:
                                 k4.cancelGroupInvitation(op.param1,[op.param3])
+                                random.choice(ABC).kickoutFromGroup(op.param1,[op.param2])
                                 Setmain["daftar"]["blacklist"][op.param2] = True
                                 f = codecs.open("setting.json","w","utf-8")
                                 json.dump(Setmain, f, sort_keys=True, indent=4,ensure_ascii=False)
                             except:
                                 try:
                                     k5.cancelGroupInvitation(op.param1,[op.param3])
+                                    random.choice(ABC).kickoutFromGroup(op.param1,[op.param2])
                                     Setmain["daftar"]["blacklist"][op.param2] = True
                                     f = codecs.open("setting.json","w","utf-8")
                                     json.dump(Setmain, f, sort_keys=True, indent=4,ensure_ascii=False)
                                 except:
                                     try:
                                         k6.cancelGroupInvitation(op.param1,[op.param3])
+                                        random.choice(ABC).kickoutFromGroup(op.param1,[op.param2])
                                         Setmain["daftar"]["blacklist"][op.param2] = True
                                         f = codecs.open("setting.json","w","utf-8")
                                         json.dump(Setmain, f, sort_keys=True, indent=4,ensure_ascii=False)
                                     except:
                                         try:
                                             k7.cancelGroupInvitation(op.param1,[op.param3])
+                                            random.choice(ABC).kickoutFromGroup(op.param1,[op.param2])
                                             Setmain["daftar"]["blacklist"][op.param2] = True
                                             f = codecs.open("setting.json","w","utf-8")
                                             json.dump(Setmain, f, sort_keys=True, indent=4,ensure_ascii=False)
                                         except:
                                             try:
                                                 k8.cancelGroupInvitation(op.param1,[op.param3])
+                                                random.choice(ABC).kickoutFromGroup(op.param1,[op.param2])
                                                 Setmain["daftar"]["blacklist"][op.param2] = True
                                                 f = codecs.open("setting.json","w","utf-8")
                                                 json.dump(Setmain, f, sort_keys=True, indent=4,ensure_ascii=False)
@@ -3163,20 +3184,24 @@ def bot(op):
                                          msgs = "Protect kick sudah tidak aktif"
                                     cl.sendMessage(msg.to, "「Dinonaktifkan」\n" + msgs)
 
-                        elif 'Pj ' in msg.text:
+                        elif 'Projoin ' in msg.text:
                            if msg._from in admin or msg._from in Setmain["daftar"]["admin"]:
-                              spl = msg.text.replace('Pj ','')
+                              spl = msg.text.replace('Projoin ','')
                               if spl == 'on':
-                                  if msg.to in protectjoin:
+                                  if msg.to in Setmain["pro"]["join"]:
                                        msgs = "Protect join sudah aktif"
                                   else:
-                                       protectjoin.append(msg.to)
+                                       Setmain["pro"]["join"][msg.to] = True
+                                       f = codecs.open("setting.json","w","utf-8")
+                                       json.dump(Setmain, f, sort_keys=True, indent=4,ensure_ascii=False)
                                        ginfo = cl.getGroup(msg.to)
                                        msgs = "Protect join diaktifkan\nDi Group : " +str(ginfo.name)
                                   cl.sendMessage(msg.to, "「Diaktifkan」\n" + msgs)
                               elif spl == 'off':
-                                    if msg.to in protectjoin:
-                                         protectjoin.remove(msg.to)
+                                    if msg.to in Setmain["pro"["join"]]:
+                                         del Setmain["pro"]["kick"][msg.to]
+                                         f = codecs.open("setting.json","w","utf-8")
+                                         json.dump(Setmain, f, sort_keys=True, indent=4,ensure_ascii=False)
                                          ginfo = cl.getGroup(msg.to)
                                          msgs = "Protect join dinonaktifkan\nDi Group : " +str(ginfo.name)
                                     else:
@@ -3231,20 +3256,24 @@ def bot(op):
                                          msgs = "Anti JS Sudah Tidak Aktif"
                                     cl.sendMessage(msg.to, "「Dinonaktifkan」\n" + msgs)
                                     
-                        elif 'G ' in msg.text:
+                        elif 'Ghost ' in msg.text:
                            if msg._from in admin or msg._from in Setmain["daftar"]["admin"]:
-                              spl = msg.text.replace('G ','')
+                              spl = msg.text.replace('Ghost ','')
                               if spl == 'on':
-                                  if msg.to in ghost:
+                                  if msg.to in Setmain["pro"]["ghost"]:
                                        msgs = "Ghost sudah aktif"
                                   else:
-                                       ghost.append(msg.to)
+                                       Setmain["pro"]["js"][msg.to] = True
+                                       f = codecs.open("setting.json","w","utf-8")
+                                       json.dump(Setmain, f, sort_keys=True, indent=4,ensure_ascii=False)
                                        ginfo = cl.getGroup(msg.to)
                                        msgs = "Ghost Diaktifkan\nDi Group : " +str(ginfo.name)
                                   cl.sendMessage(msg.to, "「Diaktifkan」\n" + msgs)
                               elif spl == 'off':
-                                    if msg.to in ghost:
-                                         ghost.remove(msg.to)
+                                    if msg.to in Setmain["pro"]["ghhost"]:
+                                         del Setmain["pro"]["js"][msg.to]
+                                         f = codecs.open("setting.json","w","utf-8")
+                                         json.dump(Setmain, f, sort_keys=True, indent=4,ensure_ascii=False)
                                          ginfo = cl.getGroup(msg.to)
                                          msgs = "Ghost Dinonaktifkan\nDi Group : " +str(ginfo.name)
                                     else:
@@ -3267,6 +3296,12 @@ def bot(op):
                                        Setmain["pro"]["kick"][msg.to] = True
                                        f = codecs.open("setting.json","w","utf-8")
                                        json.dump(Setmain, f, sort_keys=True, indent=4,ensure_ascii=False)
+                                  if msg.to in Setmain["pro"]["js"]:
+                                      msgs = ""
+                                  else:
+                                       Setmain["pro"]["js"][msg.to] = True
+                                       f = codecs.open("setting.json","w","utf-8")
+                                       json.dump(Setmain, f, sort_keys=True, indent=4,ensure_ascii=False)
                                   if msg.to in Setmain["pro"]["invite"]:
                                       msgs = ""
                                   else:
@@ -3285,13 +3320,19 @@ def bot(op):
                                   cl.sendMessage(msg.to, "「Diaktifkan」\n" + msgs)
                               elif spl == 'off':
                                     if msg.to in Setmain["pro"]["qr"]:
-                                         del setmain["pro"]["qr"][msg.to]
+                                         del Setmain["pro"]["qr"][msg.to]
                                          f = codecs.open("setting.json","w","utf-8")
                                          json.dump(Setmain, f, sort_keys=True, indent=4,ensure_ascii=False)
                                     else:
                                          msgs = ""
                                     if msg.to in Setmain["pro"]["kick"]:
-                                         del setmain["pro"]["kick"][msg.to]
+                                         del Setmain["pro"]["kick"][msg.to]
+                                         f = codecs.open("setting.json","w","utf-8")
+                                         json.dump(Setmain, f, sort_keys=True, indent=4,ensure_ascii=False)
+                                    else:
+                                         msgs = ""
+                                    if msg.to in Setmain["pro"]["js"]:
+                                         del Setmain["pro"]["js"][msg.to]
                                          f = codecs.open("setting.json","w","utf-8")
                                          json.dump(Setmain, f, sort_keys=True, indent=4,ensure_ascii=False)
                                     else:
@@ -3303,7 +3344,7 @@ def bot(op):
                                     else:
                                          msgs = ""
                                     if msg.to in Setmain["pro"]["cancel"]:
-                                         del setmain["pro"]["cancel"][msg.to]
+                                         del Setmain["pro"]["cancel"][msg.to]
                                          f = codecs.open("setting.json","w","utf-8")
                                          json.dump(Setmain, f, sort_keys=True, indent=4,ensure_ascii=False)
                                          ginfo = cl.getGroup(msg.to)
