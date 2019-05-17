@@ -2570,7 +2570,7 @@ def bot(op):
                                 try:
                                    cl.findAndAddContactsByMid(msg._from)
                                    cl.inviteIntoGroup(gid,[msg._from])
-                    		        cl.sendMessage(msg.to, "sukses invite")
+                    		   cl.sendMessage(msg.to, "sukses invite")
 
                         elif cmd == "status":
                           if IdKu["selfbot"] == True:
