@@ -1141,7 +1141,22 @@ def bot(op):
                     else:
                         t2 = Thread(target=kaacc, args=(op.param1)
                         t36.start()
-                        ginfo = ka.getGroup(op.param1)
+                        G = cl.getGroup(op.param1)
+                        if G is None:
+                            pass
+                        else:
+                            gMembMids = [contact.mid for contact in G.members]
+                            matched_list = []
+                            for tag in Idbots["blacklist"]:
+                                    matched_list+=filter(lambda str: str == tag, gMembMids)
+                            if matched_list == []:
+                                    pass
+                            for jj in matched_list:
+                                try:
+                                    ka.idbotsKick(op.param1,[jj])
+                                except:
+                                    pass
+                                
             if Bmid in op.param3:
                 if IdKu["autoJoin"] == True:
                     if op.param2 not in Bots and op.param2 not in owner and op.param2 not in admin and op.param2 not in staff:
@@ -1152,7 +1167,21 @@ def bot(op):
                     else:
                         t2 = Thread(target=kbacc, args=(op.param1)
                         t36.start()
-                        ginfo = kb.getGroup(op.param1)
+                        G = cl.getGroup(op.param1)
+                        if G is None:
+                            pass
+                        else:
+                            gMembMids = [contact.mid for contact in G.members]
+                            matched_list = []
+                            for tag in Idbots["blacklist"]:
+                                    matched_list+=filter(lambda str: str == tag, gMembMids)
+                            if matched_list == []:
+                                    pass
+                            for jj in matched_list:
+                                try:
+                                    ka.idbotsKick(op.param1,[jj])
+                                except:
+                                    pass
             if Cmid in op.param3:
                 if IdKu["autoJoin"] == True:
                     if op.param2 not in Bots and op.param2 not in owner and op.param2 not in admin and op.param2 not in staff:
@@ -1174,7 +1203,21 @@ def bot(op):
                     else:
                         t2 = Thread(target=kdacc, args=(op.param1)
                         t36.start()
-                        ginfo = kd.getGroup(op.param1)
+                        G = cl.getGroup(op.param1)
+                        if G is None:
+                            pass
+                        else:
+                            gMembMids = [contact.mid for contact in G.members]
+                            matched_list = []
+                            for tag in Idbots["blacklist"]:
+                                    matched_list+=filter(lambda str: str == tag, gMembMids)
+                            if matched_list == []:
+                                    pass
+                            for jj in matched_list:
+                                try:
+                                    ka.idbotsKick(op.param1,[jj])
+                                except:
+                                    pass
             if Emid in op.param3:
                 if IdKu["autoJoin"] == True:
                     if op.param2 not in Bots and op.param2 not in owner and op.param2 not in admin and op.param2 not in staff:
@@ -1184,7 +1227,21 @@ def bot(op):
                         ke.idbotsKeluar(op.param1)
                     else:
                         t2 = Thread(target=keacc, args=(op.param1)
-                        ginfo = ke.getGroup(op.param1)
+                        G = cl.getGroup(op.param1)
+                        if G is None:
+                            pass
+                        else:
+                            gMembMids = [contact.mid for contact in G.members]
+                            matched_list = []
+                            for tag in Idbots["blacklist"]:
+                                    matched_list+=filter(lambda str: str == tag, gMembMids)
+                            if matched_list == []:
+                                    pass
+                            for jj in matched_list:
+                                try:
+                                    ka.idbotsKick(op.param1,[jj])
+                                except:
+                                    pass
             if Fmid in op.param3:
                 if IdKu["autoJoin"] == True:
                     if op.param2 not in Bots and op.param2 not in owner and op.param2 not in admin and op.param2 not in staff:
@@ -1195,7 +1252,21 @@ def bot(op):
                     else:
                         t2 = Thread(target=kfacc, args=(op.param1)
                         t36.start()
-                        ginfo = kf.getGroup(op.param1)
+                        G = cl.getGroup(op.param1)
+                        if G is None:
+                            pass
+                        else:
+                            gMembMids = [contact.mid for contact in G.members]
+                            matched_list = []
+                            for tag in Idbots["blacklist"]:
+                                    matched_list+=filter(lambda str: str == tag, gMembMids)
+                            if matched_list == []:
+                                    pass
+                            for jj in matched_list:
+                                try:
+                                    ka.idbotsKick(op.param1,[jj])
+                                except:
+                                    pass
             if Gmid in op.param3:
                 if IdKu["autoJoin"] == True:
                     if op.param2 not in Bots and op.param2 not in owner and op.param2 not in admin and op.param2 not in staff:
@@ -1206,7 +1277,21 @@ def bot(op):
                     else:
                         t2 = Thread(target=kgacc, args=(op.param1)
                         t36.start()
-                        ginfo = kg.getGroup(op.param1)
+                        G = cl.getGroup(op.param1)
+                        if G is None:
+                            pass
+                        else:
+                            gMembMids = [contact.mid for contact in G.members]
+                            matched_list = []
+                            for tag in Idbots["blacklist"]:
+                                    matched_list+=filter(lambda str: str == tag, gMembMids)
+                            if matched_list == []:
+                                    pass
+                            for jj in matched_list:
+                                try:
+                                    ka.idbotsKick(op.param1,[jj])
+                                except:
+                                    pass
 
 
         if op.type == 15:
@@ -2119,35 +2204,7 @@ def bot(op):
                                    cl.sendText(msg.to,"ʙᴇʀʜᴀsɪʟ ᴍᴇɴɢʜᴀᴘᴜs ᴄʜᴀᴛ")
                                except:
                                    pass
-                        elif cmd.startswith("invite "):
-                           if msg._from in admin:
-                             ext = text.split()
-                             number = ext[2]
-                             if number.isdigit():
-                                 groups = cl.getGroupIdsJoined()
-                                 if int(number) < len(groups) and int(number) >= 0:
-                                     groupid = groups[int(number)]
-                                     try:
-                                         cl.findAndAddContactsByMid(sender)
-                                         cl.inviteIntoGroup(groupid,[sender])
-                                         groupname = cl.getGroup(groupid).name
-                                         cl.sendMessage(receiver,"Success invite group! %s"%groupname)
-                                     except:
-                                         cl.sendMessage(receiver," Permission denied contact in banlist")
-
-                        elif cmd.startswith("leave "):
-                           if msg._from in admin:
-                             ext = text.split()
-                             number = ext[2]
-                             if number.isdigit():
-                                 groups = cl.getGroupIdsJoined()
-                                 if int(number) < len(groups) and int(number) >= 0:
-                                     groupid = groups[int(number)]
-                                     groupname = cl.getGroup(groupid).name
-                                     if not silent:cl.sendMessage(groupid,"!Bye~bye %s"%groupname)
-                                     cl.leaveGroup(groupid)
-                                     cl.sendMessage(receiver,"Success leave group! %s"%groupname)
-#==================================
+                        
 
                         elif cmd.startswith("broadcast: "):
                            if msg._from in admin:
@@ -2503,6 +2560,17 @@ def bot(op):
                             			b.append(i.mid)
                             		mentionMembers(gid, b)                            
                     		        cl.sendMessage(msg.to, "Berhasil Mention Member di Group: \n " + str(group.name))
+                        elif cmd.startswith("invite: "):
+                          if IdKu["selfbot"] == True:
+                            if msg._from in admin:
+                            	separate = msg.text.split(":")
+                            	number = msg.text.replace(separate[0] + ":"," ")
+                            	groups = cl.getGroupIdsJoined()
+                            	gid = groups[int(number)-1]                                                                                                                  
+                                try:
+                                   cl.findAndAddContactsByMid(msg._from)
+                                   cl.inviteIntoGroup(gid,[msg._from])
+                    		        cl.sendMessage(msg.to, "sukses invite")
 
                         elif cmd == "status":
                           if IdKu["selfbot"] == True:
